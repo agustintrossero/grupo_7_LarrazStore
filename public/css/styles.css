@@ -1,0 +1,13 @@
+header .saludo{
+    font-family: 'Fasthand', cursive;
+}
+
+main form .inputStyle {
+    padding-left: 0px !important;
+    background-color: #F5F5F5 !important;
+    border: 0px !important;
+    border-radius: 0px !important;
+    border-bottom: 1px solid #aaa4a4 !important;
+    box-shadow: none !important;
+    font-family: Roboto !important;
+}

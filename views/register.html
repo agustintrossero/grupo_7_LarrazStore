@@ -5,9 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fasthand&display=swap" rel="stylesheet"> <!--font-family: 'Fasthand', cursive;-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet" />
     <title>Registrarse</title>
 </head>
 <body>
+    <header>
+        <div class="saludo">Bienvenido!</div>
+        <form action="resultado.html" method="POST">
+            <P>
+                <input type="radio" name="LOP">
+                <input type="radio">
+            </P>
+            <p>
+              <label for="nombre">Nombre:<label>
+                  <div class="inputStyle">
+                    <input type="text" name="nombre" required>
+                  </div>
+            </p>
+
+            <p>
+                <label for="apellido">Apellido:<label>
+                    <div class="inputStyle">
+                        <input type="text" name="apellido" required>
+                    </div>
+              </p>
+      
+            <p>
+              <label for="e-mail">Email:<label>
+                  <div class="inputStyle">
+                    <input type="email" name="email" required>
+                    </div>
+            </p>
+
+            <div>
+                <p> <i class="fas fa-phone"></i>Telefono de contacto</p>
+            </div>
+            <p>
+                <label for="telefono">Telefono:<label>
+                    <div class="inputStyle"></div>
+                <input type="tel" name="tel" required>
+            </p>
+            <p>
+                <label for="codigo">Codigo de area:<label>
+                    <div class="inputStyle"></div>
+                <input type="tel" name="codigo" required>
+            </p>
+            <p>
+              <label for="contraseña">Contraseña:<label>
+                <div class="inputStyle">
+                    <input type="password" name="password" required>
+                </div>
+            </p>
+            <p>
+                <label for="rep contraseña">Repetir contraseña:<label>
+            <div class="inputStyle">
+                <input type="password" name="rep contraseña" id="rep contraseña">
+            </div>
+              </p>
+              <button type="submit">REGISTRARSE</button>
+          </form>
+    </header>
     
 </body>
 </html>
