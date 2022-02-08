@@ -1,0 +1,17 @@
+header .saludo{
+    font-family: 'Fasthand', cursive;
+}
+
+header form input {
+    padding-left: 0px ;
+    background-color: #F5F5F5 ;
+    border: 0px ;
+    border-radius: 0px ;
+    border-bottom: 1px solid #aaa4a4 ;
+    box-shadow: none ;
+    font-family: 'Titillium Web' ;
+}
+
+footer .prueba {
+    font-family: 'Titillium Web', sans-serif;
+}

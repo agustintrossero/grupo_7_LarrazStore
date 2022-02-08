@@ -4,10 +4,93 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet"> <!--font-family: 'Titillium Web', sans-serif;-->
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fasthand&display=swap" rel="stylesheet"> <!--font-family: 'Fasthand', cursive;-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet" />
     <title>Registrarse</title>
 </head>
 <body>
+    <header>
+        <div class="saludo">Bienvenido!</div>
+        <div class="formulario-contenedor">
+        <form action="resultado.html" method="POST">
+            <P>
+                <input type="radio" name="LOP">
+                <input type="radio" name="LOP">
+            </P>
+            <p>
+                  <div class="inputStyle">
+                      <label for="nombre" ></label>
+                    <input type="text" 
+                    name="nombre"
+                    id="nombre"
+                    required>
+                  </div>
+            </p>
+
+            <p>
+                    <div class="inputStyle">
+                        <input type="text" 
+                        name="apellido" 
+                        placeholder="Apellido"
+                        required>
+                    </div>
+              </p>
+      
+            <p>
+                  <div class="inputStyle">
+                    <input type="email" 
+                    name="email" 
+                    placeholder="Email"
+                    required>
+                </div>
+            </p>
+
+            <div>
+                <p> <i class="fas fa-phone"></i>Telefono de contacto</p>
+            </div>
+            <p>
+                    <div class="inputStyle">
+                    <input type="tel" 
+                    name="tel" 
+                    placeholder="Teléfono"
+                    required>
+                </div>
+            </p>
+            <p>
+                    <div class="inputStyle">
+                    <input type="tel" 
+                    name="codigo" 
+                    placeholder="Código de área"
+                    required>
+                </div>  
+            </p>
+            <p>
+                    <div class="inputStyle">
+                    <input type="password" 
+                    name="password" 
+                    placeholder="Contraseña"
+                    required>
+                </div>
+            </p>
+            <p>
+                    <div class="inputStyle">
+                    <input type="password" 
+                    name="rep contraseña" 
+                    placeholder="Repetir contraseña"
+                    required>
+                </div>
+            </p>
+              <button type="submit">REGISTRARSE</button>
+          </form>
+        </div>
+          <footer>
+          </footer>
+    </header>
     
 </body>
 </html>
