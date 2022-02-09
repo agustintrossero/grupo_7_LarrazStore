@@ -10,24 +10,25 @@
 </head>
 <body>
     <header>
-        <div class="submit"><i class="fa fa-search"></i></div>
-                <div class="input">Search</div>
-                <br><img src="images/LarrazLogo.png" alt="Logo de Larraz Store"></br>
+        <div class = "top">
+            <form action = "/search" method = "GET">
+                <div><input type = "text" placeholder="Search" maxlength="100"></div>
+                <div><button type ="submit"><i class="fa fa-search"></i></button></div>
+            </form>
+        </div>
+                <div><img src="images/LarrazLogo.png" alt="Logo de Larraz Store"></div>
                 <div class = "saludo">¡Bienvenidos!</div>
-                <form action="/" method="POST"></form>
+                <form action="/home" method="GET"></form>
                     <br><input type = "radio" name = "cuenta" checked>Crear cuenta</input></br>
                     <span class="alert">¿Eres nuevo en Larraz Store?</span>
                     <br><input type = "radio" name = "cuenta" >Iniciar sesión</input></br>
                     <span class="alert">¿Ya eres cliente?</span>
                     <div class="inputStyle">
-                        <input type="email" name="email" placeholder="dirección de correo electrónico" required>
+                    <input type="email" name="email" placeholder="dirección de correo electrónico" required>
                     </div>
-                    <button type="submit">CONTINUAR</button>
+                    <label for = "enviar"></label>
+                    <button type="submit" id ="enviar">CONTINUAR</button>
                 </form>
-                    
-                
-                
-                
     </header>
     <footer>
         <div class = "fixed-icons">
