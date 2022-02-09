@@ -1,4 +1,22 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body .body-container{
+    background-color: #c4c3d3
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #c4c3d3;
+}
 header .saludo{
+    font-family: 'Fasthand', cursive;
+}
+
+.alert{
     font-family: 'Fasthand', cursive;
 }
 
@@ -12,8 +30,32 @@ header form input {
     font-family: 'Titillium Web' ;
 }
 
+.formulario-contenedor{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form p {
+    display: flex;
+}
+
 footer .prueba {
     font-family: 'Titillium Web', sans-serif;
+}
+
+.fixed-icons {
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #494653;   
+    width: 100%;
+    bottom: 0%;
+}
+
+footer i {
+    display: flex;
+    color: #F5F5F5;
 }
 
 .alert{
