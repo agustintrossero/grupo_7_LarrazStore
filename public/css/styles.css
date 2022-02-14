@@ -3,6 +3,16 @@
     padding: 0px;
     box-sizing: border-box;
 }
+
+
+body .body-container{
+    background-color: #c4c3d3
+}
+
+body{
+    background-color: #c4c3d3;
+}
+
 .logo{
     display: flex;
     width:300px;
@@ -18,13 +28,6 @@
 }
 
 
-body .body-container{
-    background-color: #c4c3d3
-}
-
-body{
-    background-color: #c4c3d3;
-}
 header .saludo{
     font-family: 'Fasthand', cursive;
 }
