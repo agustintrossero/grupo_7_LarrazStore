@@ -22,8 +22,8 @@ header .top-header {
 
 .logo{
     display: flex;
-    width:300px;
-    height:300px;
+    width:70px;
+    height:70px;
     border-radius:100%;
     border:10px solid #666;
 }
@@ -130,12 +130,39 @@ footer .prueba {
 
 /*Product-cart*/
 
-.imagenes-productos{
-    max-width: 100%;
-    max-height: 100%;
+.top-header-cart{
+    
+}
+
+.image-cart{
+    width: 50vw;
+    height: 50vw;
+}
+
+.productos{
     display: flex;
 }
 
+
+.search-bar-cart input{
+    border:solid 1px gray;
+    background-color: white;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.search-bar-cart button{
+    border:none;
+    background-color: white;
+}
+
+header .top-header {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-evenly;
+}
+/*BOTON*/
 .button-compra{
     color: #0099CC;
     background: transparent;
