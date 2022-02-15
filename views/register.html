@@ -15,15 +15,15 @@
 </head>
 <body>
     <header>
-        <div class="top-header">
+        <div class="top-header-cart">
             <div class="logo"> 
                 <img src="images/LarrazLogo.png" alt="Logo de Larraz Store" class ="imagen">
             </div>
             <div class = "top">
-                <form class="search-bar" action="#" method="GET">
-                    <div class="bar-container"><input type="text" placeholder='Buscar' name="search-bar" class='bar'></div>
-                    <div class="search-container"><button type ="submit" value="search" class="search-button"><i class="fa fa-search"></i></button></div>
-                </form> <br>
+                <form action = "/search" method = "GET">
+                    <div><input type = "text" placeholder="Search" maxlength="100"></div>
+                    <div><button type ="submit"><i class="fa fa-search"></i></button></div>
+                </form>
             </div>
             <div class = "carrito">
                 <i class="fas fa-shopping-cart"></i>
