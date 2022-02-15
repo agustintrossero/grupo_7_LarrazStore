@@ -13,10 +13,17 @@ body{
     background-color: #c4c3d3;
 }
 
+header .top-header {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-evenly;
+}
+
 .logo{
     display: flex;
-    width:300px;
-    height:300px;
+    width:70px;
+    height:70px;
     border-radius:100%;
     border:10px solid #666;
 }
@@ -44,6 +51,11 @@ header form input {
     border-bottom: 1px solid #aaa4a4 ;
     box-shadow: none ;
     font-family: 'Titillium Web' ;
+}
+
+header .menu-header{
+    display: none;
+
 }
 
 .formulario-contenedor{
@@ -118,12 +130,39 @@ footer .prueba {
 
 /*Product-cart*/
 
-.imagenes-productos{
-    max-width: 100%;
-    max-height: 100%;
+.top-header-cart{
+    
+}
+
+.image-cart{
+    width: 50vw;
+    height: 50vw;
+}
+
+.productos{
     display: flex;
 }
 
+
+.search-bar-cart input{
+    border:solid 1px gray;
+    background-color: white;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.search-bar-cart button{
+    border:none;
+    background-color: white;
+}
+
+header .top-header {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-evenly;
+}
+/*BOTON*/
 .button-compra{
     color: #0099CC;
     background: transparent;
@@ -152,6 +191,7 @@ footer .prueba {
     background-color: #008CBA;
     color: white;
 }
+
 
 /*FOOTER -- Juan Larraz*/
 
@@ -272,6 +312,31 @@ footer{
     color: #C7C7C7;
 }
 
+
+
+
+@media (min-width: 361px){
+    header .menu-header{
+        display: inline;
+        display: flex;
+        justify-content: space-around;
+    }
+
+
+    header .menu-header  li{
+        margin-right: 25px;
+        list-style: none;
+        display: inline;
+    }
+
+    .fixed-icons {
+        display: none;
+    }
+    
+    .fixed-icons i {
+        display: none
+    }
+}
 @media screen and (max-width: 1100px){
     
     .contenedor-body-footer{
@@ -285,5 +350,6 @@ footer{
     .columna-dos,
     .columna-tres{
         margin-top: 40px;
-    }
+  }
 }
+

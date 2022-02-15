@@ -17,14 +17,20 @@ rel="stylesheet" />
 </head>
 <body>
     <header>
-        <div class="top-header">
+        <div class="top-header-cart">
             <div class="logo"> 
                 <img src="images/LarrazLogo.png" alt="Logo de Larraz Store" class ="imagen">
             </div>
             <div class = "top">
                 <form action = "/search" method = "GET">
-                    <div><input type = "text" placeholder="Search" maxlength="100"></div>
-                    <div><button type ="submit"><i class="fa fa-search"></i></button></div>
+                    <div class="search-bar-cart"><input type = "text" placeholder="Search" maxlength="100">
+                    <button type ="submit"><i class="fa fa-search"></i></button></div>
+                </form>
+            </div>
+            </div>
+            <div>
+                <form class = "mapa" action = "/https://www.google.com.ar/maps/preview" method="POST">
+                    <button type ="submit" > Enviar a domicilio</button>
                 </form>
             </div>
     </header>
@@ -41,26 +47,32 @@ rel="stylesheet" />
         </div>
     </div>
     <section class = "productos-compra">
-        <article class = "imagenes-productos">
-            <img src="images/mouse-gamer-logitech.jpg" alt="MOUSE GAMER LOGITECH G203"/>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ipsam consequatur voluptate corrupti laudantium impedit. Unde totam laboriosam nulla, nemo voluptatum optio nesciunt maiores eum. Omnis quam dolore labore corporis.</p>
+        <article class = "productos">
+            <img src="images/mouse-gamer-logitech.jpg" alt="MOUSE GAMER LOGITECH G203" class = "image-cart"/>
+            <h4>Auriculares Hyperx</h4>
+            <p class = "precio-cart">$ 11.399</p>
+            <p class="descuento-cart">20%</p>
+
+            <p></p>
         </article>
         <form class ="contador">
             <input type="text" value="1">
             <input type="submit" value="+">
-            <input type="submit" value="-">
+            <button type="reset" value="-">-</button>
         </form>
-        <article class = "imagenes-productos">
-            <img src="images/mouse-gamer-logitech.jpg" alt="MOUSE GAMER LOGITECH G203"/>
+        <br>
+        <article class = "productos">
+            <img src="images/mouse-gamer-logitech.jpg" alt="MOUSE GAMER LOGITECH G203" class = "image-cart"/>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ipsam consequatur voluptate corrupti laudantium impedit. Unde totam laboriosam nulla, nemo voluptatum optio nesciunt maiores eum. Omnis quam dolore labore corporis.</p>
         </article>
         <form class="contador">
             <input type="text" value="1">
             <input type="submit" value="+">
-            <input type="submit" value="-">
+            <button type="reset" value="-"> - </button>
         </form>
-        <article class = "imagenes-productos">
-            <img src="images/mouse-gamer-logitech.jpg" alt="MOUSE GAMER LOGITECH G203"/>
+        <br>
+        <article class = "productos">
+            <img src="images/mouse-gamer-logitech.jpg" alt="MOUSE GAMER LOGITECH G203" class = "image-cart"/>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ipsam consequatur voluptate corrupti laudantium impedit. Unde totam laboriosam nulla, nemo voluptatum optio nesciunt maiores eum. Omnis quam dolore labore corporis.</p>
         </article>
 
