@@ -137,12 +137,6 @@ footer .prueba {
     background-color: #c4c3d3;
 }
 
-.top-header-cart{
-    display:flex;
-    position: relative;
-    background-color: #c4c3d3;
-}
-
 .image-cart{
     width: 50vw;
     height: 50vw;
@@ -150,16 +144,23 @@ footer .prueba {
 
 .productos{
     display: flex;
+    justify-content: space-around;
 }
 
-.search-bar-cart {
-    border: solid 1px #0099CC;
-    display: flex;
-    flex-direction: row-reverse;
-    position: absolute;
-    right:70px;
-    top: 20px;
+.contenedor-descripcion{
+    flex-wrap: wrap;
 }
+
+.contador-contenedor{
+    display: flex;
+    justify-content: center;
+}
+
+.contador-contenedor input{
+    width: 20px;
+}
+
+
 
  .mapa{
     display: flex;

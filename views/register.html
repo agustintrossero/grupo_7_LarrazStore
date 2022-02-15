@@ -11,22 +11,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Fasthand&display=swap" rel="stylesheet"> <!--font-family: 'Fasthand', cursive;-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap" rel="stylesheet">
     <title>Registrarse</title>
 </head>
 <body>
     <header>
-        <div class="top-header">
+        <div class="top-header-cart">
             <div class="logo"> 
                 <img src="images/LarrazLogo.png" alt="Logo de Larraz Store" class ="imagen">
             </div>
             <div class = "top">
-                <form class="search-bar" action="#" method="GET">
-                    <div class="bar-container"><input type="text" placeholder='Buscar' name="search-bar" class='bar'></div>
-                    <div class="search-container"><button type ="submit" value="search" class="search-button"><i class="fa fa-search"></i></button></div>
-                </form> <br>
+                <form action = "/search" method = "GET">
+                    <div><input type = "text" placeholder="Search" maxlength="100"></div>
+                    <div><button type ="submit"><i class="fa fa-search"></i></button></div>
+                </form>
             </div>
             <div class = "carrito">
                 <i class="fas fa-shopping-cart"></i>
