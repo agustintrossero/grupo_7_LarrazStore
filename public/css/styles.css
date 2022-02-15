@@ -13,6 +13,13 @@ body{
     background-color: #c4c3d3;
 }
 
+header .top-header {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-evenly;
+}
+
 .logo{
     display: flex;
     width:70px;
@@ -44,6 +51,11 @@ header form input {
     border-bottom: 1px solid #aaa4a4 ;
     box-shadow: none ;
     font-family: 'Titillium Web' ;
+}
+
+header .menu-header{
+    display: none;
+
 }
 
 .formulario-contenedor{
@@ -178,4 +190,28 @@ header .top-header {
 .button-compra:hover {
     background-color: #008CBA;
     color: white;
+}
+
+
+@media (min-width: 361px){
+    header .menu-header{
+        display: inline;
+        display: flex;
+        justify-content: space-around;
+    }
+
+
+    header .menu-header  li{
+        margin-right: 25px;
+        list-style: none;
+        display: inline;
+    }
+
+    .fixed-icons {
+        display: none;
+    }
+    
+    .fixed-icons i {
+        display: none
+    }
 }
