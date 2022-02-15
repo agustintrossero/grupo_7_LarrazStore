@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: 'Gideon Roman', cursive;
 }
 
 
@@ -130,6 +131,10 @@ footer .prueba {
 
 /*Product-cart*/
 
+.body-cart{
+    background-color: #c4c3d3;
+}
+
 .top-header-cart{
     display:flex;
     position: relative;
@@ -159,6 +164,10 @@ footer .prueba {
     justify-content: center;
 }
 
+.contenedor-button-cart{
+    background-color: #c4c3d3;
+}
+
 .button-cart{
     border: solid 2px #008CBA;
     border-radius: 6px;
@@ -170,6 +179,12 @@ footer .prueba {
 .button-cart:hover{
     background-color: #0099CC;
     color: white;
+}
+
+.contenedor-button-compra{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
 }
 
 .search-bar-cart input{
@@ -184,6 +199,10 @@ footer .prueba {
     border:none;
     background-color: white;
     color:gray;
+}
+
+.contador input{
+    padding: -50px;
 }
 
 header .top-header {
