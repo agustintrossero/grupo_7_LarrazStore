@@ -152,3 +152,138 @@ footer .prueba {
     background-color: #008CBA;
     color: white;
 }
+
+/*FOOTER -- Juan Larraz*/
+
+.footer-principal{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+footer{
+    width: 100%;
+    background: #6200ff;
+    color: rgb(255, 255, 255);   
+    
+}
+
+.contenedor-footer{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px;
+}
+
+.contenedor-body-footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.columna-dos{
+    max-width: 400px;
+}
+
+.columna-uno h1{
+    font-size: 22px;
+}
+
+.columna-uno p{
+    font-size: 14px;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+.columna-dos{
+    max-width: 400px;
+    
+}
+
+.columna-dos h1{
+    font-size: 22px;
+}
+
+.row{
+    margin-top: 20px;
+    display: flex;
+}
+
+.row img{
+    width: 36px;
+    height: 36px;
+}
+
+.row label{
+    margin-top: 10px;
+    margin-left: 20px;
+    color: #ffffff;
+}
+
+.columna-tres{
+    max-width: 400px;
+}
+
+.columna-tres h1{
+    font-size: 22px;
+}
+
+.row2{
+    margin-top: 20px;
+    display: flex;
+}
+
+.row2 img{
+    width: 36px;
+    height: 36px;
+}
+
+.row2 label{
+    margin-top: 10px;
+    margin-left: 20px;
+    max-width: 140px;
+}
+
+.contenedor-derechos{
+    width: 100%;  
+    background: #101010;
+}
+
+.footer{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;  
+    padding: 20px;
+}
+
+.copyright{
+    color: #C7C7C7;
+}
+
+.copyright a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.informacion a{
+    text-decoration: none;
+    color: #C7C7C7;
+}
+
+@media screen and (max-width: 1100px){
+    
+    .contenedor-body-footer{
+        flex-wrap: wrap;
+    }
+    
+    .columna-uno{
+        max-width: 100%;
+    }
+    
+    .columna-dos,
+    .columna-tres{
+        margin-top: 40px;
+    }
+}
