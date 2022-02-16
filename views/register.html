@@ -54,90 +54,42 @@
     </header>
 
     <main>
-
-        <div class="formulario-contenedor">
-        <form action="resultado.html" method="POST">
-            <p>
-                  <div class="inputStyle">
-                      <label for="nombre" ></label>
-                    <input type="text" 
-                    name="nombre"
-                    placeholder="Nombre"
-                    id="nombre"
-                    required>
-                  </div>
-            </p>
-
-            <p>
-                    <div class="inputStyle">
-                        <input type="text" 
-                        name="apellido" 
-                        placeholder="Apellido"
-                        required>
-                    </div>
-              </p>
-      
-            <p>
-                  <div class="inputStyle">
-                    <input type="email" 
-                    name="email" 
-                    placeholder="Email"
-                    required>
-                </div>
-            </p>
-
-            <div>
-                <p> <i class="fas fa-phone"></i>Telefono de contacto</p>
+        <form action="/" method="get" class="user-form">
+            <div class="user-container">
+            <h2 class="user-title">Registra tu Cuenta</h2>
+            <h6 class="user-subtitle">Ingresa tus datos para crear tu cuenta</h6>
+            <div class="user-name">
+            <div><label for="name" class="user-text">Nombre</label></div>
+                <div><input class="bar-user" type="text" id="name" require></div>
             </div>
-            <p>
-                    <div class="inputStyle">
-                    <input type="tel" 
-                    name="tel" 
-                    placeholder="Teléfono"
-                    required>
-                </div>
-            </p>
-            <p>
-                    <div class="inputStyle">
-                    <input type="tel" 
-                    name="codigo" 
-                    placeholder="Código de área"
-                    required>
-                </div>  
-            </p>
-            <p>
-                    <div class="inputStyle">
-                    <input type="password" 
-                    name="password" 
-                    placeholder="Contraseña"
-                    required>
-                </div>
-            </p>
-            <p>
-                    <div class="inputStyle">
-                    <input type="password" 
-                    name="rep contraseña" 
-                    placeholder="Repetir contraseña"
-                    required>
-                </div>
-            </p>
-              <button type="submit">REGISTRARSE</button>
-          </form>
-        </div>
-        <section class = "fixed-icons">
-            <div class = "home">
-                <a href="/"><i class="fas fa-home"></i></a>
+            <div class="user-name-pass">
+                <div><label for="surname" class="user-text">Apellido</label></div>
+                <div><input class="bar-user-name-pass" type="text" id="surname" require></div>
             </div>
-            <div class = "mobile">
-                <i class="fas fa-mobile-alt"></i>
+            <div class="input-user">
+                <div><label for="email" class="user-text">Email</label></div>
+                <div><input class="bar-user" type="email" id="email" placeholder="ej.@email.com" require></div>
             </div>
-            <div class = "controller">
-                <i class="fas fa-gamepad"></i>
+            <div class="input-user">
+                <div><label for="phone-number" class="user-text">Numero de telefono</label></div>
+                <div><input class="bar-user" type="text" id="phone-number" placeholder="11-xxxx-xxxx" require></div>
             </div>
-            <div class = "user">
-                <a href="/login"><i class="fas fa-user"></i></a>
+            <div class="user-name-pass">
+                <div><label for="password" class="user-text">Contraseña</label></div>
+                <div><input class="bar-user-name-pass" type="text" id="password" minlength="8" placeholder="********" require></div>
             </div>
-        </section>
+            <div class="user-name-pass">
+                <div><label for="password-confirm" class="user-text">Confirmar contraseña</label></div>
+                <div class="bar"><input class="bar-user-name-pass" type="text" id="password-confirm" minlength="8" placeholder="********" required></div>
+            </div>
+            <div class="user-checkbox">
+                <div><input type="checkbox" name="legal-buy" id="legal-age" require></div>
+                <div class="user-legal"><label for="legal-age">Soy mayor de edad</label></div>
+            </div>
+            <div><button type="submit" class="user-button">Registrarse</button></div>
+            <div><h6 class="user-subtitle">Ya tenes cuenta? <a href="/login"><br>Inicia sesion</a></h6></div>
+            </div>
+            </form>    
     </main>
     <footer>
 
