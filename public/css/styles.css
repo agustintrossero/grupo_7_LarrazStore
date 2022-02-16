@@ -2,20 +2,8 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: 'Gideon Roman', cursive;
 }
 
-h1.cursiva{
-    font-family: 'Satisfy', cursive;
-}
-
-h2.cursiva{
-    font-family: 'Satisfy', cursive;
-}
-
-h4.cursiva{
-    font-family: 'Satisfy', cursive;
-}
 
 body .body-container{
     background-color: #c4c3d3
@@ -32,17 +20,18 @@ header .top-header {
     flex-direction: row;
     align-items:center;
     justify-content: space-evenly;
+    background-color: #3453;
 }
 
-.logo{
+ .logo{
     display: flex;
+    
     width:70px;
     height:70px;
     border-radius:100%;
     
 }
-
-.logo > .imagen {
+ .logo >  .imagen {
     width:100%;
     height:100%;
     border-radius:100%;
@@ -57,7 +46,7 @@ header .saludo{
     font-family: 'Fasthand', cursive;
 }
 
-header form input {
+header .top-header form input {
     padding-left: 0px ;
     background-color: #F5F5F5 ;
     border: 0px ;
@@ -71,6 +60,27 @@ header .menu-header{
     display: none;
 
 }
+
+/*home css*/
+
+main .armaPC {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+main .armaPC img{
+    display: flex;
+    width: 75%;
+    height: auto;
+    border-radius: 10px;
+
+}
+
+main .armaPC img:hover {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
 
 .formulario-contenedor{
     display: flex;
@@ -105,6 +115,7 @@ footer .prueba {
 }
 
 /*login nacho css*/
+
 
 .top-header {
     display: flex; 
@@ -143,7 +154,9 @@ footer .prueba {
 
 /*Product-cart*/
 
-.body-cart{
+.top-header-cart{
+    display:flex;
+    position: relative;
     background-color: #c4c3d3;
 }
 
@@ -154,31 +167,20 @@ footer .prueba {
 
 .productos{
     display: flex;
-    justify-content: space-around;
 }
 
-.contenedor-descripcion{
-    flex-wrap: wrap;
-}
-
-.contador-contenedor{
+.search-bar-cart {
+    border: solid 1px #0099CC;
     display: flex;
-    justify-content: center;
+    flex-direction: row-reverse;
+    position: absolute;
+    right:70px;
+    top: 20px;
 }
-
-.contador-contenedor input{
-    width: 20px;
-}
-
-
 
  .mapa{
     display: flex;
     justify-content: center;
-}
-
-.contenedor-button-cart{
-    background-color: #c4c3d3;
 }
 
 .button-cart{
@@ -194,12 +196,6 @@ footer .prueba {
     color: white;
 }
 
-.contenedor-button-compra{
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-}
-
 .search-bar-cart input{
     background-color: white;
     border: none;
@@ -212,10 +208,6 @@ footer .prueba {
     border:none;
     background-color: white;
     color:gray;
-}
-
-.contador input{
-    padding: -50px;
 }
 
 header .top-header {
@@ -471,12 +463,12 @@ footer{
         justify-content: space-around;
     }
 
-
     header .menu-header  li{
         margin-right: 25px;
         list-style: none;
         display: inline;
     }
+
 
     .fixed-icons {
         display: none;
@@ -485,6 +477,8 @@ footer{
     .fixed-icons i {
         display: none
     }
+
+    
 }
 
 /* MI PARTE */
