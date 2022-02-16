@@ -385,7 +385,7 @@ footer{
 .user-container {
     width: 50%;
     margin: 0 auto;
-    padding: 10px;
+    padding: 10px 12px;
     border: 2px solid #d4d4d4;
     border-radius: 12px;
     background-color: #f2f3f7;
@@ -402,15 +402,13 @@ footer{
 .user-subtitle {
     width: 95%;
     text-align: center;
-}
+    color: #8a92a3}
 
-.user-subtitle, .user-text {
-    font-size: 15px;
-    color: #a6a2a8
-}
+.user-text {color: #a6a2a8}
 
-.bar-user, .bar-user-name-pass {
-    width: 95%;
+.user-subtitle, .user-text {font-size: 15px;}
+
+.bar-user {
     height: 25px;
     margin: 4px 0;
     border: 1px solid #dbdcdd;
@@ -419,7 +417,13 @@ footer{
     padding: 5px;
 }
 
-.bar-user::placeholder, .bar-user-name-pass::placeholder  {color: #e6e1e6;}
+.bar-user {width: 100%;}
+
+.bar-user::placeholder {color: #e6e1e6;}
+
+.bar-user:focus {
+    outline: 2px solid #0d6efd;
+    box-shadow: 0px 0px 8px 0px #0d6efd;}
 
 .user-checkbox{
     display:flex;
@@ -435,14 +439,23 @@ footer{
 
 
 .user-button {
-    width: 95%;
-    margin-bottom: 4px;
+    width: 100%;
+    margin: 15px 0;
     height: 35px;
     border-radius: 8px;
     background-color: #6200ff;
     color: #fff;
     border: 0px
 }
+
+.form-container {
+    display:flex; 
+    justify-content:space-between;
+}
+
+.user-name {width: 48%;}
+
+.bar-username {width: 100%;}
 /* MI PARTE */
 
 
