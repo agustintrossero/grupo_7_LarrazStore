@@ -6,7 +6,9 @@
 
 
 body .body-container{
-    background-color: #c4c3d3
+    background-color: #c4c3d3;
+    width: 95vw;
+    
 }
 
 body{
@@ -25,7 +27,6 @@ header .top-header {
 
  .logo{
     display: flex;
-    
     width:70px;
     height:70px;
     border-radius:100%;
@@ -153,7 +154,7 @@ footer .prueba {
 }
 
 /*Product-cart*/
-
+/*esto tmb esta editado especificamente para el carrito html*/
 .top-header-cart{
     display:flex;
     position: relative;
@@ -169,8 +170,10 @@ footer .prueba {
     display: flex;
 }
 
+/*serch bar del carrito editado en html*/
+
 .search-bar-cart {
-    border: solid 1px #0099CC;
+    border: solid 1px #6200ff;
     display: flex;
     flex-direction: row-reverse;
     position: absolute;
@@ -208,6 +211,11 @@ footer .prueba {
     border:none;
     background-color: white;
     color:gray;
+}
+
+.contador-contenedor input[type=text]{
+    width: 20px;
+    text-align: center;
 }
 
 header .top-header {
