@@ -5,6 +5,17 @@
     font-family: 'Gideon Roman', cursive;
 }
 
+h1.cursiva{
+    font-family: 'Satisfy', cursive;
+}
+
+h2.cursiva{
+    font-family: 'Satisfy', cursive;
+}
+
+h4.cursiva{
+    font-family: 'Satisfy', cursive;
+}
 
 body .body-container{
     background-color: #c4c3d3
@@ -94,7 +105,6 @@ footer .prueba {
 }
 
 /*login nacho css*/
-
 
 .top-header {
     display: flex; 
