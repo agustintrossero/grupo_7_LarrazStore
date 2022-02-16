@@ -246,11 +246,11 @@ header .top-header {
 .button-compra {
       background-color: white; 
       color: black; 
-      border: 2px solid #008CBA;
+      border: 2px solid #6200ff;
 }
 
 .button-compra:hover {
-    background-color: #008CBA;
+    background-color: #6200ff;
     color: white;
 }
 
@@ -443,9 +443,18 @@ footer{
     margin: 15px 0;
     height: 35px;
     border-radius: 8px;
+    background-color:#fff;
+    color: #a6a2a8;
+    border: 2px solid #6200ff;
+    -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+}
+
+.user-button:hover {
     background-color: #6200ff;
     color: #fff;
-    border: 0px
 }
 
 .form-container {
