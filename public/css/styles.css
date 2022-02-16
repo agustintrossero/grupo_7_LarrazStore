@@ -73,6 +73,7 @@ main .armaPC img{
     display: flex;
     width: 75%;
     height: auto;
+    border-radius: 10px;
 
 }
 
@@ -462,12 +463,12 @@ footer{
         justify-content: space-around;
     }
 
-
     header .menu-header  li{
         margin-right: 25px;
         list-style: none;
         display: inline;
     }
+
 
     .fixed-icons {
         display: none;
@@ -476,6 +477,8 @@ footer{
     .fixed-icons i {
         display: none
     }
+
+    
 }
 
 /* MI PARTE */
