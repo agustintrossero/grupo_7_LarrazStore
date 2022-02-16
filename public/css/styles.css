@@ -17,25 +17,89 @@ body{
 
 
 
+header {background-color: #3453;}
+
 header .top-header {
     display: flex;
     flex-direction: row;
     align-items:center;
-    justify-content: space-evenly;
-    background-color: #3453;
+    width: 100%;
+    justify-content: space-around;
+    
 }
+
+.search-bar {display:flex;
+width: 70%;}
+
+.search-container{
+display:flex;
+width: 100%;
+padding: 0 10px;}
+
+.bar {width: 100%;}
+
+.search-input{
+    width: 100%;
+    border: 2px solid  #6200ff;
+    border-radius: 10px 0 0 10px;
+    padding: 5px
+}
+
+.search-input::placeholder {color:#e6e1e6}
+
+.search-input:focus {
+    box-shadow: 0px 0px 8px 0px #6a0dff;
+}
+
+.search-button {
+    width: 40px;
+    height: 38px;
+    border: 2px solid #6200ff;
+    border-radius: 0 10px 10px 0 ;
+    background-color: #6a0dff;
+    color: #fff;
+    -webkit-transition-duration: 0.1s;
+      transition-duration: 0.1s;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+.search-button:hover {color: #e6e1e6;
+outline: 2px solid #6a0dff;
+box-shadow: 0px 0px 8px 0px #6a0dff}
+
+.header-buttons{
+    display:flex;
+    width: 15%;
+    }
+
+
+.carrito {width: 50%;}
+
+.header-icon {
+    font-size: 18px;
+    color:#6a0dff}
+
+
+
 
  .logo{
     display: flex;
     width:70px;
     height:70px;
+    margin-top:5px;
     border-radius:100%;
-    
 }
- .logo >  .imagen {
+
+.top{width: 65%;
+padding-top: 30px;}
+
+
+ .logo   .imagen {
     width:100%;
     height:100%;
     border-radius:100%;
+    
 }
 
 
@@ -47,20 +111,15 @@ header .saludo{
     font-family: 'Fasthand', cursive;
 }
 
-header .top-header form input {
-    padding-left: 0px ;
-    background-color: #F5F5F5 ;
-    border: 0px ;
-    border-radius: 0px ;
-    border-bottom: 1px solid #aaa4a4 ;
-    box-shadow: none ;
-    font-family: 'Titillium Web' ;
-}
+.burger-menu{text-align: center;}
 
-header .menu-header{
-    display: none;
+.cel-icon {padding: 13px;
+    background-color: #6a0dff;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #fff;}
 
-}
+.lista-nav{display:none}
 
 /*home css*/
 
@@ -374,7 +433,7 @@ footer{
     color: #C7C7C7;
 }
 
-/* MI PARTE*/
+/* MI PARTE nacho*/
 .user-form {
     width: 90%;
     margin: 10px auto;
@@ -400,7 +459,7 @@ footer{
 }
 
 .user-subtitle {
-    width: 95%;
+    width: 100%;
     text-align: center;
     color: #8a92a3}
 
@@ -465,7 +524,7 @@ footer{
 .user-name {width: 48%;}
 
 .bar-username {width: 100%;}
-/* MI PARTE */
+/* MI PARTE nacho */
 
 
 
@@ -495,12 +554,33 @@ footer{
         display: none
     }
 
+    .burger-menu{display:none}
+
+    .menu-header{display:flex;}
+
+    .header-login {
+        display:none;
+        width: 0}
+
+    .carrito {
+        width: 50%;
+        margin: 0 auto}
+
+    .header-icon {font-size:40px;}
     
+    .lista-nav{
+        display:flex;
+        padding: 5px;
+        margin:0;
+        justify-content: space-around;
+        list-style-type: none;
+        color: #646363
+    } 
 }
 
-/* MI PARTE */
+/* MI PARTE nacho */
 .user-legal {font-size: 13px;}
-/* MI PARTE */
+/* MI PARTE nacno */
 
 @media screen and (max-width: 1100px){
     
