@@ -61,6 +61,26 @@ header .menu-header{
 
 }
 
+/*home css*/
+
+main .armaPC {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+main .armaPC img{
+    display: flex;
+    width: 75%;
+    height: auto;
+
+}
+
+main .armaPC img:hover {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+
 .formulario-contenedor{
     display: flex;
     flex-wrap: wrap;
