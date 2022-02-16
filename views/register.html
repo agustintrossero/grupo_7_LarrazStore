@@ -21,28 +21,30 @@
 <body>
     <header>
         <div class="top-header">
-
-            <a href="/"><div class="logo"> 
-                <img src="images/LarrazLogo.png" alt="Logo de Larraz Store" class ="imagen">
-            </div></a>
-
-            <div class = "top">
-              <form class="search-bar" action="#" method="GET">
-                <div class="bar-container"><input type="text" placeholder='Buscar' name="search-bar" class='bar'></div>
-                <div class="search-container"><button type ="submit" value="search" class="search-button"><i class="fa fa-search"></i></button></div>
+            <div class="logo"> <a href="/">
+            <img src="./images/LarrazLogo.png" alt="Logo de Larraz Store" class ="imagen">
+            </a>
+            </div>
+            <div class="search-bar">
+            <form action="#" method="GET" class="search-container" >
+                <div class='bar'><input type="text" placeholder='Buscar en la pagina' name="search-bar"' class="search-input"></div>
+                <div><button type ="submit" value="search" class="search-button"><i class="fa fa-search"></i></button></div>
             </form> <br>
             </div>
-
-            <a href="/cart"><div class = "carrito">
-                <i class="fas fa-shopping-cart"></i>
-            </div></a>
-
-            <div class="burger-menu">
-                <i class="fa fa-bars burger"></i>
+            <div class="header-buttons">
+            <div class = "carrito"><a href="/cart">
+            <i class="fas fa-shopping-cart header-icon"></i></a>
+            </div>
+            <div class="header-login">
+                <a href="/login2"><i class="fas fa-user header-icon"></i></a>
+            </div>
             </div>
         </div> 
+            <div class="burger-menu">
+                <i class="fa fa-bars burger cel-icon"></i>
+            </div>
         <br>
-        <nav class="menu-header">
+        <nav>
           <ul class="lista-nav">
               <li>Productos</li>
               <li>Arma tu PC</li>
@@ -53,7 +55,7 @@
       </nav>
     </header>
 
-    <main>
+<main>
         <form action="/" method="get" class="user-form">
             <div class="user-container">
             <h2 class="user-title">Registra tu Cuenta</h2>
