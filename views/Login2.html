@@ -52,50 +52,22 @@
           </ul>
       </nav>
     </header>
-
     <main>
         <form action="/" method="get" class="user-form">
             <div class="user-container">
-            <h2 class="user-title">Registra tu Cuenta</h2>
-            <h6 class="user-subtitle">Ingresa tus datos para crear tu cuenta</h6>
-            <div class="form-container">
-            <div class="user-name">
-                <div><label for="name" class="user-text">Nombre</label></div>
-                <div><input class="bar-user" type="text" id="name" require></div>
-            </div>
-            <div class="user-name">
-                <div><label for="surname" class="user-text">Apellido</label></div>
-                <div><input class="bar-user" type="text" id="surname" require></div>
-            </div>
-            </div>
+            <h2 class="user-title">Ingresa a tu cuenta</h2>
             <div class="input-user">
                 <div><label for="username" class="user-text">Nombre de usuario</label></div>
                 <div><input class="bar-user" type="text" id="username" require></div>
             </div>
             <div class="input-user">
-                <div><label for="email" class="user-text">Email</label></div>
-                <div><input class="bar-user" type="email" id="email" placeholder="ej.@email.com" require></div>
-            </div>
-            <div class="input-user">
-                <div><label for="phone-number" class="user-text">Numero de telefono</label></div>
-                <div><input class="bar-user" type="text" id="phone-number" placeholder="11-xxxx-xxxx" require></div>
-            </div>
-            <div class="input-user">
                 <div><label for="password" class="user-text">Contraseña</label></div>
                 <div><input class="bar-user" type="text" id="password" minlength="8" placeholder="********" require></div>
             </div>
-            <div class="input-user">
-                <div><label for="password-confirm" class="user-text">Confirmar contraseña</label></div>
-                <div class="bar"><input class="bar-user" type="text" id="password-confirm" minlength="8" placeholder="********" required></div>
-            </div> 
-            <div class="user-checkbox">
-                <div><input type="checkbox" name="legal-buy" id="legal-age" require></div>
-                <div class="user-legal"><label for="legal-age">Soy mayor de edad</label></div>
-            </div>
             <div><button type="submit" class="user-button">Registrarse</button></div>
-            <div><h6 class="user-subtitle">Ya tenes cuenta? <a href="/login"><br>Inicia sesion</a></h6></div>
+            <div><h6 class="user-subtitle">Todavia no tenes cuenta?<a href="/register"><br>Crear cuenta</a></h6></div>
             </div>
-            </form>    
+        </form>
     </main>
     <footer>
 
@@ -176,6 +148,4 @@
                </div>
           </div>
        </footer>
-    
 </body>
-</html>
