@@ -48,6 +48,7 @@ padding: 0 10px;}
 .search-input::placeholder {color:#e6e1e6}
 
 .search-input:focus {
+    outline: 1px solid #6a0dff;
     box-shadow: 0px 0px 8px 0px #6a0dff;
 }
 
