@@ -73,6 +73,10 @@ box-shadow: 0px 0px 8px 0px #6a0dff}
     width: 15%;
     }
 
+.header-login {
+    display: none;
+}
+
 
 .carrito {width: 50%;}
 
@@ -559,7 +563,7 @@ footer{
     .menu-header{display:flex;}
 
     .header-login {
-        display:none;
+        display:flex;
         width: 0}
 
     .carrito {
