@@ -16,34 +16,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-    <title>Login</title>
-<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></
+    <title>Registrarse</title>
 </head>
 <body>
     <header>
         <div class="top-header">
-
-            <a href="/"><div class="logo"> 
-                <img src="images/LarrazLogo.png" alt="Logo de Larraz Store" class ="imagen">
-            </div></a>
-
-            <div class = "top">
-              <form class="search-bar" action="#" method="GET">
-                <div class="bar-container"><input type="text" placeholder='Buscar' name="search-bar" class='bar'></div>
-                <div class="search-container"><button type ="submit" value="search" class="search-button"><i class="fa fa-search"></i></button></div>
+            <div class="logo"> <a href="/">
+            <img src="./images/LarrazLogo.png" alt="Logo de Larraz Store" class ="imagen">
+            </a>
+            </div>
+            <div class="search-bar">
+            <form action="#" method="GET" class="search-container" >
+                <div class='bar'><input type="text" placeholder='Buscar en la pagina' name="search-bar"' class="search-input"></div>
+                <div><button type ="submit" value="search" class="search-button"><i class="fa fa-search"></i></button></div>
             </form> <br>
             </div>
-
-            <a href="/cart"><div class = "carrito">
-                <i class="fas fa-shopping-cart"></i>
-            </div></a>
-
-            <div class="burger-menu">
-                <i class="fa fa-bars burger"></i>
+            <div class="header-buttons">
+            <div class = "carrito"><a href="/cart">
+            <i class="fas fa-shopping-cart header-icon"></i></a>
+            </div>
+            <div class="header-login">
+                <a href="/login"><i class="fas fa-user header-icon"></i></a>
+            </div>
             </div>
         </div> 
+            <div class="burger-menu">
+                <i class="fa fa-bars burger cel-icon"></i>
+            </div>
         <br>
-        <nav class="menu-header">
+        <nav>
           <ul class="lista-nav">
               <li>Productos</li>
               <li>Arma tu PC</li>
@@ -53,120 +54,115 @@
           </ul>
       </nav>
     </header>
-    
-
-<main>
-    <div class="login-container"> <br>
-        <div class="login-text"><h1 class="cursiva">Iniciar Sesion</h1></div> 
-        <form action="/" method="get">
-           <div class="login-data">
-            <div><label for = "user-name" class="login-require">Email</label> <br>
-            <input type="text" name="user-name" placeholder="example@email.com"> <br></div>
-            <div><label for = "password" class="login-require">contrasena</label><br>
-            <input type="password" name="password" placeholder="********"> <br></div>
-        </div>
-            <div class="login-button"><button type="submit" name="login">Ingresar</button></div>
-         
+    <main>
+        <form action="/" method="get" class="user-form">
+            <div class="user-container">
+            <h2 class="user-title">Ingresa a tu cuenta</h2>
+            <div class="input-user">
+                <div><label for="username" class="user-text">Nombre de usuario</label></div>
+                <div><input class="bar-user" type="text" id="username" require></div>
+            </div>
+            <div class="input-user">
+                <div><label for="password" class="user-text">Contraseña</label></div>
+                <div><input class="bar-user" type="text" id="password" minlength="8" placeholder="********" require></div>
+            </div>
+            <div><button type="submit" class="user-button">Registrarse</button></div>
+            <div><h6 class="user-subtitle">Todavia no tenes cuenta?<a href="/register"><br>Crear cuenta</a></h6></div>
+            </div>
         </form>
-        <div class="login-problems">
-            <div class="password-missing"><p><a href="#">Olvidaste tu contrasena?</a></p></div> 
-            <div class="login-register"><p><a href="/register">Todavia no tienes cuenta?</a></p></div>
+    </section>
+    <section class = "fixed-icons">
+        <div class = "home">
+            <a href="/"><i class="fas fa-home"></i></a>
         </div>
+        <div class = "mobile">
+            <i class="fas fa-mobile-alt"></i>
         </div>
-        <section class = "fixed-icons">
-            <div class = "home">
-                <a href="/"><i class="fas fa-home"></i></a>
-            </div>
-            <div class = "mobile">
-                <i class="fas fa-mobile-alt"></i>
-            </div>
-            <div class = "controller">
-                <i class="fas fa-gamepad"></i>
-            </div>
-            <div class = "user">
-                <a href="/login2"><i class="fas fa-user"></i></a>
-            </div>
-        </section>
-</main>
-<footer>
+        <div class = "controller">
+            <i class="fas fa-gamepad"></i>
+        </div>
+        <div class = "user">
+            <a href="/login"><i class="fas fa-user"></i></a>
+        </div>
+    </section>
+    </main>
+    <footer>
 
-    <div class="footer-principal">
-      <div class="contenedor-footer">
-       
-           <div class="contenedor-body-footer">
-
-               <div class="columna-uno">
-                   <h1>Nuestra historia</h1>
-
-                   <p>Larraz Store surge con la pandemia global de COVID-19 para dar respuesta a la alta demanda de tecnicos en la ciudad de Olavarria, y posteriormente a la de insumos y equipos informaticos. Hoy en dia la marca se centra en proveer soluciones informaticas integrales en materia tecnologica.</p>
-
+        <div class="footer-principal">
+          <div class="contenedor-footer">
+           
+               <div class="contenedor-body-footer">
+    
+                   <div class="columna-uno">
+                       <h1>Nuestra historia</h1>
+    
+                       <p>Larraz Store surge con la pandemia global de COVID-19 para dar respuesta a la alta demanda de tecnicos en la ciudad de Olavarria, y posteriormente a la de insumos y equipos informaticos. Hoy en dia la marca se centra en proveer soluciones informaticas integrales en materia tecnologica.</p>
+    
+                   </div>
+    
+                   <div class="columna-dos">
+    
+                       <h1>Redes Sociales</h1>
+    
+                       <div class="row">
+                         <img src="">
+                           <label>Seguinos en Facebook</label>
+                       </div>
+    
+                       <div class="row">
+                           <img src="">
+                           <label>Seguinos en Twitter</label>
+                       </div>
+    
+                       <div class="row">
+                           <img src="">
+                           <label>Seguinos en Instagram</label>
+                       </div>
+            
+                       <div class="row">
+                           <img src="">
+                           <label>Nuestro WhatsApp</label>
+                       </div>
+    
+                   </div>
+    
+                   <div class="columna-tres">
+    
+                       <h1>Contactanos</h1>
+    
+                       <div class="row2">
+                           <img src="">
+                           <label>Olavarria, Provincia de Buenos Aires, Argentina.</label>
+                       </div>
+    
+                       <div class="row2">
+                           <img src="">
+                           <label>+54 2284216726</label>
+                       </div>
+    
+                       <div class="row2">
+                           <img src="">
+                            <label>contactojuanlarraz@gmail.com</label>
+                       </div>
+    
+                   </div>
+    
                </div>
-
-               <div class="columna-dos">
-
-                   <h1>Redes Sociales</h1>
-
-                   <div class="row">
-                     <img src="">
-                       <label>Seguinos en Facebook</label>
-                   </div>
-
-                   <div class="row">
-                       <img src="">
-                       <label>Seguinos en Twitter</label>
-                   </div>
-
-                   <div class="row">
-                       <img src="">
-                       <label>Seguinos en Instagram</label>
-                   </div>
-        
-                   <div class="row">
-                       <img src="">
-                       <label>Nuestro WhatsApp</label>
-                   </div>
-
-               </div>
-
-               <div class="columna-tres">
-
-                   <h1>Contactanos</h1>
-
-                   <div class="row2">
-                       <img src="">
-                       <label>Olavarria, Provincia de Buenos Aires, Argentina.</label>
-                   </div>
-
-                   <div class="row2">
-                       <img src="">
-                       <label>+54 2284216726</label>
-                   </div>
-
-                   <div class="row2">
-                       <img src="">
-                        <label>contactojuanlarraz@gmail.com</label>
-                   </div>
-
-               </div>
-
+           
            </div>
-       
-       </div>
-       
-       <div class="contenedor-derechos">
-              <div class="footer">
-                   <div class="copyright">
-                       © 2022 Todos los Derechos Reservados | <a href="">LarrazStore</a>
+           
+         <div class="contenedor-derechos">
+                  <div class="footer">
+                       <div class="copyright">
+                           © 2022 Todos los Derechos Reservados | <a href="">LarrazStore</a>
+                       </div>
+    
+                       <div class="informacion">
+                           <a href="">Nuestra marca</a> | <a href="">RSE</a> | <a href="">Terminos y Condiciones</a>
+                       </div>
                    </div>
-
-                   <div class="informacion">
-                       <a href="">Nuestra marca</a> | <a href="">RSE</a> | <a href="">Terminos y Condiciones</a>
-                   </div>
+    
                </div>
-
-           </div>
-      </div>
-   </footer>
-    <script type="text/javascript">(function(){window['__CF$cv$params']={r:'6dd0309cbea839e1',m:'HRHQtE4IbyjlGVy5EmS2mU4NGhGJ.z0Cx_g8M4PImCE-1644777676-0-AXhlU5aVb/D4giwCeXUCAxuwNpo/eAPoRXOvcRoWRjm4A3ygP82Ormk7KYzR9d5VghrQovxoiSjlJeZp06uTpcvru6HSBovkx/MMz/jfnzn/f3xMUqwD+gZ/QRfi8syCUfJdBUpFobT7vgmoliJe/SyElAzoYJDhET+hP+v9ewL5epTH+y8HCVgsA31VYn4VbQ==',s:[0xf06e8c5c5a,0xd7f9ed845b],}})();</script></body>
+          </div>
+       </footer>
 </body>
-</html>
