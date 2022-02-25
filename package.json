@@ -4,8 +4,9 @@
   "description": "1) hacer repositorio (Agus) OK\r 2) detalle del ecommerce y tematica marcket place (JUAN) pendiente\r 3) busqueda de navegadores referentes en estilos y porque .. al menos 5 (Marc) OK\r 4) diseño (Agus) pendiente",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+    },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/agustintrossero/grupo_7_LarrazStore.git"
@@ -17,7 +18,9 @@
   },
   "homepage": "https://github.com/agustintrossero/grupo_7_LarrazStore#readme",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.2",
     "nodemon": "^2.0.15"
-  }
+  },
+  "devDependencies": {}
 }
