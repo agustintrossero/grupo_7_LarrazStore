@@ -5,16 +5,16 @@ const controlador = {
         return res.render("index")
     },
     login: (req, res) => {
-        return res.render("login")
+        return res.render("users/login")
     },
     cart: (req, res) => {
-        return res.render("product-cart")
+        return res.render("products/product-cart")
     },
     products: (req, res) => {
-        return res.render("product-detail")
+        return res.render("products/product-detail")
     },
     register: (req, res) => {
-        return res.render("register")
+        return res.render("users/register")
     },
 }
 
