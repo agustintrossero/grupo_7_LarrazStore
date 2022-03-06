@@ -5,23 +5,44 @@
     <main>
         <div class="form-adm-containter">
             <form action="" method="POST" class="product-cont">
-                <label for="Product-name"> Crear Producto </label>
+                <label for="Product-name"> <h1>Agregar producto</h1></label>
                 <div>
-                    <input type= "text" class="product-input" id="Product-name" placeholder="Nombre de producto" maxlength="75">
+                    <input type= "text" class="product-input" id="Product-name" placeholder="Nombre de producto" maxlength="75" required>
                 </div>
                 <div>
-                    <input type= "text" class="product-price" id="Product-price" placeholder="Precio" pattern="[$]\s[\s0-9.]+" title="Solo en formato de numeros">
+                    <input type= "text" class="product-price" id="Product-price" placeholder="Precio" pattern="[$]\s[\s0-9.]+" title="Solo en formato de numeros" required>
                 </div>
                 <div>
-                    <input type= "text" class="product-detail" id="Product-detail" placeholder="Detalle de producto" maxlength="75">
+                    <input type= "text" class="product-detail" id="Product-detail" placeholder="Detalle de producto" maxlength="75" required> 
+                </div>
+                <div>
+                    <h4>Seleccione una categoria para su producto</h4>
+                    <label><input type="checkbox" id="cbox1" value="first_checkbox">Productos</label><br>
+                    <select name="Desplegable-agregar" id="tipos-de-productos">
+                        <option value="Componentes de PC">Componentes de PC</option>
+                        <option value="Perifericos">Perifericos</option>
+                        <option value="Celulares">Celulares</option>
+                        <option value="Impresoras">Impresoras</option>
+                        <option value="Articulos para el Hogar">Articulos para el Hogar</option>
+                        <option value="Computadoras de escritorio">Computadoras de escritorio</option>
+                        <option value="Notebooks y Tablets">Notebooks y Tablets</option>
+                      </select><br>
+                    <input type="checkbox" id="cbox2" value="second_checkbox"> <label for="cbox2">Servicio tecnico</label><br>
+                    <select name="Desplegable-agregar" id="tipos-de-servicios">
+                        <option value="Notebooks">Notebooks</option>
+                        <option value="Celulares">Celulares</option>
+                        <option value="Computadoras de escritorio">Computadoras de escritorio</option>
+                        <option value="Impresoras">Impresoras</option>
+                        <option value="Televisores">Televisores</option>
+                    </select>
                 </div>
                 <div class="add-img" for="profile-img">
                     <label for="profile-img">Añadir imagen de producto</label>
-                    <input type="file" class="img-button" id="product-img" accept=".jpg, .png, .jpeg">
+                    <input type="file" class="img-button" id="product-img" accept=".jpg, .png, .jpeg" required>
                  </div>
                 <div class="btn-adm-producto-container">
                     <div>
-                        <button type="submit" class="btn-adm-producto">Crear Producto</button>
+                        <button type="submit" class="btn-adm-producto">Agregar producto</button>
                     </div>
                 </div>
             </form>
