@@ -3,50 +3,52 @@
     <%- include ("../partials/header")%>
 
     <main>
-        <div class="form-adm-containter">
-            <form action="" method="POST" class="product-cont">
-                <label for="Product-name"> <h1>Modificar producto</h1></label>
-                <div>
-                    <input type= "text" class="product-input" id="Product-name" placeholder="Nombre de producto" maxlength="75" required>
+        <form action="/" method="get" class="user-form admin-form">
+            <div class="user-container">
+            <h2 class="user-title">Modificar producto</h2>
+            <div class="input-user">
+                <div><input class="bar-user" type="text" id="product-name-mod" placeholder="Nombre del producto" required></div>
+            </div>
+            <div class="input-user">
+                <div><input class="bar-user" type="text" id="product-price-mod"  placeholder="Precio" pattern="[$]\s[\s0-9.]+" title="Solo en formato de numeros" required></div>
+            </div>
+            <div class="input-user">
+                <div><input class="bar-user" type="text" id="product-detail-mod"  placeholder="Detalle del producto" required></div>
+            </div>
+            <div>
+                <h4 class="user-title">Seleccione una categoria para su producto</h4>
+                <div class="user-checkbox">
+                    <div><input type="checkbox" name="product-check" id="product-check" required></div>
+                    <div class="user-legal"><label for="product-check">Productos</label></div>
                 </div>
-                <div>
-                    <input type= "text" class="product-price" id="Product-price" placeholder="Precio" pattern="[$]\s[\s0-9.]+" title="Solo en formato de numeros" required>
+                <select name="Desplegable-agregar" id="tipos-de-productos">
+                    <option class= "select-txt" value="Componentes de PC">Componentes de PC</option>
+                    <option class= "select-txt" value="Perifericos">Perifericos</option>
+                    <option class= "select-txt" value="Celulares">Celulares</option>
+                    <option class= "select-txt" value="Impresoras">Impresoras</option>
+                    <option class= "select-txt" value="Articulos para el Hogar">Articulos para el Hogar</option>
+                    <option class= "select-txt" value="Computadoras de escritorio">Computadoras de escritorio</option>
+                    <option class= "select-txt" value="Notebooks y Tablets">Notebooks y Tablets</option>
+                  </select><br>
+                  <div class="user-checkbox">
+                    <div><input type="checkbox" name="service-check" id="service-check" required></div>
+                    <div class="user-legal"><label for="service-check">Servicio Tecnico</label></div>
                 </div>
-                <div>
-                    <input type= "text" class="product-detail" id="Product-detail" placeholder="Detalle de producto" maxlength="75" required> 
-                </div>
-                <div>
-                    <h4>Seleccione una categoria para su producto</h4>
-                    <label><input type="checkbox" id="cbox1" value="first_checkbox">Productos</label><br>
-                    <select name="Desplegable-agregar" id="tipos-de-productos">
-                        <option value="Componentes de PC">Componentes de PC</option>
-                        <option value="Perifericos">Perifericos</option>
-                        <option value="Celulares">Celulares</option>
-                        <option value="Impresoras">Impresoras</option>
-                        <option value="Articulos para el Hogar">Articulos para el Hogar</option>
-                        <option value="Computadoras de escritorio">Computadoras de escritorio</option>
-                        <option value="Notebooks y Tablets">Notebooks y Tablets</option>
-                      </select><br>
-                    <input type="checkbox" id="cbox2" value="second_checkbox"> <label for="cbox2">Servicio tecnico</label><br>
-                    <select name="Desplegable-agregar" id="tipos-de-servicios">
-                        <option value="Notebooks">Notebooks</option>
-                        <option value="Celulares">Celulares</option>
-                        <option value="Computadoras de escritorio">Computadoras de escritorio</option>
-                        <option value="Impresoras">Impresoras</option>
-                        <option value="Televisores">Televisores</option>
-                    </select>
-                </div>
-                <div class="add-img" for="profile-img">
-                    <label for="profile-img">Añadir imagen de producto</label>
-                    <input type="file" class="img-button" id="product-img" accept=".jpg, .png, .jpeg" required>
-                 </div>
-                <div class="btn-adm-producto-container">
-                    <div>
-                        <button type="submit" class="btn-adm-producto">Modificar producto</button>
-                    </div>
-                </div>
-            </form>
-        </div>
+                <select name="Desplegable-agregar" id="tipos-de-servicios">
+                    <option class= "select-txt" value="Notebooks">Notebooks</option>
+                    <option class= "select-txt" value="Celulares">Celulares</option>
+                    <option class= "select-txt" value="Computadoras de escritorio">Computadoras de escritorio</option>
+                    <option class= "select-txt" value="Impresoras">Impresoras</option>
+                    <option class= "select-txt" value="Televisores">Televisores</option>
+                </select>
+            </div>
+            <div class="add-img">
+                <label for="add-producr">Añadir imagen del producto</label>
+                <input type="file" class="img-button" id="add-product-mod" accept=".jpg, .png, .jpeg">
+             </div>
+            <div><button type="submit" class="user-button">Modificar producto</button></div>
+            </div>
+        </form>
 
 
     </main>
