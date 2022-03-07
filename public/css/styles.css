@@ -16,7 +16,9 @@ body{
 
 
 
-header {background-color: #3453;}
+header {
+    background-color: #3453;
+}
 
 header .top-header {
     display: flex;
@@ -27,8 +29,6 @@ header .top-header {
     
 }
 
-.search-bar {display:flex;
-width: 70%;}
 
 .search-container{
 display:flex;
@@ -41,7 +41,8 @@ padding: 0 10px;}
     width: 100%;
     border: 2px solid  #6200ff;
     border-radius: 10px 0 0 10px;
-    padding: 5px
+    padding: 5px;
+    height: 45px
 }
 
 .search-input::placeholder {color:#e6e1e6}
@@ -53,7 +54,7 @@ padding: 0 10px;}
 
 .search-button {
     width: 40px;
-    height: 38px;
+    height: 45px;
     border: 2px solid #6200ff;
     border-radius: 0 10px 10px 0 ;
     background-color: #6a0dff;
@@ -70,29 +71,41 @@ box-shadow: 0px 0px 8px 0px #6a0dff}
 
 .header-buttons{
     display:flex;
-    width: 15%;
+    width:15%;
     }
 
 .header-login {
     display: none;
+    width:33%;
+    justify-content:center
 }
 
 
-.carrito {width: 50%;}
+.carrito {
+    width: 33%;
+    text-align: center;}
 
 .header-icon {
-    font-size: 18px;
-    color:#6a0dff}
+    font-size: 25px;
+    color: #fff;
+    background-color: #6a0dff;
+    padding: 10px;
+    border-radius: 6px;
+}
 
-
-
+.header-icon-login {font-size: 20px;
+color: #fff;
+background-color: #6a0dff;
+padding: 10px 12.5px;
+border-radius: 6px;
+}
 
  .logo{
     display: flex;
-    width:70px;
     height:70px;
     margin-top:5px;
     border-radius:100%;
+    padding-left: 5px
 }
 
 .top{width: 65%;
@@ -115,13 +128,22 @@ header .saludo{
     font-family: 'Fasthand', cursive;
 }
 
-.burger-menu{text-align: center;}
+.burger-menu{
+    text-align: center;
+    padding-bottom: 8px;
+}
 
-.cel-icon {padding: 13px;
+.cel-icon {    
+    padding: 15px;
     background-color: #6a0dff;
     border-radius: 10px;
-    font-size: 20px;
-    color: #fff;}
+    font-size: 24px;
+    color: #fff;
+}
+
+.cel-icon:focus {
+    box-shadow: 0px 0px 4px 0px rgba(98,0,255,0.75);
+}
 
 .lista-nav{display:none}
 
@@ -164,10 +186,13 @@ footer .prueba {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color: #494653;   
+    background-color: #494653;
     width: 100%;
     bottom: 0%;
+    padding: 10px;
+    font-size: 20px;
 }
+
 
 .fixed-icons i {
     display: flex;
@@ -184,11 +209,14 @@ footer .prueba {
 .top-header {
     display: flex; 
     flex-direction: column; 
-    align-items: center
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5px;
 }
 
 .search-bar {
-    display: flex
+    display: flex;
+    width: 50%
 }
 
 .login-container {
@@ -227,10 +255,13 @@ footer .prueba {
 .image-cart{
     width: 50vw;
     height: 50vw;
+    max-width: 300px;
+    max-height: 300px;
 }
 
 .productos{
     display: flex;
+    justify-content: space-around;
 }
 
 /*serch bar del carrito editado en html*/
@@ -277,15 +308,24 @@ footer .prueba {
 }
 
 .contador-contenedor input[type=text]{
-    width: 20px;
+    width: 25px;
+    height: 25px;
     text-align: center;
 }
 
+.contador-contenedor input {
+    background-color: #6200ff;
+    color: #fff;
+    width: 15px;
+    border-radius: 5px;
+    height: 30px;
+    border: none;
+}
+   
 header .top-header {
     display: flex;
     flex-direction: row;
     align-items:center;
-    justify-content: space-evenly;
 }
 /*BOTON*/
 .button-compra{
@@ -336,7 +376,7 @@ footer{
 
 .contenedor-footer{
     width: 100%;
-    max-width: 1200px;
+    /*max-width: 1200px;*/
     margin: auto;
     padding: 40px;
 }
@@ -446,7 +486,7 @@ footer{
 
 
 .user-container {
-    width: 50%;
+    width: 85%;
     margin: 0 auto;
     padding: 10px 12px;
     border: 2px solid #d4d4d4;
@@ -469,15 +509,18 @@ footer{
 
 .user-text {color: #a6a2a8}
 
-.user-subtitle, .user-text {font-size: 15px;}
+.user-subtitle, .user-text {
+    font-size: 20px;
+}
 
 .bar-user {
-    height: 25px;
+    height: 30px;
     margin: 4px 0;
     border: 1px solid #dbdcdd;
     border-radius: 4px;
     font-size: 13px;
     padding: 5px;
+    font-size: 18px;
 }
 
 .bar-user {width: 100%;}
@@ -490,7 +533,8 @@ footer{
 
 .user-checkbox{
     display:flex;
-    margin: 4px 0}
+    margin-top: 10px;
+}
 
 .user-legal {
     font-size: 12px;
@@ -504,10 +548,12 @@ footer{
 .user-button {
     width: 100%;
     margin: 15px 0;
-    height: 35px;
+    height: 40px;
     border-radius: 8px;
     background-color:#fff;
     color: #a6a2a8;
+    font-size: 20px;
+    padding-bottom: 2px;
     border: 2px solid #6200ff;
     -webkit-transition-duration: 0.3s;
       transition-duration: 0.3s;
@@ -528,7 +574,127 @@ footer{
 .user-name {width: 48%;}
 
 .bar-username {width: 100%;}
+
+.realizar {
+    text-align: center;
+}
+
+.contenedor-button-compra {
+    margin-bottom: 15px;
+}
+
+.contenedor-descripcion {
+    text-align: center;
+    padding-top: 30px;
+    font-size: 16px;
+    margin-right:10px
+}
+
+.contador-contenedor {
+    text-align: center;
+}
+
+.lista-nav li {
+    display: block;
+    background-color: #6200ff;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 25px;
+    font-size: 2.4vw;
+}
+
+.lista-nav li:focus { 
+        box-shadow: 0px 0px 4px 0px rgba(98,0,255,0.75);
+}
+
+.cursiva {
+    font-size: 20px;
+}
 /* MI PARTE nacho */
+
+/* FOOOTER NUEVO CSS */
+
+.history-txt 
+{display:none;
+text-align: center}
+
+.history-txt p {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+
+
+.footer-cont {
+    padding: 30px;
+}
+
+.history-txt h1 {
+    font-size: 36px;
+}
+
+.history-txt p {
+    font-size: 15px
+}
+
+
+.contact-flex {
+    margin: 0 auto;
+}
+
+
+.contact-flex div a {
+    display: flex;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.footer-icon {
+    font-size: 20px;
+    margin-right: 10px;
+    padding-top: 3px;
+}
+
+.contact-txt {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.social-cont div {
+    margin-right: 20px;
+}
+
+.footer-about a {
+    
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.footer-about h1 {
+    font-size: 48px;
+}
+
+
+.copyright-cont {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color:#101010;
+    font-size: 12px;
+    padding-bottom: 40px;
+}
+
+.copyright-cont a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+
 
 
 
@@ -549,7 +715,75 @@ footer{
         display: inline;
     }
 
+    .top-header {
+        justify-content: space-between;
+    }
 
+    .header-buttons {
+        display: flex;
+        width: 30%;
+        margin-right: 5px;
+    }
+
+
+    
+    .burger-menu{display:none}
+
+    .menu-header{display:flex;}
+
+    .header-login {
+        display:flex;
+        width: 50%}
+
+    .carrito {
+        width: 50%;
+        margin: 0 10px}
+
+    .header-icon {font-size: 20px}
+
+    .header-icon:focus {
+        box-shadow: 0px 0px 4px 0px rgba(98,0,255,0.75);
+    }
+
+    .social-cont {
+        display: flex;
+        justify-content:space-between;
+    }
+    
+    .lista-nav{
+    display: flex;
+    padding: 5px 5px 10px 5px;
+    margin: 0 0px;
+    justify-content: space-around;
+    list-style-type: none;
+    color: #646363;
+    font-size: 15px;
+    text-align: center;
+    } 
+
+    .cursiva {
+        font-size: 25px;
+    }
+
+    .contenedor-descripcion {
+        font-size: 18px
+    }
+}
+
+/* MI PARTE nacho */
+.user-legal {font-size: 13px;}
+/* MI PARTE nacno */
+
+@media (min-width: 721px){
+    /* FOOTER NUEVO*/
+    .history-txt {
+        display: block;
+    }
+
+    .footer-about{
+        display:none
+    }
+    /* FOOTER NUEVO*/
     .fixed-icons {
         display: none;
     }
@@ -558,35 +792,68 @@ footer{
         display: none
     }
 
-    .burger-menu{display:none}
-
-    .menu-header{display:flex;}
-
-    .header-login {
-        display:flex;
-        width: 0}
-
-    .carrito {
-        width: 50%;
-        margin: 0 auto}
-
-    .header-icon {font-size:40px;}
-    
-    .lista-nav{
-        display:flex;
-        padding: 5px;
-        margin:0;
-        justify-content: space-around;
-        list-style-type: none;
-        color: #646363
-    } 
+.copyright-cont {
+    padding:20px
 }
 
-/* MI PARTE nacho */
-.user-legal {font-size: 13px;}
-/* MI PARTE nacno */
+.header-icon-login {
+    font-size: 30px;
+}
 
-@media screen and (max-width: 1100px){
+.header-icon {
+    font-size: 28px;
+}
+
+.carrito {
+    width: 35%
+}
+
+.social-cont {
+    justify-content: space-around
+}
+
+.soc-2 {
+    margin-left: 10px;
+}
+
+.lista-nav li {
+    font-size: 2.2vw
+}
+
+.user-container {
+    width: 65%;
+}
+
+.header-icon:focus {
+    box-shadow: 0px 0px 0px 0px rgba(98,0,255,0.75);
+}
+
+.header-icon:hover {
+        box-shadow: 0px 0px 4px 0px rgba(98,0,255,0.75);
+}
+
+.lista-nav li:focus { 
+        box-shadow: 0px 0px 0px 0px rgba(98,0,255,0.75);
+}
+
+.lista-nav li:hover {
+    box-shadow: 0px 0px 4px 0px rgba(98,0,255,0.75);
+}
+
+.curisva {
+    font-size: 35px;
+}
+
+.contenedor-descripcion {
+    font-size: 25px ;
+    margin-top: 30px;
+}
+
+}
+    
+
+
+ @media screen and (max-width: 1100px){
     
     .contenedor-body-footer{
         flex-wrap: wrap;
