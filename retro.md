@@ -1,4 +1,4 @@
-.RETROSPECTIVA GRUPAL.
+.RETROSPECTIVA GRUPAL. 1
 
 Tuvimos una charla grupal donde nos pusimos de acuerdo en las falencias que tuvimos como grupo
 y tambien remarcamos las cosas que hicimos bien y que tenemos que seguir haciendo.
@@ -26,3 +26,8 @@ o estamos comprometidos y somos responsables frente a lo que tenemos que hacer o
 STOP DOING:
 Dejar de trabajar solos sin hacer consultas, estamos de acuerdo que todos estamos para ayudarnos entre todos
 como un equipo funcional.
+
+
+.RETROSPECTIVA GRUPAL. 2
+
+Seguimos teniendo muchisimos problemas para reunirnos todos, especialmente para este sprint, lo que si queda claro con el paso del tiempo que nos vamos conociendo ya se ve las habilididades y roles de cada uno, estamos de acuerdo en que tenemos que estar mas a disposicion y mostrarse disponible al grupo para poder avazar eficientemente, y tambien estamos de acuerdo en dejar de dejar cierta tarea a ultimo momento porque esa tarea puede ser muy necesaria para que el resto del equipo  pueda avanzar con sus tareas .
