@@ -811,6 +811,11 @@ text-align: center}
         box-shadow: 0px 0px 4px 0px rgba(98,0,255,0.75);
     }
 
+
+    .header-icon:focus {
+        box-shadow: 0px 0px 4px 0px rgba(98,0,255,0.75);
+    }
+
     .social-cont {
         display: flex;
         justify-content:space-between;
@@ -837,6 +842,7 @@ text-align: center}
     .admin-form {
         width: 65%;
     }
+=======
 }
 
 /* MI PARTE nacho */
