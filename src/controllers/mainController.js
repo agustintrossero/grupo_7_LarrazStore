@@ -1,24 +1,9 @@
-const productos = [{
-    nombre : "CPU GAMER AEROCOOL",
-    precio : "precio",
-    description: "descripcion",
-    img: "/images/silla-gamer-aerocool.jpg"
-},{
-    nombre : "MOUSE GAMER LOGITECH G203 LILA",
-    precio : "precio",
-    description: "descripcion",
-    img: "/images/mouse-gamer-logitech.jpg"
-},{
-    nombre : "SAMSUNG GALAXY NOTE 20 128GB",
-    precio : "precio",
-    description: "descripcion",
-    img: "/images/note-20.jpg"
-},{
-    nombre : "SILLA GAMER AEROCOOL C/ DETALLES EN ROJO",
-    precio : "precio",
-    description: "descripcion",
-    img: "/images/silla-gamer-aerocool.jpg"
-}]
+const path = require("path")
+const fs = require("fs")
+
+const productsPathFile = path.join(__dirname, "../data/products.JSON")
+const products = JSON.parse(fs.readFileSync(productsPathFile, 'utf-8'));
+
 
 const controlador = {
     index: (req, res) => {
@@ -34,7 +19,8 @@ const controlador = {
         return res.render("users/register")
     },
     products: (req, res) => {
-        return res.render("products/product-detail",{"productos":productos})
+        let productsList = products
+        return res.render("products/product-detail",{productos : productsList})
     },
     admin: (req, res) => {
         return res.render("admin")
