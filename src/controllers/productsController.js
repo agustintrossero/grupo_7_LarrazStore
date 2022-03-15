@@ -6,11 +6,11 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const productsController = {
 
     cart: (req, res) => {
-        return res.render("product-cart")
+        return res.render("./products/product-cart")
     },
     products: (req, res) => {
         let productsList = products
-        return res.render("product-detail",{productos : productsList})
+        return res.render("./products/product-detail",{productos : productsList})
     },
     agregar: (req, res) => {
         return res.render("products/agregar")

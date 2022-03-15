@@ -11,13 +11,13 @@ app.use(express.urlencoded({ extended: false })); // Para capturar la info de lo
 app.use(express.json());
 
 app.set("view engine", "ejs");
-app.set('views', path.join(__dirname, '/views'))
+app.set('views',"./src/views");
 
-const mainRouter = require("./routes/mainRouter")
-const productsRouter = require("./routes/productRouter")
+const mainRoutes = require("./routes/mainRouter")
+const productsRouter = require("./routes/productRouter");
 
-app.use("/", mainRouter); 
-app.use('/products', productsRouter);
+app.use("/", mainRoutes);
+app.use("/products", productsRouter)
 
 app.listen (5000, () => {
     console.log("Larraz Store en funcionamiento!")
