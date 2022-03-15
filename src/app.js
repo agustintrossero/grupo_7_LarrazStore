@@ -15,9 +15,9 @@ app.set('views',"./src/views");
 
 app.use("/", mainRoutes); 
 
-app.listen (5000), () => {
+app.listen (5000, () => {
     console.log("Larraz Store en funcionamiento!")
-};
+});
 
 
 //app.get('/' , (req,res) => {res.sendFile(path.resolve(__dirname, './views/index.html'))});
