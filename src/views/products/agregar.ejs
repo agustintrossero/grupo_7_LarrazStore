@@ -3,14 +3,14 @@
     <%- include ("../partials/header")%>
 
     <main>
-        <form action="/" method="get" class="user-form admin-form">
+        <form action="/" method="get" class="user-form admin-form" enctype="multipart/form-data">
             <div class="user-container">
             <h2 class="user-title">Agregar producto</h2>
             <div class="input-user">
                 <div><input class="bar-user" type="text" id="product-name" placeholder="Nombre del producto" required></div>
             </div>
             <div class="input-user">
-                <div><input class="bar-user" type="text" id="product-price"  placeholder="Precio" pattern="[$]\s[\s0-9.]+" title="Solo en formato de numeros" required></div>
+                <div><input class="bar-user" type="text" id="product-price"  placeholder="Precio"  title="Solo en formato de numeros" required></div> <!--pattern="[$]\s[\s0-9.]+"-->
             </div>
             <div class="input-user">
                 <div><input class="bar-user" type="text" id="product-detail"  placeholder="Detalle del producto" required></div>
@@ -18,7 +18,7 @@
             <div>
                 <h4 class="user-title">Seleccione una categoria para su producto</h4>
                 <div class="user-checkbox">
-                    <div><input type="checkbox" name="product-check" id="product-check" required></div>
+                    <div><input type="checkbox" name="product-check" id="product-check" ></div>
                     <div class="user-legal"><label for="product-check">Productos</label></div>
                 </div>
                 <select class= "select-txt-bar" name="Desplegable-agregar" id="tipos-de-productos">
@@ -31,7 +31,7 @@
                     <option class= "select-txt" value="Notebooks y Tablets">Notebooks y Tablets</option>
                   </select><br>
                   <div class="user-checkbox">
-                    <div><input type="checkbox" name="service-check" id="service-check" required></div>
+                    <div><input type="checkbox" name="service-check" id="service-check" ></div>
                     <div class="user-legal"><label for="service-check">Servicio Tecnico</label></div>
                 </div>
                 <select class= "select-txt-bar" name="Desplegable-agregar" id="tipos-de-servicios">

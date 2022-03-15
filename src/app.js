@@ -17,7 +17,7 @@ const mainRoutes = require("./routes/mainRouter")
 const productsRouter = require("./routes/productRouter");
 
 app.use("/", mainRoutes);
-app.use("/products", productsRouter)
+app.use("/products/", productsRouter)
 
 app.listen (5000, () => {
     console.log("Larraz Store en funcionamiento!")
