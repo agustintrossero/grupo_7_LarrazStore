@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js"
-    },
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/agustintrossero/grupo_7_LarrazStore.git"
@@ -20,7 +20,7 @@
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.2",
+    "method-override": "^3.0.0",
     "nodemon": "^2.0.15"
-  },
-  "devDependencies": {}
+  }
 }

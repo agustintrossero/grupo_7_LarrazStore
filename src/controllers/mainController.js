@@ -5,7 +5,7 @@ const productsPathFile = path.join(__dirname, "../data/products.JSON")
 const products = JSON.parse(fs.readFileSync(productsPathFile, 'utf-8'));
 
 
-const controlador = {
+const mainController = {
     index: (req, res) => {
         return res.render("index")
     },
@@ -36,4 +36,4 @@ const controlador = {
     },
 }
 
-module.exports = controlador;
+module.exports = mainController;
