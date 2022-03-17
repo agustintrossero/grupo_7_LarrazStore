@@ -7,7 +7,9 @@
         <section class = "contenedor">
             <div class = "contenedor-imagen">
               <% for (let i = 0 ; i < productos.length ; i++ ){%>
+                <a href="/products/detail/<%=productos[i].id%>">
                 <img  class = "product-imagen" src= <%= productos[i].image %> alt= <%= productos[i].nombre %>/>
+              </a>
             </div>
           
             <div class = "contenedor-detalle">

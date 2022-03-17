@@ -16,6 +16,7 @@ var upload = multer({storage: storage})
 
 router.get("/", productsController.products)
 router.get("/cart", productsController.cart)
+router.get('/detail/:id', productsController.detail)
 
 router.get("/agregar", productsController.agregar)
 router.post('/',upload.single("image"), productsController.store);
