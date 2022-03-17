@@ -7,8 +7,15 @@ const productsController = {
 
     products: (req, res) => {
         let productsList = products
-        return res.render("./products/product-detail",{productos : productsList})
+        return res.render("./products/products",{productos : productsList})
     },
+
+    detail: (req, res) => {
+       // let productsList = products
+		let productSelected = req.params.id
+		res.render("./products/detail", {productDetail : products[productSelected - 1]})
+		
+	},
 
     cart: (req, res) => {
         return res.render("./products/product-cart")
