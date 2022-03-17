@@ -15,29 +15,18 @@ const productsController = {
     },
     
     agregar: (req, res) => {
-        return res.render("./products/agregar")
+        res.render("./products/agregar")
     },
 
     store: (req, res) => {
-        const newProduct = {
-            id: products.length + 1,
-            name: req.body.name,
-            price: req.body.price,
-            discount: req.body.discount,
-            category: req.body.category,
-            description: req.body.description,
-            image : req.file.filename
-        }
 
-        
-        
+        const newProduct = req.body
+		newProduct.id = products.length + 1
+        newProduct.image = "/images/" + req.file.filename
         products.push(newProduct)
         fs.writeFileSync(productsFilePath, JSON.stringify(products))
-
-        console.log(newProduct.req.body);
-        
-
         res.redirect("/products");
+        
     },
 
     modificar: (req, res) => {
