@@ -21,10 +21,8 @@ const productsController = {
     store: (req, res) => {
         const newProduct = {
             id: products.length + 1,
-            name: req.body.name,
-            price: req.body.price,
-            discount: req.body.discount,
-            category: req.body.category,
+            nombre: req.body.nombre,
+            precio: req.body.precio,
             description: req.body.description,
             image : req.file.filename
         }
