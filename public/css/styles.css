@@ -732,7 +732,7 @@ text-align: center}
 }
 
 .select-txt {
-    color: #e6e1e6;
+    color:black;
 }
 
 .select-txt-bar {
@@ -742,7 +742,7 @@ text-align: center}
     border-radius: 4px;
     font-size: 13px;
     padding: 5px;
-    color: #e6e1e6;
+    color: black;
 }
 
 .img-button {
