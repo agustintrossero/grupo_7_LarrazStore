@@ -10,8 +10,8 @@ body .body-container{
     
 }
 
-.product-imagen{
-    width: 100%;
+.contenedor-imagen{
+    width: 65%;
 }
 
 body{
@@ -927,7 +927,15 @@ text-align: center}
     font-size: 25px ;
     margin-top: 30px;
 }
-
+/*
+.contenedor-imagen{
+    display: flex;
+    width: 50vw;
+}
+.contenedor-detalle{
+    display: flex;
+}
+*/
 }
     
 

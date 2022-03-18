@@ -21,7 +21,9 @@ router.get('/detail/:id', productsController.detail)
 router.get("/agregar", productsController.agregar)
 router.post('/',upload.single("image"), productsController.store);
 
-router.get("/modificar", productsController.modificar)
+router.get("/modificar/:id", productsController.modificar)
+router.put("/:id/guardar", productsController.guardar);
+
 router.get("/eliminar", productsController.eliminar)
 
 module.exports = router;
