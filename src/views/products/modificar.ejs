@@ -3,25 +3,29 @@
     <%- include ("../partials/header")%>
 
     <main>
-        <form action="/" method="get" class="user-form admin-form">
+        <% for ( i = 0; i < productToEdit.length; i++) { %> <% } %> 
+        <form action="/products/<%= `${productToEdit.id}` %>/guardar?_method=PUT" method="POST">
             <div class="user-container">
-            <h2 class="user-title">Modificar producto</h2>
+            <h2 class="user-title">Modificando el producto: <i><%= productToEdit.nombre %></i></h2>
             <div class="input-user">
-                <div><input class="bar-user" type="text" id="product-name-mod" placeholder="Nombre del producto" required></div>
+                <label for="nombre" class="bar-user">Nombre del producto:</label>
+                <input type="text" value="<%= productToEdit.nombre %>" id="nombre" name="nombre" placeholder="Nombre del producto">
             </div>
             <div class="input-user">
-                <div><input class="bar-user" type="text" id="product-price-mod"  placeholder="Precio" pattern="[$]\s[\s0-9.]+" title="Solo en formato de numeros" required></div>
+                <label for="precio" class="bar-user">Precio del producto:</label>
+                <input type="text" value="<%= productToEdit.precio %>" id="precio" name="precio" placeholder="Ej: 5678">
             </div>
             <div class="input-user">
-                <div><input class="bar-user" type="text" id="product-detail-mod"  placeholder="Detalle del producto" required></div>
+                <label for="description" class="bar-user">Descipción:</label>
+                <textarea name="description" id="description" value=>"<%= productToEdit.description %>"</textarea>
             </div>
             <div>
                 <h4 class="user-title">Seleccione una categoria para su producto</h4>
                 <div class="user-checkbox">
-                    <div><input type="checkbox" name="product-check" id="product-check" required></div>
+                    <div><input type="checkbox" name="product-check" id="product-check" ></div>
                     <div class="user-legal"><label for="product-check">Productos</label></div>
                 </div>
-                <select name="Desplegable-agregar" id="tipos-de-productos">
+                <select class= "select-txt-bar" name="Categoria" id="tipos-de-productos">
                     <option class= "select-txt" value="Componentes de PC">Componentes de PC</option>
                     <option class= "select-txt" value="Perifericos">Perifericos</option>
                     <option class= "select-txt" value="Celulares">Celulares</option>
@@ -31,10 +35,10 @@
                     <option class= "select-txt" value="Notebooks y Tablets">Notebooks y Tablets</option>
                   </select><br>
                   <div class="user-checkbox">
-                    <div><input type="checkbox" name="service-check" id="service-check" required></div>
+                    <div><input type="checkbox" name="service-check" id="service-check" ></div>
                     <div class="user-legal"><label for="service-check">Servicio Tecnico</label></div>
                 </div>
-                <select name="Desplegable-agregar" id="tipos-de-servicios">
+                <select class= "select-txt-bar" name="Categoria" id="tipos-de-servicios">
                     <option class= "select-txt" value="Notebooks">Notebooks</option>
                     <option class= "select-txt" value="Celulares">Celulares</option>
                     <option class= "select-txt" value="Computadoras de escritorio">Computadoras de escritorio</option>
@@ -43,14 +47,12 @@
                 </select>
             </div>
             <div class="add-img">
-                <label for="add-producr">Añadir imagen del producto</label>
-                <input type="file" class="img-button" id="add-product-mod" accept=".jpg, .png, .jpeg">
+                <label for="image" class="form-label"> Imagen de tu producto: </label>
+                <input type="file" name="image" id="image" class="img-button">
              </div>
-            <div><button type="submit" class="user-button">Modificar producto</button></div>
+            <div><button type="submit" class="user-button">Guardar producto</button></div>
             </div>
         </form>
-
-
     </main>
 
     <footer>
