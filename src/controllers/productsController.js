@@ -63,7 +63,17 @@ const productsController = {
    },
 
     eliminar: (req, res) => {
-         res.render("products/eliminar")
+        let reqID = req.params.id;
+
+        const productoEliminado = products.filter((producto)=>{
+            return producto.id != reqID;
+        })
+
+        fs.writeFileSync(productsFilePath,JSON.stringify(productoEliminado));
+
+        //console.log(productoEliminado);
+
+         res.redirect("/products");
     },
 
 }

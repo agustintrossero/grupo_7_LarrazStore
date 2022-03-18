@@ -22,7 +22,7 @@
             <hr>
             <div class = 'contenedor-edit-delete'>
 						<a href="/products/modificar/<%=productDetail.id%>" class="action-button-edit">EDITAR</a>
-            <form action="/products/delete/¿¿" method="POST">
+            <form action="/products/detail/<%= productDetail.id %>/?_method=DELETE" method="POST">
 							<button type="submit" class="action-button-delete">ELIMINAR</button>
 						</form>
           </div>
