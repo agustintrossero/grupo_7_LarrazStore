@@ -207,6 +207,39 @@ footer .prueba {
     font-family: 'Fasthand', cursive;
 }
 
+/* button modificar y eliminar*/
+
+.action-button-edit {
+    text-decoration: none;
+    border: solid 2px #008CBA;
+    border-radius: 6px;
+    background-color: #0099CC;
+    color: white;
+    width: 100px;
+    padding:5px;
+    text-align: center;
+    
+}
+
+.action-button-delete{
+    border: solid 2px #B22222;
+    border-radius: 6px;
+    background-color: #CD5C5C;
+    color:white;
+    width: 100px;
+    padding:5px
+}
+
+.contenedor-edit-delete{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    margin : 10px
+}
+
+
+
+
 /*login nacho css*/
 
 
