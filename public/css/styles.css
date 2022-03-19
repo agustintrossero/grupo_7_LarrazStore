@@ -283,6 +283,11 @@ footer .prueba {
 
 /*Product-cart*/
 /*esto tmb esta editado especificamente para el carrito html*/
+
+.product-imagen {
+    width: 50%;
+    height: 50%;
+}
 .top-header-cart{
     display:flex;
     position: relative;
@@ -695,11 +700,9 @@ text-align: center}
 
 .contact-txt {
     font-size: 25px;
-    font-weight: bold;
-}
-
-.social-cont div {
-    margin-right: 20px;
+    background-color: #c4c3d3;
+    width: 100%;
+    
 }
 
 .footer-about a {
