@@ -147,16 +147,5 @@
         "precio": "$349.999",
         "description": "PLACA MSI RTX 3080 VENTUS X 10G OC 10GB GDDR6 LHR (G3080V3X10CL)",
         "image": "/images/RTX3080.jpg"
-    },
-    {
-        "nombre": "Skinner",
-        "precio": "123",
-        "description": "\"Sé que escuchas mis pensamientos, Bart. Si descubro que saliste de clases, te vas AL DEMONIO.... ¡Si, eso dije! Puedo pensar cosas que nunca digo....\"",
-        "Desplegable-agregar": [
-            "Componentes de PC",
-            "Notebooks"
-        ],
-        "id": 22,
-        "image": "/images/image-1647532601658.jpg"
     }
 ]
