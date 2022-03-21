@@ -1,0 +1,25 @@
+<%- include ("../partials/head")%>
+<body>
+    <%- include ("../partials/header")%>
+    <main>
+        <H1 class="index-title">ESTE ES EL INDEX DE USUARIOS</H1>
+        <div class="user-list-wrap">
+        <% for (let i = 0 ; i < users.length ; i++ ){%>
+            <div class="users-list-cont">
+                <div class="list-avatar-cont">
+                    <a href="/users/<%=users[i].id%>"><img src="<%=users[i].avatar%>" alt="<%=users[i].name%>" class="index-img"></a>
+                </div>
+                <div class="list-txt-cont">
+                    <h5>Usuario:</h5>
+                    <p class='list-txt-user'><%=users[i].username%></p>
+                </div>
+                <div class="list-txt-cont">
+                    <h5>Email:</h5>
+                    <p class='list-txt-email'><%=users[i].email%></p>
+                </div>
+            </div>
+            <%}%>
+        </div>
+    </main>
+    <%- include ("../partials/footer2")%>
+</body>

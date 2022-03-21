@@ -1,0 +1,20 @@
+[
+  {
+    "id": 3,
+    "username": "duki",
+    "name": "mateo",
+    "surname": "carrazco",
+    "email": "mateocarrazco@gmail.com",
+    "password": "el pepe",
+    "avatar": "/images/avatars/Avatar1647892339258.jpg"
+  },
+  {
+    "id": 7,
+    "username": "bzrp",
+    "name": "matias",
+    "surname": "tobias",
+    "email": "raaac@gmail.com",
+    "password": "el pepe"
+  }
+]
+

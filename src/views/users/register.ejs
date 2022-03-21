@@ -3,11 +3,15 @@
     <%- include ("../partials/header")%>
 
 <main>
-        <form action="/" method="get" class="user-form">
+        <form action="/register" method="POST" class="user-form">
             <div class="user-container">
             <h2 class="user-title">Registra tu Cuenta</h2>
             <h6 class="user-subtitle">Ingresa tus datos para crear tu cuenta</h6>
             <div class="form-container">
+            <div class="input-user">
+                <div><label for="username" class="user-text">Nombre de usuario</label></div>
+                <div><input class="bar-user" type="text" id="username" require></div>
+            </div>
             <div class="user-name">
                 <div><label for="name" class="user-text">Nombre</label></div>
                 <div><input class="bar-user" type="text" id="name" require></div>
@@ -17,17 +21,10 @@
                 <div><input class="bar-user" type="text" id="surname" require></div>
             </div>
             </div>
-            <div class="input-user">
-                <div><label for="username" class="user-text">Nombre de usuario</label></div>
-                <div><input class="bar-user" type="text" id="username" require></div>
-            </div>
+            
             <div class="input-user">
                 <div><label for="email" class="user-text">Email</label></div>
                 <div><input class="bar-user" type="email" id="email" placeholder="ej.@email.com" require></div>
-            </div>
-            <div class="input-user">
-                <div><label for="phone-number" class="user-text">Numero de telefono</label></div>
-                <div><input class="bar-user" type="text" id="phone-number" placeholder="11-xxxx-xxxx" require></div>
             </div>
             <div class="input-user">
                 <div><label for="password" class="user-text">Contraseña</label></div>
