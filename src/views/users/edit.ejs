@@ -1,0 +1,37 @@
+<%- include ("../partials/head")%>
+<body>
+    <%- include ("../partials/header")%>
+    <main>
+        <h1>Editar usuario</h1>
+        <form action="/users/edit/<%=user.id%>?_method=PUT" method="POST" class="user-container" enctype="multipart/form-data">
+            <div class="input-user">
+                <label for="username" class="bar-user">Nombre de usuario:</label>
+                <input type="text" value="<%=user.username%>" id="username" name="username" placeholder="<%=user.username%>">
+            </div>
+            <div class="input-user">
+                <label for="name" class="bar-user">Nombre:</label>
+                <input type="text" value="<%=user.name%>" id="name" name="name" placeholder="<%=user.name%>">
+            </div>
+            <div class="input-user">
+                <label for="surname" class="bar-user">Apellido:</label>
+                <input type="text" value="<%=user.surname%>" id="surname" name="surname" placeholder="<%=user.surname%>">
+            </div>
+            <div class="input-user">
+                <label for="email" class="bar-user">Email:</label>
+                <input type="text" value="<%=user.email%>" id="email" name="email" placeholder="<%=user.email%>">
+            </div>
+            <div class="input-user">
+                <label for="password" class="bar-user">Contraseña:</label>
+                <input type="text" value="<%=user.password%>" id="password" name="password" placeholder="<%=user.password%>">
+            </div>
+            <div class="add-img">
+                <label for="image" class="form-label"> Nueva imagen de perfil </label>
+                <input type="file" name="Avatar" id="image" class="img-button" value="<%=user.avatar%>">
+            </div>
+            <p>imagen actual de avatar</p>
+            <img src="<%=user.avatar%>" alt="<%=user.name%>">
+            <button type="submit" class="user-button">Guardar perfil</button>
+        </form>   
+    </main>
+    <% include ("../partials/footer")%>
+</body>
