@@ -18,15 +18,16 @@ var uploadFile = multer({storage: storage})
 
 router.get("/", userController.index)
 
-router.get ('/:id', userController.detail)
-
+router.get("/login", userController.login)
 
 
 router.get ('/register' , userController.registerView) 
-router.post ('/register' , uploadFile.single('Avatar') , userController.register)
+router.post ('/register' , uploadFile.single('avatar') , userController.register)
+
+router.get ('/:id', userController.detail)
 
 router.get ('/edit/:id' , userController.editView)
-router.put ('/edit/:id' , uploadFile.single('Avatar') , userController.edit)
+router.put ('/edit/:id' , uploadFile.single('avatar') , userController.edit)
 
 router.get ('/delete/:id' , userController.deleteView)
 router.delete ('/delete/:id' , userController.delete)

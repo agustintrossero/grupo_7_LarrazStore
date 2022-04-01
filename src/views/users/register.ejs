@@ -3,37 +3,41 @@
     <%- include ("../partials/header")%>
 
 <main>
-        <form action="/register" method="POST" class="user-form">
+        <form action="/users/register" method="POST" class="user-form" enctype="multipart/form-data">
             <div class="user-container">
             <h2 class="user-title">Registra tu Cuenta</h2>
             <h6 class="user-subtitle">Ingresa tus datos para crear tu cuenta</h6>
             <div class="form-container">
             <div class="input-user">
-                <div><label for="username" class="user-text">Nombre de usuario</label></div>
-                <div><input class="bar-user" type="text" id="username" require></div>
+                <div><label for="username" class="user-text">Usuario</label></div>
+                <div><input class="bar-user" type="text" id="username" name="username" require></div>
             </div>
             <div class="user-name">
                 <div><label for="name" class="user-text">Nombre</label></div>
-                <div><input class="bar-user" type="text" id="name" require></div>
+                <div><input class="bar-user" type="text" id="name" name="name" require></div>
             </div>
             <div class="user-name">
                 <div><label for="surname" class="user-text">Apellido</label></div>
-                <div><input class="bar-user" type="text" id="surname" require></div>
+                <div><input class="bar-user" type="text" id="surname" name="surname" require></div>
             </div>
             </div>
             
             <div class="input-user">
                 <div><label for="email" class="user-text">Email</label></div>
-                <div><input class="bar-user" type="email" id="email" placeholder="ej.@email.com" require></div>
+                <div><input class="bar-user" type="email" id="email" placeholder="ej.@email.com" name="email" require></div>
             </div>
             <div class="input-user">
                 <div><label for="password" class="user-text">Contraseña</label></div>
-                <div><input class="bar-user" type="text" id="password" minlength="8" placeholder="********" require></div>
+                <div><input class="bar-user" type="password" id="password" minlength="8" placeholder="********" name="password" require></div>
             </div>
             <div class="input-user">
                 <div><label for="password-confirm" class="user-text">Confirmar contraseña</label></div>
-                <div class="bar"><input class="bar-user" type="text" id="password-confirm" minlength="8" placeholder="********" required></div>
+                <div class="bar"><input class="bar-user" type="password" id="password-confirm" minlength="8" placeholder="********" name="password-confirm" required></div>
             </div> 
+            <div class="input-user">
+                <div><label for="avatar" id="avatar">Inserta una imagen</label></div>
+                <div class="bar-user"><input type="file" id="avatar" name="avatar"></div>
+            </div>
             <div class="user-checkbox">
                 <div><input type="checkbox" name="legal-buy" id="legal-age" require></div>
                 <div class="user-legal"><label for="legal-age">Soy mayor de edad</label></div>
