@@ -27,28 +27,11 @@ const controller = {
             return res.render('users/register', {
                 errors: resultValidation.mapped(),
                 oldData: req.body
-            })
+            });
         }
+
+        return res.send('Ok, las validaciones se pasaron y no tienes errores')
     },
-
-/*
-    registerView: (req, res) => {
-        res.render ('users/register')
-    },
-    register: (req, res) => {
-        res.send("Viaje por POSTTTTTTTTT")
-        
-
-        const newUser = req.body
-        newUser.id = Date.now()
-        newUser.avatar = "/images/avatars/" + req.file.filename
-        users.push(newUser)
-        fs.writeFileSync(userFilePath, JSON.stringify(users))
-
-        console.log(newUser)
-
-    },
-*/
 
     detail: (req, res) => {
         let user = users.find (el => el.id == req.params.id)

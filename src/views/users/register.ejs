@@ -93,7 +93,7 @@
                <% } %>
             </div>
             <div class="input-user">
-                <div><label for="password-confirm" class="user-text">Confirmar contraseña</label></div>
+                <div><label for="passwordConfirm" class="user-text">Confirmar contraseña</label></div>
                 <div class="bar">
                     <input 
                     type="password" 
@@ -110,8 +110,17 @@
                <% } %>
             </div>
             <div class="input-user">
-                <div><label for="avatar" id="avatar">Inserta una imagen</label></div>
-                <div class="bar-user"><input type="file" id="avatar" name="avatar"></div>
+                <div>
+                    <label for="avatar" id="avatar">Inserta una imagen</label>
+                </div>
+                <div class="bar-user">
+                    <input type="file" id="avatar" name="avatar">
+                 </div><br>
+                 <% if (locals.errors && errors.avatar) { %>
+                    <div class="text-danger">
+                       <%= errors.avatar.msg %> 
+                   </div>
+               <% } %>
             </div>
             <div class="user-checkbox">
                 <div><input type="checkbox" name="legal-buy" id="legal-age" required></div>

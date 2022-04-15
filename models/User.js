@@ -1,8 +1,5 @@
 const fs = require('fs');
 
-
-
-
 const User = {
     fileName: './database/users.json',
 

@@ -6,7 +6,7 @@ const path = require("path");
 const userController = require("../controllers/userController");
 const multer = require('multer');
 
-const { body } = require('express-validator');
+const { body } = require('express-validator')
 
 //Disco donde se va a almacenar nuestra informacion. 
 var storage = multer.diskStorage({
@@ -22,13 +22,33 @@ var storage = multer.diskStorage({
 
 var uploadFile = multer({storage: storage})
 
+//Validaciones para la carga de datos en nuestro formulario de registro.
 const validations = [
     body('username').notEmpty().withMessage('Debes elegir tu nombre de usuario'),
     body('name').notEmpty().withMessage('Debes escribir tu nombre'),
     body('surname').notEmpty().withMessage('Debes escribir tu apellido'),
-    body('email').notEmpty().withMessage('Debes escribir tu correo electronico'),
+    body('email')
+        .notEmpty().withMessage('Debes escribir tu correo electronico').bail()
+        .isEmail().withMessage('Debes escribir un formato de correo electronico valido'),
     body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
-    body('passwordConfirm').notEmpty.withMessage('Aqui debes repetir tu contraseña')
+    body('passwordConfirm').notEmpty().withMessage('Tienes que confirmar tu contraseña'),
+
+    //Validacion "Custom" para la carga de imagenes en nuestro formulario de registro.
+    body('avatar').custom((value, {req}) => {
+        let file = req.file;
+        let acceptedExtensions = ['.jpg', '.png', '.gif'];
+        if (!file) {
+            throw new Error('Tienes que subir una imagen');
+        } else {
+            let fileExtension = path.extname(file.originalname)
+            if (!acceptedExtensions.includes(fileExtension)) {
+                throw new Error('Las extensiones de archivos permitidas son ".jpg", ".png", ".gif"');
+            }
+        }
+
+        return true;
+    })
+
 ]
 
 router.get("/", userController.index)
