@@ -5,9 +5,10 @@ const path = require('path');
 const userFilePath = path.join(__dirname, '../data/users.JSON'); 
 const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8')); 
 
-//const User = require('../models/User.js');
-
+//Modulos requeridos para el proceso de register y de login.
+const User = require('../../models/User');
 const { validationResult } = require('express-validator');
+const bcryptjs = require('bcryptjs');
 
 
 const controller = {
@@ -30,7 +31,32 @@ const controller = {
             });
         }
 
-        return res.send('Ok, las validaciones se pasaron y no tienes errores')
+        let userInDb = User.findByField('email', req.body.email);
+
+//Sirve para que no se puedan registrar dos usuarios con el mismo email.
+        if (userInDb) {
+            return res.render('users/register', {
+                errors: {
+                    email: {
+                        msg: 'Este email ya se encuentra registrado'
+                    }
+                },
+                oldData: req.body
+            });
+        }
+
+//Sirve para agregar la propiedad "avatar" en nuestro JSON, y tambien, para encriptar el password.
+        let userToCreate = {
+
+            ...req.body,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            passwordConfirm: bcryptjs.hashSync(req.body.passwordConfirm, 10),
+            avatar: req.file.filename
+        }
+
+        let userCreated = User.create(userToCreate);
+
+        return res.redirect('/users/login');
     },
 
     detail: (req, res) => {
@@ -85,4 +111,4 @@ const controller = {
     }
 }
 
-module.exports = controller
+module.exports = controller;
