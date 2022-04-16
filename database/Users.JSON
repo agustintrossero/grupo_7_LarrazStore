@@ -1,3 +1,13 @@
 [
-    
+ {
+  "id": 1,
+  "username": "contactojuanlarraz",
+  "name": "Juan",
+  "surname": "Larraz",
+  "email": "contactojuanlarraz@gmail.com",
+  "password": "$2a$10$onr5QSqDnZdrTd8uIvJET.hHaiqGCF18JRsaWuL3ETLUhzrD9xe26",
+  "passwordConfirm": "$2a$10$ZHZGQRd1HJ3b4.313V/.8OZlMkTRXTZ8.SBgZldZhR38.yVOnVy86",
+  "legal-buy": "on",
+  "avatar": "avatar1650114287823.jpg"
+ }
 ]
