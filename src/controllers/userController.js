@@ -56,7 +56,7 @@ const controller = {
 
         let userCreated = User.create(userToCreate);
 
-        return res.redirect('/users/login');
+        return res.render('users/login');
     },
 
     detail: (req, res) => {
@@ -67,13 +67,31 @@ const controller = {
         res.render("users/login")
     },
 
+//Proceso de validacion del Login.
     loginProcess: (req,res) => {
         let userToLogin = User.findByField('email', req.body.email);
-        if (userToLogin){
 
+        if (userToLogin){
+            let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+
+            if (isOkThePassword){
+                return res.send('Ok, puedes ingresar');
+            }
+            return res.render('users/login',{
+                errors: {
+                    password: {
+                        msg: 'La contraseña ingresada es incorrecta'
+                    }
+                }
+            });
         }
-        return res.render('userLoginForm',{
-            
+
+        return res.render('users/login',{
+            errors: {
+                email: {
+                    msg: 'Este email no se encuentra registrado'
+                }
+            }
         })
     },
 

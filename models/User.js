@@ -5,7 +5,7 @@ const User = {
 
 //Devuelve todos los usuarios en formato de JavaScript.
     getData: function () {
-        return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
+        return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'))
     },
 
 //Se encarga de asignar el ID a los usuarios que se registran en nuestra DB.
