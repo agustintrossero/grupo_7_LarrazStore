@@ -51,18 +51,19 @@ const validations = [
 
 ]
 
-router.get("/", userController.index)
+router.get("/", userController.index);
 
 //Formulario de Registro
-//router.get ('/register' , userController.registerView)
-router.get('/register', userController.register) 
+router.get('/register', userController.register);
 
 //Procesar el Registro
-//router.post ('/register' , uploadFile.single('avatar') , userController.register)
-router.post('/register', uploadFile.single('avatar'), validations, userController.processRegister)
+router.post('/register', uploadFile.single('avatar'), validations, userController.processRegister);
 
 //Formulario de Login
-router.get("/login", userController.login)
+router.get('/login', userController.login);
+
+//Procesar el Login
+router.post('/login', userController.loginProcess);
 
 //Perfil del Usuario
 router.get ('/:id', userController.detail)

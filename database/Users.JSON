@@ -1,13 +1,13 @@
 [
  {
   "id": 1,
-  "username": "contactojuanlarraz",
+  "username": "juanilarraz",
   "name": "Juan",
   "surname": "Larraz",
   "email": "contactojuanlarraz@gmail.com",
-  "password": "$2a$10$onr5QSqDnZdrTd8uIvJET.hHaiqGCF18JRsaWuL3ETLUhzrD9xe26",
-  "passwordConfirm": "$2a$10$ZHZGQRd1HJ3b4.313V/.8OZlMkTRXTZ8.SBgZldZhR38.yVOnVy86",
+  "password": "$2a$10$p63tzPeiVl0HmbphH6Yd7u9tzXyJtiwnKSJKpjgMy4qTsn6GtvSli",
+  "passwordConfirm": "$2a$10$bz6NIQflOTRIiF.lyNeVT.6v5iGTlYmEwmUaD8ZYjJpKmNm.3mW7a",
   "legal-buy": "on",
-  "avatar": "avatar1650114287823.jpg"
+  "avatar": "avatar1650202168947.png"
  }
 ]
