@@ -1,14 +1,62 @@
+const res = require('express/lib/response');
 const fs = require('fs');
 const path = require('path');
 
 const userFilePath = path.join(__dirname, '../data/users.JSON'); 
 const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8')); 
 
+//Modulos requeridos para el proceso de register y de login.
+const User = require('../../models/User');
+const { validationResult } = require('express-validator');
+const bcryptjs = require('bcryptjs');
 
 
 const controller = {
     index: (req, res) => {
         res.render ('users/index' , {users})
+    },
+
+    register: (req, res) => {
+        return res.render ('users/register')
+    },
+
+//Proceso de validacion del register - Express Validator.
+    processRegister: (req, res) => {
+        const resultValidation = validationResult(req);
+        
+        if (resultValidation.errors.length > 0) {
+            return res.render('users/register', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        }
+
+        let userInDb = User.findByField('email', req.body.email);
+
+//Sirve para que no se puedan registrar dos usuarios con el mismo email.
+        if (userInDb) {
+            return res.render('users/register', {
+                errors: {
+                    email: {
+                        msg: 'Este email ya se encuentra registrado'
+                    }
+                },
+                oldData: req.body
+            });
+        }
+
+//Sirve para agregar la propiedad "avatar" en nuestro JSON, y tambien, para encriptar el password.
+        let userToCreate = {
+
+            ...req.body,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            passwordConfirm: bcryptjs.hashSync(req.body.passwordConfirm, 10),
+            avatar: req.file.filename
+        }
+
+        let userCreated = User.create(userToCreate);
+
+        return res.render('users/login');
     },
 
     detail: (req, res) => {
@@ -19,44 +67,34 @@ const controller = {
         res.render("users/login")
     },
 
-    registerView: (req, res) => {
-        res.render ('users/register')
-    },
-    register: (req, res) => {
-        res.send("Viaje por POSTTTTTTTTT")
-        
+//Proceso de validacion del Login.
+    loginProcess: (req,res) => {
+        let userToLogin = User.findByField('email', req.body.email);
 
-        const newUser = req.body
-        newUser.id = Date.now()
-        newUser.avatar = "/images/avatars/" + req.file.filename
-        users.push(newUser)
-        fs.writeFileSync(userFilePath, JSON.stringify(users))
+        if (userToLogin){
+            let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
 
-        console.log(newUser)
-
-        
-        /*
-        let {username , name , surname , email , avatar , password} = req.body
-        let id = Date.now()
-        let userObj = new userObj (id , username , name , surname , email , avatar , password)
-        
-        if (users == '') {
-            users = []
-        } 
-        if (req.file !== undefined) {
-            userObj.avatar = "/images/avatars/" + req.file.filename
-        } else {
-        userObj.avatar = ''
+            if (isOkThePassword){
+                return res.send('Ok, puedes ingresar');
+            }
+            return res.render('users/login',{
+                errors: {
+                    password: {
+                        msg: 'La contraseña ingresada es incorrecta'
+                    }
+                }
+            });
         }
-        users.push (userObj)
-        let newUser = JSON.stringify (users)
-        fs.writeFileSync (userFilePath , newUser)
-        
-        res.render ('users/index' , {users})
-        */
-       
 
+        return res.render('users/login',{
+            errors: {
+                email: {
+                    msg: 'Este email no se encuentra registrado'
+                }
+            }
+        })
     },
+
     editView: (req, res) => {
         let user = users.find (el => el.id == req.params.id)
         res.render ('users/edit' , {user})
@@ -91,4 +129,4 @@ const controller = {
     }
 }
 
-module.exports = controller
+module.exports = controller;

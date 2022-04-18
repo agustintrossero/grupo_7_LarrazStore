@@ -10,36 +10,120 @@
             <div class="form-container">
             <div class="input-user">
                 <div><label for="username" class="user-text">Usuario</label></div>
-                <div><input class="bar-user" type="text" id="username" name="username" require></div>
+                <div>
+                    <input
+                     type="text" 
+                     id="username" 
+                     name="username" 
+                     class="form-control <%= locals.errors && errors.username ? 'is-invalid' : null %>"
+                     value="<%= locals.oldData ? oldData.username : null %>">
+                </div>
+                <% if (locals.errors && errors.username) { %>
+                     <div class="text-danger">
+                        <%= errors.username.msg %> 
+                    </div>
+                <% } %>
             </div>
             <div class="user-name">
                 <div><label for="name" class="user-text">Nombre</label></div>
-                <div><input class="bar-user" type="text" id="name" name="name" require></div>
+                <div>
+                    <input
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    class="form-control <%= locals.errors && errors.name ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.name : null %>">
+                </div>
+                <% if (locals.errors && errors.name) { %>
+                    <div class="text-danger">
+                       <%= errors.name.msg %> 
+                   </div>
+               <% } %>
             </div>
             <div class="user-name">
                 <div><label for="surname" class="user-text">Apellido</label></div>
-                <div><input class="bar-user" type="text" id="surname" name="surname" require></div>
+                <div>
+                    <input
+                    type="text"
+                    id="surname" 
+                    name="surname" 
+                    class="form-control <%= locals.errors && errors.surname ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.surname : null %>">
+                </div>
+                <% if (locals.errors && errors.surname) { %>
+                    <div class="text-danger">
+                       <%= errors.surname.msg %> 
+                   </div>
+               <% } %>
             </div>
             </div>
             
             <div class="input-user">
                 <div><label for="email" class="user-text">Email</label></div>
-                <div><input class="bar-user" type="email" id="email" placeholder="ej.@email.com" name="email" require></div>
+                <div>
+                    <input
+                    type="email"
+                    id="email"
+                    placeholder="ej.@email.com"
+                    name="email"
+                    class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.email : null %>">
+                </div>
+                <% if (locals.errors && errors.email) { %>
+                    <div class="text-danger">
+                       <%= errors.email.msg %> 
+                   </div>
+               <% } %>
             </div>
             <div class="input-user">
                 <div><label for="password" class="user-text">Contraseña</label></div>
-                <div><input class="bar-user" type="password" id="password" minlength="8" placeholder="********" name="password" require></div>
+                <div>
+                    <input
+                    type="password" 
+                    id="password" 
+                    minlength="8" 
+                    placeholder="********" 
+                    name="password"
+                    class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>">
+                </div>
+                <% if (locals.errors && errors.password) { %>
+                    <div class="text-danger">
+                       <%= errors.password.msg %> 
+                   </div>
+               <% } %>
             </div>
             <div class="input-user">
-                <div><label for="password-confirm" class="user-text">Confirmar contraseña</label></div>
-                <div class="bar"><input class="bar-user" type="password" id="password-confirm" minlength="8" placeholder="********" name="password-confirm" required></div>
-            </div> 
+                <div><label for="passwordConfirm" class="user-text">Confirmar contraseña</label></div>
+                <div class="bar">
+                    <input 
+                    type="password" 
+                    id="passwordConfirm" 
+                    minlength="8" 
+                    placeholder="********" 
+                    name="passwordConfirm" 
+                    class="form-control <%= locals.errors && errors.passwordConfirm ? 'is-invalid' : null %>">
+                </div>
+                <% if (locals.errors && errors.passwordConfirm) { %>
+                    <div class="text-danger">
+                       <%= errors.passwordConfirm.msg %> 
+                   </div>
+               <% } %>
+            </div>
             <div class="input-user">
-                <div><label for="avatar" id="avatar">Inserta una imagen</label></div>
-                <div class="bar-user"><input type="file" id="avatar" name="avatar"></div>
+                <div>
+                    <label for="avatar" id="avatar">Inserta una imagen</label>
+                </div>
+                <div class="bar-user">
+                    <input type="file" id="avatar" name="avatar">
+                 </div><br>
+                 <% if (locals.errors && errors.avatar) { %>
+                    <div class="text-danger">
+                       <%= errors.avatar.msg %> 
+                   </div>
+               <% } %>
             </div>
             <div class="user-checkbox">
-                <div><input type="checkbox" name="legal-buy" id="legal-age" require></div>
+                <div><input type="checkbox" name="legal-buy" id="legal-age" required></div>
                 <div class="user-legal"><label for="legal-age">Soy mayor de edad</label></div>
             </div>
             <div><button type="submit" class="user-button">Registrarse</button></div>

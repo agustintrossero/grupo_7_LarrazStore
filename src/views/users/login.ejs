@@ -2,12 +2,24 @@
 <body>
     <%- include ("../partials/header")%>
     <main>
-        <form action="/" method="get" class="user-form">
+        <form action="/users/login" method="POST" class="user-form" enctype="multipart/form-data">
             <div class="user-container">
             <h2 class="user-title">Ingresa a tu cuenta</h2>
             <div class="input-user">
-                <div><label for="username" class="user-text">Nombre de usuario</label></div>
-                <div><input class="bar-user" type="text" id="username" require></div>
+                <div><label for="email" class="user-text">Email</label></div>
+                <div>
+                    <input
+                    type="email"
+                    id="email"
+                    placeholder="ej.@email.com"
+                    name="email"
+                    class="form-control">
+                </div>
+                <% if (locals.errors && errors.email) { %>
+                 <div class="text-danger">
+                     <%= errors.email.msg %> 
+                 </div>
+                <% } %>
             </div>
             <div class="input-user">
                 <div><label for="password" class="user-text">Contraseña</label></div>
