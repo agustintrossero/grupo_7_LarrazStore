@@ -10,19 +10,36 @@ const controller = {
     index: (req, res) => {
         res.render ('users/index' , {users})
     },
-    
-    
+
     detail: (req, res) => {
         let users = users.find (el => el.id == req.params.id)
         res.render ('users/detail' , {users})
     },
+    login: (req,res) =>{
+        res.render("users/login")
+    },
+
     registerView: (req, res) => {
         res.render ('users/register')
     },
     register: (req, res) => {
+        res.send("Viaje por POSTTTTTTTTT")
+        
+
+        const newUser = req.body
+        newUser.id = Date.now()
+        newUser.avatar = "/images/avatars/" + req.file.filename
+        users.push(newUser)
+        fs.writeFileSync(userFilePath, JSON.stringify(users))
+
+        console.log(newUser)
+
+        
+        /*
         let {username , name , surname , email , avatar , password} = req.body
         let id = Date.now()
         let userObj = new userObj (id , username , name , surname , email , avatar , password)
+        
         if (users == '') {
             users = []
         } 
@@ -34,7 +51,11 @@ const controller = {
         users.push (userObj)
         let newUser = JSON.stringify (users)
         fs.writeFileSync (userFilePath , newUser)
+        
         res.render ('users/index' , {users})
+        */
+       
+
     },
     editView: (req, res) => {
         let user = users.find (el => el.id == req.params.id)
@@ -65,7 +86,7 @@ const controller = {
     delete: (req, res) => {
         let deletedUser = users.filter (el => el.id != req.params.id)
         let newUsers = JSON.stringify (deletedUser)
-        fs.writeFileSync (userFilePath , newUsers)
+        fs.appendFileSync (userFilePath , newUsers)
         res.render ('users/index' , {users : deletedUser})
     }
 }

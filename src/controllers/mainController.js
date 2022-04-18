@@ -14,10 +14,6 @@ const mainController = {
         return res.render("index")
     },
 
-    login: (req, res) => {
-        res.render ('users/login')
-    },
-
     admin: (req, res) => {
         return res.render("admin")
     },

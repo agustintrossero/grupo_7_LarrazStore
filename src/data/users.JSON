@@ -6,7 +6,7 @@
     "surname": "carrazco",
     "email": "mateocarrazco@gmail.com",
     "password": "el pepe",
-    "avatar": "/images/avatars/Avatar1648839509882.jpeg"
+    "avatar": "/images/avatars/Avatar1648842812847.jpeg"
   },
   {
     "id": 7,
@@ -15,5 +15,17 @@
     "surname": "tobias",
     "email": "raaac@gmail.com",
     "password": "el pepe"
+  },
+  {
+    "username": "agus",
+    "name": "Marc",
+    "surname": "Trossero",
+    "email": "agustintrossero@gmail.com",
+    "password": "12345678",
+    "password-confirm": "12345678",
+    "legal-buy": "on",
+    "id": 1648848712184,
+    "avatar": "/images/avatars/avatar1648848712169.jpg"
   }
 ]
+
