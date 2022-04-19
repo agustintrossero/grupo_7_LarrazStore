@@ -23,7 +23,21 @@
             </div>
             <div class="input-user">
                 <div><label for="password" class="user-text">Contraseña</label></div>
-                <div><input class="bar-user" type="text" id="password" name="password" minlength="8" placeholder="********" require></div>
+                <div>
+                    <input 
+                    class="bar-user" 
+                    type="text" 
+                    id="password" 
+                    name="password" 
+                    minlength="8" 
+                    placeholder="********" 
+                    require>
+                </div>
+                <% if (locals.errors && errors.password) { %>
+                <div class="text-danger">
+                    <%= errors.password.msg %> 
+                </div>
+                <% } %>
             </div>
             <div><button type="submit" class="user-button">Ingresar</button></div>
             <div><h6 class="user-subtitle">Todavia no tenes cuenta?<a href="/users/register"><br>Crear cuenta</a></h6></div>
