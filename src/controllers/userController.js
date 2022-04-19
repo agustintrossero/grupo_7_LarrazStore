@@ -11,8 +11,8 @@ const { validationResult } = require("express-validator");
 const bcryptjs = require("bcryptjs");
 
 const controller = {
-  index: (req, res) => {
-    res.render("users/index", { users });
+ index: (req, res) => {
+    res.render("/", { users });
   },
 
   register: (req, res) => {
@@ -82,9 +82,10 @@ const controller = {
         delete userToLogin.passwordConfirm;
         req.session.userLogged = userToLogin;
 
-        return res.render('users/profile');
+        return res.redirect('/users/profile');
       }
-      return res.redirect("/profile", {
+
+      return res.render("users/login", {
         errors: {
           password: {
             msg: "Las credenciales son inválidas",
@@ -139,7 +140,7 @@ const controller = {
   profile: (req, res) => {
     return res.render('users/profile', {
         user: req.session.userLogged
-    });//Problema: Por alguna razon en profile no se captura o mantiene la informacion de la session, lo que hace que no se puedan utilizar los datos del usuario en las vistas de ejs.
+    });
   }
 };
 
