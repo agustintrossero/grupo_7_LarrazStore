@@ -2,7 +2,7 @@
 <body>
     <%- include ("../partials/header")%>
     <main>
-        <form action="/users/login" method="POST" class="user-form" enctype="multipart/form-data">
+        <form action="/users/login" method="POST" class="user-form">
             <div class="user-container">
             <h2 class="user-title">Ingresa a tu cuenta</h2>
             <div class="input-user">
@@ -23,7 +23,7 @@
             </div>
             <div class="input-user">
                 <div><label for="password" class="user-text">Contraseña</label></div>
-                <div><input class="bar-user" type="text" id="password" minlength="8" placeholder="********" require></div>
+                <div><input class="bar-user" type="text" id="password" name="password" minlength="8" placeholder="********" require></div>
             </div>
             <div><button type="submit" class="user-button">Ingresar</button></div>
             <div><h6 class="user-subtitle">Todavia no tenes cuenta?<a href="/users/register"><br>Crear cuenta</a></h6></div>
