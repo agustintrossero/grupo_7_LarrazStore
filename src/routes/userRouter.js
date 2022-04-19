@@ -5,6 +5,7 @@ const router= express.Router();
 const path = require("path");
 const userController = require("../controllers/userController");
 const multer = require('multer');
+const guestMiddleware = require('..//middlewares/guestMiddleware');
 
 const { body } = require('express-validator')
 
@@ -55,7 +56,7 @@ const validations = [
 router.get("/users", userController.index);
 
 //Formulario de Registro
-router.get('/register', userController.register);
+router.get('/register', guestMiddleware, userController.register);
 
 //Procesar el Registro
 router.post('/register', uploadFile.single('avatar'), validations, userController.processRegister);
@@ -78,4 +79,4 @@ router.put ('/edit/:id' , uploadFile.single('avatar') , userController.edit)
 router.get ('/delete/:id' , userController.deleteView)
 router.delete ('/delete/:id' , userController.delete)
 
-module.exports = router
+module.exports = router;
