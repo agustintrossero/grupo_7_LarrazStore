@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+const session = require('express-session')
 
 
 // const pathFile = path.resolve(__dirname, './public');
@@ -10,6 +11,13 @@ app.use(express.static("public"))
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 app.use(express.urlencoded({ extended: false })); // Para capturar la info de los formularios
 app.use(express.json());
+
+//Express-Session ----> configs (no es relevante).
+app.use(session({
+    secret: 'Shhh, Its a secret',
+    resave: false,
+    saveUninitialized: false,
+}));
 
 //Template engine
 app.set("view engine", "ejs");

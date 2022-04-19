@@ -66,7 +66,10 @@ router.get('/login', userController.login);
 router.post('/login', userController.loginProcess);
 
 //Perfil del Usuario
-router.get ('/:id', userController.detail)
+//router.get ('/:id', userController.detail)
+
+//Perfil del Usuario
+router.get('/profile', userController.profile)
 
 router.get ('/edit/:id' , userController.editView)
 router.put ('/edit/:id' , uploadFile.single('avatar') , userController.edit)
