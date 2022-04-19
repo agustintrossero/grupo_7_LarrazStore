@@ -2,8 +2,11 @@
 <body>
     <%- include ("../partials/header")%>
     <main>
-        <H1 class="edit-hl">Bienvenido1</H1>
-
+        <H1 class="edit-hl"><%=user.name%> <%=user.surname%>, bienvenido a nuestro e-commerce!</H1>
+        <div>
+            <p>El mail con el que te encuentras registrado es <%= user.email %></p>
+            <img src="/images/avatars/<%= user.avatar %>">
+        </div>
     </main>
     <%- include ("../partials/footer2")%>
 </body>
