@@ -60,8 +60,8 @@ const controller = {
     },
 
     detail: (req, res) => {
-        let user = users.find (el => el.id == req.params.id)
-        res.render ('users/detail' , {user})
+        let users = users.find (el => el.id == req.params.id)
+        res.render ('users/detail' , {users})
     },
     login: (req,res) =>{
         res.render("users/login")
