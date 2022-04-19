@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const User = {
-    fileName: './database/users.json',
+    fileName: './src/data/users.json',
 
 //Devuelve todos los usuarios en formato de JavaScript.
     getData: function () {
