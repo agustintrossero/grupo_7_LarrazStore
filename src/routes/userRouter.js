@@ -6,6 +6,7 @@ const path = require("path");
 const userController = require("../controllers/userController");
 const multer = require('multer');
 const guestMiddleware = require('..//middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');//Middleware para autentificar a los usuarios de nuestro sitio.
 
 const { body } = require('express-validator')
 
@@ -52,7 +53,7 @@ const validations = [
 
 ]
 
-//Index de los usuarios
+//Index de usuarios
 router.get("/users", userController.index);
 
 //Formulario de Registro
@@ -62,16 +63,16 @@ router.get('/register', guestMiddleware, userController.register);
 router.post('/register', uploadFile.single('avatar'), validations, userController.processRegister);
 
 //Formulario de Login
-router.get('/login', userController.login);
+router.get('/login', guestMiddleware, userController.login);
 
 //Procesar el Login
 router.post('/login', userController.loginProcess);
 
 //Perfil del Usuario
-//router.get ('/:id', userController.detail)
+router.get('/profile', authMiddleware, userController.profile)
 
-//Perfil del Usuario
-router.get('/profile', userController.profile)
+//Logout
+router.get('/logout', userController.logout);//Falta implementar en la vista el boton para poder desloguear al usuario. Las funcionalidades ya estan todas implementadas.
 
 router.get ('/edit/:id' , userController.editView)
 router.put ('/edit/:id' , uploadFile.single('avatar') , userController.edit)

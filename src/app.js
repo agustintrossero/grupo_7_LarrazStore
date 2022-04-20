@@ -19,6 +19,10 @@ app.use(session({
     saveUninitialized: false,
 }));
 
+//Middleware para ocultar el boton de registro/login cuando el usuario esta logueado
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+app.use(userLoggedMiddleware);
+
 //Template engine
 app.set("view engine", "ejs");
 
