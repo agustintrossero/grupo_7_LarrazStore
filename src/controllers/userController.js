@@ -57,12 +57,6 @@ const controller = {
     return res.render("users/login");
   },
 
-  /* detail: (req, res) => {
-        let users = users.find (el => el.id == req.params.id)
-        res.render ('users/detail' , {users})
-    },
-    */
-
   login: (req, res) => {
     res.render("users/login");
   },
@@ -141,7 +135,15 @@ const controller = {
     return res.render('users/profile', {
         user: req.session.userLogged
     });
+  },
+
+  //Logout
+  logout: (req,res) => {
+    req.session.destroy();
+    console.log(req.session)
+    return res.redirect('/');
   }
+
 };
 
 module.exports = controller;
