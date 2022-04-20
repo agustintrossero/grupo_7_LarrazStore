@@ -15,7 +15,11 @@
         <i class="fas fa-shopping-cart header-icon"></i></a>
         </div>
         <div class="header-login">
-            <a href="/users/login"><i class="fas fa-user header-icon-login"></i></a>
+            <% if (locals.userLogged) { %>
+                <p>Hola <%= locals.userLogged.name %> <%= locals.userLogged.surname %>!</p> 
+            <% } else {%>
+                <a href="/users/login"><i class="fas fa-user header-icon-login"></i></a>
+            <% } %> 
         </div>
         </div>
     </div> 
