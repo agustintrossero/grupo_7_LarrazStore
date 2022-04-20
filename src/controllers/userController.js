@@ -11,11 +11,14 @@ const { validationResult } = require("express-validator");
 const bcryptjs = require("bcryptjs");
 
 const controller = {
+
+  //Index de usuarios
  index: (req, res) => {
     res.render("/", { users });
   },
 
   register: (req, res) => {
+    res.cookies()
     return res.render("users/register");
   },
 
@@ -140,7 +143,6 @@ const controller = {
   //Logout
   logout: (req,res) => {
     req.session.destroy();
-    console.log(req.session)
     return res.redirect('/');
   }
 

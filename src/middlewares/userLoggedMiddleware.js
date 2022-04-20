@@ -1,6 +1,10 @@
 function userLoggedMiddleware (req,res,next) {
-    console.log('pase por el user logged');
-    res.locals.isLogged = true;
+    res.locals.isLogged = false;
+
+    if (req.session.userLogged) {
+        req.session.isLogged = true
+        res.locals.userLogged = req.session.userLogged;
+    } 
     
     next();
 }
