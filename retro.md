@@ -32,5 +32,31 @@ como un equipo funcional.
 
 Seguimos teniendo muchisimos problemas para reunirnos todos, especialmente para este sprint, lo que si queda claro con el paso del tiempo que nos vamos conociendo ya se ve las habilididades y roles de cada uno, estamos de acuerdo en que tenemos que estar mas a disposicion y mostrarse disponible al grupo para poder avazar eficientemente, y tambien estamos de acuerdo en dejar de dejar cierta tarea a ultimo momento porque esa tarea puede ser muy necesaria para que el resto del equipo  pueda avanzar con sus tareas .
 
+.RETROSPECTIVA GRUPAL 5
+
+START DOING:
+
+Ser constante con el tema de la comunicacion. Mejorar el compromiso con el proyecto de parte de todos.
+
+MORE OF:
+
+Recalcar de nuevo que la comunicacion es lo mas importante en un equipo sobre todas las cosas. Ya que asi nos podemos organizar mucho mejor.
+Y el compromiso no hay mucho que decir sino mas que nada dedicarle mas tiempo al proyecto que tanto le dedicamos.
+
+Keep Doing :
+
+Empezar a trabajar mas en equipo, digamos empezar a hacer pair programming, codear entre dos ayudarnos en los problemas.
+
+Less of:
+
+Estar mas comprometido con el proyecto, empezar a trabajar mas en equipo y mucha mas comunicacion.
+
+STOP DOING:
+
+Empezar a trabajar mas en equipo como recalcamos en otras ocasiones. No solo codear en solitario sino ser mas compañero entre nosotros mismos. Y dejar de no comunicar nada cuando hacemos un merge.
+
+
+
+
 
 
