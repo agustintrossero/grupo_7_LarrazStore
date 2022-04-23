@@ -41,11 +41,11 @@ CREATE OR REPLACE TABLE productos(
     description TEXT not null,
     image longblob NOT NULL,
     id_check int not null,
-    primary key(id)
-    key check_id_foreign (id_check),
-    constraint check_id_foreign foreign key(id_check)references sp_check(id)
- 
+    primary key(id),
+    key check_id_sp_check_foreign (id_check),
+    constraint check_id_sp_check_foreign foreign key(id_check)references sp_check (id)
 );
+
 
 
 CREATE OR REPLACE TABLE sp_check(
@@ -53,15 +53,14 @@ CREATE OR REPLACE TABLE sp_check(
     producto TINYINT DEFAULT null,
     servicio TINYINT DEFAULT null,
     id_categoria int not null,
-    primary key(id)
+    primary key(id),
     key id_categoria_foreign(id_categoria),
     constraint id_categoria_foreign foreign key (id_categoria) references categoria(id)
 );
+
 
 CREATE OR REPLACE TABLE categoria(
     id INT NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(30),
     PRIMARY KEY (id)
 );
-
-
