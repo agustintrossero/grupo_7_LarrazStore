@@ -20,5 +20,16 @@
   "passwordConfirm": "$2a$10$jCbmrKdvECvmpghLkSYHHON2EeUVmWyCV5HonErj9Z0JeGmX7um.y",
   "legal-buy": "on",
   "avatar": "avatar1650391369771.png"
+ },
+ {
+  "id": 1648848712187,
+  "username": "larrazapple",
+  "name": "Juan",
+  "surname": "Larraz",
+  "email": "juanilarraz_14@hotmail.com",
+  "password": "$2a$10$6Pq5AQjW.xcTpVCPtA7W9O7.33KYLsvhMdYuIxvsTW/Imf3dzQ8Yy",
+  "passwordConfirm": "$2a$10$pXfsp2FpXgdl77rgfkaCOeGgKlYqg7bmWOEaEacGtyOU74EOvk2DK",
+  "legal-buy": "on",
+  "avatar": "avatar1650822089586.png"
  }
 ]

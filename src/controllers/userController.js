@@ -18,7 +18,7 @@ const controller = {
   },
 
   register: (req, res) => {
-    res.cookies()
+    //res.cookies()//Falata terminar de armar
     return res.render("users/register");
   },
 
