@@ -37,7 +37,7 @@ const userRouter = require ('./routes/userRouter')
 
 app.use("/", mainRouter);
 app.use("/products/", productsRouter)
-app.use('/users/' , userRouter)
+app.use('/users' , userRouter)
 
 app.listen (5000, () => {
     console.log("Larraz Store en funcionamiento!")

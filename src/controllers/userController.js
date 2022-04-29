@@ -14,7 +14,7 @@ const controller = {
 
   //Index de usuarios
  index: (req, res) => {
-    res.render("/", { users });
+    res.render("users/index", { users });
   },
 
   register: (req, res) => {
@@ -112,7 +112,7 @@ const controller = {
         let id = users[i].id;
         users[i] = { id, username, name, surname, email, password };
         if (req.file !== undefined) {
-          users[i].avatar = "/images/avatars/" + req.file.filename;
+          users[i].avatar = "images/avatars/" + req.file.filename;
         } else {
           users[i].avatar = userAvatar;
         }
