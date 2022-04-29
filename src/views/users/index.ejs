@@ -7,7 +7,7 @@
         <% for (let i = 0 ; i < users.length ; i++ ){%>
             <div class="users-list-cont">
                 <div class="list-avatar-cont">
-                    <a href="/users/<%=users[i].id%>"><img src="<%=users[i].avatar%>" alt="<%=users[i].name%>" class="index-img"></a>
+                    <a href="/users/edit/<%=users[i].id%>"><img src="/images/avatars/<%=users[i].avatar%>" alt="<%=users[i].name%>" class="index-img"></a>
                 </div>
                 <div class="list-txt-cont">
                     <h5>Usuario:</h5>

@@ -54,7 +54,7 @@ const validations = [
 ]
 
 //Index de usuarios
-router.get("/users", userController.index);
+router.get("/", userController.index);
 
 //Formulario de Registro
 router.get('/register', guestMiddleware, userController.register);
