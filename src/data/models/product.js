@@ -2,7 +2,7 @@ module.exports = (sequelize, dataTypes) => {
   let alias = "productos";
   let cols = {
     id: {
-        type: dataTypes.INT(11),
+        type: dataTypes.INTEGER,
         primaryKey: true,
         allowNull: false,
         autoIncrement: true,
@@ -18,14 +18,24 @@ module.exports = (sequelize, dataTypes) => {
         type : dataTypes.TEXT,
         allowNull: false
     },
-/*  image: {
-
+  image: {
+    type: dataTypes.STRING(255),
+    allowNull: false,
     },
-*/  
-    
-    
-    
-
+};
+  let config = {
+      tableName: "productos",
+      timestamps: false,
   };
-  let config = {};
+  const Product = sequelize.define(alias, cols, config)
+  Product.associate = (model) => {
+    Product.belongsToMany(model.User, {
+       as: 'usuarios',
+        through: 'usuarios_producto',
+        foreignKey: 'id_productos',
+        otherKey: 'id_usuario',
+        timestamps: false
+    })
+}
+  return Product
 };

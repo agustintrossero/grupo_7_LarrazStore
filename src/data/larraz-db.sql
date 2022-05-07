@@ -20,7 +20,7 @@ CREATE OR REPLACE TABLE usuarios(
     password VARCHAR(60) ,
     passwordConfirm VARCHAR(60),
     legal_buy TINYINT DEFAULT 1,
-    avatar longblob NOT NULL,
+    avatar VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 );
 
@@ -50,7 +50,7 @@ CREATE OR REPLACE TABLE productos(
     nombre VARCHAR(30) not null,
     precio decimal(10,2) DEFAULT NULL,
     description TEXT not null,
-    image longblob NOT NULL,
+    image VARCHAR(255) NOT NULL,
     id_check int not null,
     primary key(id),
     key check_id_sp_check_foreign (id_check),
