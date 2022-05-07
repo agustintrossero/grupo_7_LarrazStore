@@ -1,7 +1,90 @@
 const fs = require ("fs")
-const path = require("path")
+const path = require("path");
+const { defaultValueSchemable } = require("sequelize/types/utils");
 const productsFilePath = path.join(__dirname, '../data/products.JSON');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+//Sequelize
+let db = require('../data/models');
+
+const productsController = {
+    //Agregar producto.
+    agregar: function (req, res) {
+        db.productos.findAll()
+            .then(function (productos) {
+                return res.render("agregar", {productos : productos})
+            })
+    },
+
+    //Guardado del producto creado.
+    guardado: function (req, res) {
+        db.productos.create({
+            nombre: req.body.nombre,
+            precio: req.body.precio,
+            descripcion:req.body.descripcion,
+            image: req.body.image
+        });
+
+        res.redirect("/productos");
+    },
+
+    //Listado de productos.
+    listado: function (req, res) {
+        db.productos.findAll()
+            .then(function() {
+                res.render("products", {productos : productos});
+            })
+    },
+
+    //Detalle producto.
+    detalle: function (req, res) {
+        db.productos.findByPk(req.params.id, {
+            include: [{association : "usuarios"}]
+        })
+            .then(function(producto) {
+                res.render("detalle", {producto : producto})
+            })
+    },
+
+    //Actualizar producto.
+    editar: function (req, res) {
+        db.productos.findAll()
+            .then(function (productos) {
+                return res.render("modificar", {productos : productos})
+            })
+    },
+
+    actualizar: function (req, res) {
+        db.productos.update({
+            nombre: req.body.nombre,
+            precio: req.body.precio,
+            descripcion:req.body.descripcion,
+            image: req.body.image
+        }, {
+            where: {
+                id: req.params.id
+            }
+        });
+
+        res.redirect("/productos/" + req.params.id);
+
+    },
+    
+    //Eliminar producto.
+    eliminar: function(req, res) {
+        db.productos.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+
+        res.redirect("/productos")
+    }
+}
+
+
+/*
+---ESTO ES PARTE DEL CRUD VIEJO CUANDO USABAMOS EL JSON---
 
 const productsController = {
 
@@ -77,7 +160,8 @@ const productsController = {
     },
 
 }
+*/
 
-module.exports = productsController
+module.exports = productsController;
 
 
