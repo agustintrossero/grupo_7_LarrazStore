@@ -1,6 +1,6 @@
 const fs = require ("fs")
 const path = require("path");
-const { defaultValueSchemable } = require("sequelize/types/utils");
+//const { defaultValueSchemable } = require("sequelize/types/utils");
 const productsFilePath = path.join(__dirname, '../data/products.JSON');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -12,27 +12,30 @@ const productsController = {
     agregar: function (req, res) {
         db.productos.findAll()
             .then(function (productos) {
-                return res.render("agregar", {productos : productos})
+                res.render("products/agregar", {productos})
             })
     },
 
     //Guardado del producto creado.
     guardado: function (req, res) {
+        let arr = [req.body.nombre,req.body.precio,req.body.description,req.body.image]
+        console.log(arr)
+        console.log(req.file)
         db.productos.create({
             nombre: req.body.nombre,
             precio: req.body.precio,
-            descripcion:req.body.descripcion,
-            image: req.body.image
+            description: req.body.description,
+            image: "/public/images/" + req.file.filename
         });
 
-        res.redirect("/productos");
+        res.redirect("/products");
     },
 
     //Listado de productos.
     listado: function (req, res) {
         db.productos.findAll()
-            .then(function() {
-                res.render("products", {productos : productos});
+            .then((productos) => {
+                res.render("products/products", {productos});
             })
     },
 

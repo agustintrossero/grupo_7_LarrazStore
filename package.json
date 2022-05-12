@@ -4,7 +4,7 @@
   "description": "1) hacer repositorio (Agus) OK\r 2) detalle del ecommerce y tematica marcket place (JUAN) pendiente\r 3) busqueda de navegadores referentes en estilos y porque .. al menos 5 (Marc) OK\r 4) diseño (Agus) pendiente",
   "main": "./src/app.js",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "nodemon src/app.js",
     "dev": "nodemon src/app.js"
   },
   "repository": {

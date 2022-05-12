@@ -20,7 +20,7 @@ CREATE OR REPLACE TABLE usuarios(
     password VARCHAR(60) ,
     passwordConfirm VARCHAR(60),
     legal_buy TINYINT DEFAULT 1,
-    avatar VARCHAR(255) NOT0 NULL,
+    avatar VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 );
 

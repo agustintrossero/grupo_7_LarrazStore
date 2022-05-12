@@ -9,15 +9,15 @@ var storage = multer.diskStorage({
         cb(null, 'public/images')
     },
     filename: function(req,file,cb){
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))     
     }
 })
-var upload = multer({storage: storage})
+var upload = multer({storage})
 
 //Agregar producto
 router.get('/agregar', productsController.agregar);
 
-router.post('/crear', productsController.guardado);
+router.post('/agregar', upload.single('image'), productsController.guardado);
 
 //Productos
 router.get('/', productsController.listado);

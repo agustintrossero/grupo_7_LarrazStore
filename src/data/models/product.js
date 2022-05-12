@@ -14,7 +14,7 @@ module.exports = (sequelize, dataTypes) => {
     precio: {
         type: dataTypes.DECIMAL(10,2)
     },
-    descripcion: {
+    description: {
         type : dataTypes.TEXT,
         allowNull: false
     },

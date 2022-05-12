@@ -129,7 +129,7 @@ const controller = {
   delete: (req, res) => {
     let deletedUser = users.filter((el) => el.id != req.params.id);
     let newUsers = JSON.stringify(deletedUser);
-    fs.appendFileSync(userFilePath, newUsers);
+    fs.writeFileSync(userFilePath, newUsers);
     res.render("users/index", { users: deletedUser });
   },
 
