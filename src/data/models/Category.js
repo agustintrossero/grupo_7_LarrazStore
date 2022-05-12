@@ -16,13 +16,13 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     }
     const Category = sequelize.define(alias, cols, config)
-    
-    Category.associate = model => {
-        Category.belongsTo(model.sp_check, {
-            as: "spCheck",
-            through: "id_categoria"
+    Category.associate = (model) => {
+        Category.hasMany(model.productos, {
+            as:"productos",
+            foreignKey: "id_category"
         })
     }
+
 
     return Category
 }   

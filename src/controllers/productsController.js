@@ -25,7 +25,9 @@ const productsController = {
             nombre: req.body.nombre,
             precio: req.body.precio,
             description: req.body.description,
-            image: "/public/images/" + req.file.filename
+            image: "/public/images/" + req.file.filename,
+            id_check: 1,
+            id_category: 3
         });
 
         res.redirect("/products");
