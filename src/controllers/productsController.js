@@ -55,12 +55,13 @@ const productsController = {
 
     actualizar: function (req, res) {
         let productImage;
-        db.productos.findByPk(req.params.id)
+        let reqFile = req.file.filename
+        if (!reqFile) {
+            db.productos.findByPk(req.params.id)
             .then((product) => {
                 productImage = product.dataValues.image
             })
-        let reqFile = req.file.filename
-        if (reqFile) {
+        } else {
             productImage = "/public/images/" + req.file.filename
         }
         db.productos.update({
