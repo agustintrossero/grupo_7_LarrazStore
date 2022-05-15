@@ -17,19 +17,15 @@ const productsController = {
     },
 
     //Guardado del producto creado.
-    guardado: function (req, res) {
-        let arr = [req.body.nombre,req.body.precio,req.body.description,req.body.image]
-        console.log(arr)
-        console.log(req.file)
+    guardado: function (req, res) {   
         db.productos.create({
             nombre: req.body.nombre,
             precio: req.body.precio,
             description: req.body.description,
             image: "/public/images/" + req.file.filename,
-            id_check: 1,
-            id_category: 3
+            id_check: parseInt(req.body.productCheck),
+            id_category: parseInt(req.body.categoria)
         });
-
         res.redirect("/products");
     },
 
@@ -43,35 +39,44 @@ const productsController = {
 
     //Detalle producto.
     detalle: function (req, res) {
-        db.productos.findByPk(req.params.id, {
-            include: [{association : "usuarios"}]
-        })
-            .then(function(producto) {
-                res.render("detalle", {producto : producto})
+        db.productos.findByPk(req.params.id)
+            .then(function(productDetail) {
+                res.render("products/detalle", {productDetail})
             })
     },
 
     //Actualizar producto.
     editar: function (req, res) {
-        db.productos.findAll()
-            .then(function (productos) {
-                return res.render("modificar", {productos : productos})
+        db.productos.findByPk(req.params.id)
+            .then(function (productToEdit) {
+                res.render("products/modificar", {productToEdit})
             })
     },
 
     actualizar: function (req, res) {
+        let productImage;
+        db.productos.findByPk(req.params.id)
+            .then((product) => {
+                productImage = product.dataValues.image
+            })
+        let reqFile = req.file.filename
+        if (reqFile) {
+            productImage = "/public/images/" + req.file.filename
+        }
         db.productos.update({
             nombre: req.body.nombre,
             precio: req.body.precio,
-            descripcion:req.body.descripcion,
-            image: req.body.image
+            description: req.body.description,
+            image: productImage,
+            id_check: parseInt(req.body.productCheck),
+            id_category: parseInt(req.body.categoria)
         }, {
             where: {
                 id: req.params.id
             }
         });
 
-        res.redirect("/productos/" + req.params.id);
+        res.redirect("/products");
 
     },
     
@@ -83,7 +88,7 @@ const productsController = {
             }
         })
 
-        res.redirect("/productos")
+        res.redirect("/products")
     }
 }
 

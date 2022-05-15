@@ -22,28 +22,30 @@
             <div>
                 <h4 class="user-title">Seleccione una categoria para su producto</h4>
                 <div class="user-checkbox">
-                    <div><input type="checkbox" name="product-check" id="product-check" ></div>
+                    <div><input type="radio" name="productCheck" id="product-check" value="1"></div>
                     <div class="user-legal"><label for="product-check">Productos</label></div>
                 </div>
-                <select class= "select-txt-bar" name="Categoria" id="tipos-de-productos" >
-                    <option class= "select-txt" value="Componentes de PC">Componentes de PC</option>
-                    <option class= "select-txt" value="Perifericos">Perifericos</option>
-                    <option class= "select-txt" value="Celulares">Celulares</option>
-                    <option class= "select-txt" value="Impresoras">Impresoras</option>
-                    <option class= "select-txt" value="Articulos para el Hogar">Articulos para el Hogar</option>
-                    <option class= "select-txt" value="Computadoras de escritorio">Computadoras de escritorio</option>
-                    <option class= "select-txt" value="Notebooks y Tablets">Notebooks y Tablets</option>
+                <select class= "select-txt-bar" name="categoria" id="tipos-de-productos" >
+                    <option class= "select-txt" value="product" selected>Elija una opcion</option>
+                    <option class= "select-txt" value="1">Componentes de PC</option>
+                    <option class= "select-txt" value="2">Perifericos</option>
+                    <option class= "select-txt" value="3">Celulares</option>
+                    <option class= "select-txt" value="4">Impresoras</option>
+                    <option class= "select-txt" value="5">Articulos para el Hogar</option>
+                    <option class= "select-txt" value="6">Computadoras de escritorio</option>
+                    <option class= "select-txt" value="7">Notebooks y Tablets</option>
                   </select><br>
                   <div class="user-checkbox">
-                    <div><input type="checkbox" name="service-check" id="service-check" ></div>
+                    <div><input type="radio" name="productCheck" value="2" id="service-check"></div>
                     <div class="user-legal"><label for="service-check">Servicio Tecnico</label></div>
                 </div>
                 <select class= "select-txt-bar" name="Categoria" id="tipos-de-servicios">
-                    <option class= "select-txt" value="Notebooks">Notebooks</option>
-                    <option class= "select-txt" value="Celulares">Celulares</option>
-                    <option class= "select-txt" value="Computadoras de escritorio">Computadoras de escritorio</option>
-                    <option class= "select-txt" value="Impresoras">Impresoras</option>
-                    <option class= "select-txt" value="Televisores">Televisores</option>
+                    <option class= "select-txt" value="service" selected>Elija una opcion</option>
+                    <option class= "select-txt" value="8">Notebooks</option>
+                    <option class= "select-txt" value="9">Celulares</option>
+                    <option class= "select-txt" value="10">Computadoras de escritorio</option>
+                    <option class= "select-txt" value="11">Impresoras</option>
+                    <option class= "select-txt" value="12">Televisores</option>
                 </select>
             </div>
             <div class="add-img">
@@ -96,6 +98,6 @@
         <%- include ("../partials/footer")%>
     </footer>
 
-    
+
 </body>
 </html>

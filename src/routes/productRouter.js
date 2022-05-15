@@ -23,15 +23,15 @@ router.post('/agregar', upload.single('image'), productsController.guardado);
 router.get('/', productsController.listado);
 
 //Detalle
-router.get('/:id', productsController.detalle);
+router.get('/detail/:id', productsController.detalle);
 
 //Actualizacion de producto
-router.get('/editar/:id', productsController.editar);
+router.get('/modificar/:id', productsController.editar);
 
 router.patch('/editar/:id', productsController.actualizar);
 
 //Eliminar producto
-router.delete('/eliminar/:id', productsController.eliminar)
+router.delete('/detail/:id', productsController.eliminar)
 
 /*
 router.get("/", productsController.products)
