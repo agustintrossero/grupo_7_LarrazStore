@@ -1,6 +1,6 @@
 const fs = require ("fs")
 const path = require("path");
-const { defaultValueSchemable } = require("sequelize/types/utils");
+//const { defaultValueSchemable } = require("sequelize/types/utils");
 const productsFilePath = path.join(__dirname, '../data/products.JSON');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -12,61 +12,73 @@ const productsController = {
     agregar: function (req, res) {
         db.productos.findAll()
             .then(function (productos) {
-                return res.render("agregar", {productos : productos})
+                res.render("products/agregar", {productos})
             })
     },
 
     //Guardado del producto creado.
-    guardado: function (req, res) {
+    guardado: function (req, res) {   
         db.productos.create({
             nombre: req.body.nombre,
             precio: req.body.precio,
-            descripcion:req.body.descripcion,
-            image: req.body.image
+            description: req.body.description,
+            image: "/images/" + req.file.filename,
+            id_check: parseInt(req.body.productCheck),
+            id_category: parseInt(req.body.categoria)
         });
-
-        res.redirect("/productos");
+        res.redirect("/products");
     },
 
     //Listado de productos.
     listado: function (req, res) {
         db.productos.findAll()
-            .then(function() {
-                res.render("products", {productos : productos});
+            .then((productos) => {
+                res.render("products/products", {productos});
             })
     },
 
     //Detalle producto.
     detalle: function (req, res) {
-        db.productos.findByPk(req.params.id, {
-            include: [{association : "usuarios"}]
-        })
-            .then(function(producto) {
-                res.render("detalle", {producto : producto})
+        db.productos.findByPk(req.params.id)
+            .then(function(productDetail) {
+                res.render("products/detalle", {productDetail})
             })
     },
 
     //Actualizar producto.
     editar: function (req, res) {
-        db.productos.findAll()
-            .then(function (productos) {
-                return res.render("modificar", {productos : productos})
+        db.productos.findByPk(req.params.id)
+            .then(function (productToEdit) {
+                res.render("products/modificar", {productToEdit})
             })
     },
 
     actualizar: function (req, res) {
+        let productImage;
+        let reqFile = req.file
+        if (!reqFile) {
+            db.productos.findByPk(req.params.id)
+            .then((product) => {
+                productImage = product.dataValues.image
+            })
+        } else {
+            productImage = "/images/" + req.file.filename
+        }
+        console.table(reqFile)
         db.productos.update({
             nombre: req.body.nombre,
             precio: req.body.precio,
-            descripcion:req.body.descripcion,
-            image: req.body.image
+            description: req.body.description,
+            image: productImage,
+            id_check: parseInt(req.body.productCheck),
+            id_category: parseInt(req.body.categoria)
         }, {
             where: {
                 id: req.params.id
             }
         });
 
-        res.redirect("/productos/" + req.params.id);
+        res.redirect("/products");
 
     },
     
@@ -78,7 +90,7 @@ const productsController = {
             }
         })
 
-        res.redirect("/productos")
+        res.redirect("/products")
     }
 }
 
