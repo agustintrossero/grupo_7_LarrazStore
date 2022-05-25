@@ -4,7 +4,7 @@
 
     <main>
         <% for ( i = 0; i < productToEdit.length; i++) { %> <% } %> 
-        <form action="/products/<%= `${productToEdit.id}` %>/guardar?_method=PUT" method="POST">
+        <form action="/products/<%= productToEdit.id %>/guardar?_method=PUT" method="POST" enctype="multipart/form-data">
             <div class="user-container">
             <h2 class="user-title">Modificando el producto: <i><%= productToEdit.nombre %></i></h2>
             <div class="input-user">

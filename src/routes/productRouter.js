@@ -28,7 +28,7 @@ router.get('/detail/:id', productsController.detalle);
 //Actualizacion de producto
 router.get('/modificar/:id', productsController.editar);
 
-router.patch('/editar/:id', productsController.actualizar);
+router.put('/:id/guardar', upload.single('image') ,productsController.actualizar);
 
 //Eliminar producto
 router.delete('/detail/:id', productsController.eliminar)

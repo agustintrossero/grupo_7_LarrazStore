@@ -22,7 +22,7 @@ const productsController = {
             nombre: req.body.nombre,
             precio: req.body.precio,
             description: req.body.description,
-            image: "/public/images/" + req.file.filename,
+            image: "/images/" + req.file.filename,
             id_check: parseInt(req.body.productCheck),
             id_category: parseInt(req.body.categoria)
         });
@@ -55,15 +55,16 @@ const productsController = {
 
     actualizar: function (req, res) {
         let productImage;
-        let reqFile = req.file.filename
+        let reqFile = req.file
         if (!reqFile) {
             db.productos.findByPk(req.params.id)
             .then((product) => {
                 productImage = product.dataValues.image
             })
         } else {
-            productImage = "/public/images/" + req.file.filename
+            productImage = "/images/" + req.file.filename
         }
+        console.table(reqFile)
         db.productos.update({
             nombre: req.body.nombre,
             precio: req.body.precio,
