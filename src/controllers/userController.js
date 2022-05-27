@@ -6,16 +6,19 @@ const userFilePath = path.join(__dirname, "../data/users.JSON");
 const users = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
 
 //Modulos requeridos para el proceso de register y de login.
-const User = require("../../models/User");
+const User = require("../data/models");
 const { validationResult } = require("express-validator");
 const bcryptjs = require("bcryptjs");
 
 const controller = {
 
   //Index de usuarios
- index: (req, res) => {
-    res.render("users/index", { users });
-  },
+  index: (req, res) => {
+    User.usuarios.findAll()
+      .then(function(usuarios){
+        res.render("users/index", { users: usuarios })
+      })
+   },
 
   register: (req, res) => {
     //res.cookies()//Falata terminar de armar
