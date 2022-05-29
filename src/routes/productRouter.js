@@ -33,18 +33,4 @@ router.put('/:id/guardar', upload.single('image') ,productsController.actualizar
 //Eliminar producto
 router.delete('/detail/:id', productsController.eliminar)
 
-/*
-router.get("/", productsController.products)
-router.get("/cart", productsController.cart)
-router.get('/detail/:id', productsController.detail)
-
-router.get("/agregar", productsController.agregar)
-router.post('/',upload.single("image"), productsController.store);
-
-router.get("/modificar/:id", productsController.modificar)
-router.put("/:id/guardar", productsController.guardar);
-
-router.delete("/detail/:id", productsController.eliminar)
-*/
-
 module.exports = router;

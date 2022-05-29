@@ -9,24 +9,23 @@ const users = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
 const User = require("../data/models");
 const { validationResult } = require("express-validator");
 const bcryptjs = require("bcryptjs");
+const db = require("../data/models");
 
 const controller = {
-
-  //Index de usuarios
-  index: (req, res) => {
-    User.usuarios.findAll()
-      .then(function(usuarios){
-        res.render("users/index", { users: usuarios })
-      })
-   },
-
-  register: (req, res) => {
-    //res.cookies()//Falata terminar de armar
-    return res.render("users/register");
+  //Index de usuarios -- OK
+  index: function (req, res) {
+    db.usuarios.findAll().then((usuarios) => {
+      res.render("users/index", { usuarios });
+    });
+  },
+  
+  register: function (req, res) {
+    db.usuarios.findAll().then(function (usuarios) {
+      res.render("users/register", { usuarios });
+    });
   },
 
-  //Proceso de validacion del register - Express Validator.
-  processRegister: (req, res) => {
+  /*processRegister: (req, res) => {
     const resultValidation = validationResult(req);
 
     if (resultValidation.errors.length > 0) {
@@ -35,41 +34,66 @@ const controller = {
         oldData: req.body,
       });
     }
+    */
+  //Proceso de validacion del register - Express Validator.
+  processRegister: function (req, res) {
+    const resultValidation = validationResult(req);
 
-    let userInDb = User.findByField("email", req.body.email);
+    
 
-    //Sirve para que no se puedan registrar dos usuarios con el mismo email.
-    if (userInDb) {
-      return res.render("users/register", {
-        errors: {
-          email: {
-            msg: "Este email ya se encuentra registrado",
+      db.usuarios.create({
+        name: req.body.name,
+      let allUsers;      
+      let userInDb;
+      
+      db.usuarios.findAll()
+      .then(users =   allUsers = users
+      })
+
+      let funcionalidadUser = {
+        //Devuelve el primer usuario encontrado por el campom que queremos.
+        findByField: function(field,text) {
+        let userFound = allUsers.find(oneUser => oneUser[field] === text);
+        return userFound;
+        }
+       }
+
+       let userInDb = funcionalidadUser.findByField("email", req.body.email);
+
+       if (userInDb) {
+        return res.render("users/register", {
+          errors: {
+            email: {
+              msg: "Este email ya se encuentra registrado",
+            },
           },
-        },
+          oldData: req.body,
+        });
+      } else {
+        let encryptedPass = bcryptjs.hashSync(req.body.password, 10)
+        let confirmPass = bcrypt.hashSync(req.body.confirmPassword, 10) //hay que borrar passwordconfirm de la base de datos
+
+        db.usuarios.create({
+          name: req.body.name,
+          surname: req.body.surname,
+          email: req.body.email,
+          password: encryptedPass,
+          passwordConfirm: confirmPass,
+          legal_buy: parseInt(req.body.legal_buy),
+          avatar: "/images/" + req.file.filename,
+         })
+         return res.render("users/login");
+      }      let userFound = allUsers.find((oneUser) => oneUser[field] === text);
+        return userFound;
+      return res.render("users/register", {
+        errors: resultValidation.mapped(),
+      return res.render("users/register", {
+        errors: resultValidation.mapped(),
         oldData: req.body,
       });
-    }
-
-    //Sirve para agregar la propiedad "avatar" en nuestro JSON, y tambien, para encriptar el password.
-    let userToCreate = {
-      ...req.body,
-      password: bcryptjs.hashSync(req.body.password, 10),
-      passwordConfirm: bcryptjs.hashSync(req.body.passwordConfirm, 10),
-      avatar: req.file.filename,
     };
 
-    let userCreated = User.create(userToCreate);
-
-    return res.render("users/login");
-  },
-
-  login: (req, res) => {
-    res.render("users/login");
-  },
-
-  //Proceso de validacion del Login.
-  loginProcess: (req, res) => {
-    let userToLogin = User.findByField("email", req.body.email);
+    let userToLogin = funcionalidadUser.findByField("email", req.body.email);
 
     if (userToLogin) {
       let isOkThePassword = bcryptjs.compareSync(
@@ -82,7 +106,7 @@ const controller = {
         delete userToLogin.passwordConfirm;
         req.session.userLogged = userToLogin;
 
-        return res.redirect('/users/profile');
+        return res.redirect("/users/profile");
       }
 
       return res.render("users/login", {
@@ -107,6 +131,7 @@ const controller = {
     let user = users.find((el) => el.id == req.params.id);
     res.render("users/edit", { user });
   },
+  
   edit: (req, res) => {
     for (let i = 0; i < users.length; i++) {
       if (users[i].id == req.params.id) {
@@ -138,17 +163,16 @@ const controller = {
 
   //Perfil del usuario.
   profile: (req, res) => {
-    return res.render('users/profile', {
-        user: req.session.userLogged
+    return res.render("users/profile", {
+      user: req.session.userLogged,
     });
   },
 
   //Logout
-  logout: (req,res) => {
+  logout: (req, res) => {
     req.session.destroy();
-    return res.redirect('/');
-  }
-
+    return res.redirect("/");
+  },
 };
 
 module.exports = controller;
