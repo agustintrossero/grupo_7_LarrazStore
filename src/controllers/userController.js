@@ -2,8 +2,8 @@ const res = require("express/lib/response");
 const fs = require("fs");
 const path = require("path");
 
-const userFilePath = path.join(__dirname, "../data/users.JSON");
-const users = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
+//const userFilePath = path.join(__dirname, "../data/users.JSON");
+//const users = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
 
 //Modulos requeridos para el proceso de register y de login.
 const User = require("../data/models");
@@ -14,8 +14,10 @@ const db = require("../data/models");
 const controller = {
   //Index de usuarios -- OK
   index: function (req, res) {
-    db.usuarios.findAll().then((usuarios) => {
-      res.render("users/index", { usuarios });
+    db.usuarios.findAll()
+      .then((users) => {
+      console.log(users)
+      res.render("users/index", { users });
     });
   },
   
@@ -36,31 +38,18 @@ const controller = {
     }
     */
   //Proceso de validacion del register - Express Validator.
-  processRegister: function (req, res) {
-    const resultValidation = validationResult(req);
-
-    
-
-      db.usuarios.create({
-        name: req.body.name,
-      let allUsers;      
-      let userInDb;
-      
+  processRegister: function (req, res) { //Hay que agregar username y borrar confirmpassword de la base de datos
+    var errorsForm = validationResult(req);  
+      var registerUserDb;
+      console.log(errorsForm)
       db.usuarios.findAll()
-      .then(users =   allUsers = users
+      .then(users => {
+        registerUserDb = users.find(user => user.email == req.body.email)
       })
+      
 
-      let funcionalidadUser = {
-        //Devuelve el primer usuario encontrado por el campom que queremos.
-        findByField: function(field,text) {
-        let userFound = allUsers.find(oneUser => oneUser[field] === text);
-        return userFound;
-        }
-       }
-
-       let userInDb = funcionalidadUser.findByField("email", req.body.email);
-
-       if (userInDb) {
+       if (registerUserDb) {
+        console.log("encontro errores con el email")
         return res.render("users/register", {
           errors: {
             email: {
@@ -68,31 +57,42 @@ const controller = {
             },
           },
           oldData: req.body,
-        });
+        }); 
       } else {
-        let encryptedPass = bcryptjs.hashSync(req.body.password, 10)
-        let confirmPass = bcrypt.hashSync(req.body.confirmPassword, 10) //hay que borrar passwordconfirm de la base de datos
+        if(errorsForm.isEmpty()) {
+          let encryptedPass = bcryptjs.hashSync(req.body.password, 10)
+          let confirmPass = bcryptjs.hashSync(req.body.confirmPassword, 10) //hay que borrar passwordconfirm de la base de datos
+  
+          db.usuarios.create({
+            name: req.body.name,
+            surname: req.body.surname,
+            email: req.body.email,
+            password: encryptedPass,
+            passwordConfirm: confirmPass,
+            legal_buy: parseInt(req.body.legal_buy),
+            avatar: "/images/" + req.file.filename,
+           })
+           console.log("se creo el usuario")
+           return res.redirect('/');
+           
+        } else {
+          req.file = ""
+          console.log("encontro errores")
+          return res.render("users/register", {
+            errors: errorsForm.array(),
+            oldData: req.body,
+          });
+          
+        }
+      }      
+    },
 
-        db.usuarios.create({
-          name: req.body.name,
-          surname: req.body.surname,
-          email: req.body.email,
-          password: encryptedPass,
-          passwordConfirm: confirmPass,
-          legal_buy: parseInt(req.body.legal_buy),
-          avatar: "/images/" + req.file.filename,
-         })
-         return res.render("users/login");
-      }      let userFound = allUsers.find((oneUser) => oneUser[field] === text);
-        return userFound;
-      return res.render("users/register", {
-        errors: resultValidation.mapped(),
-      return res.render("users/register", {
-        errors: resultValidation.mapped(),
-        oldData: req.body,
-      });
-    };
+    login: function(req, res) {
 
+    },
+
+
+    loginProcess: (req,res) => {
     let userToLogin = funcionalidadUser.findByField("email", req.body.email);
 
     if (userToLogin) {
