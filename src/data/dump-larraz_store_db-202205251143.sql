@@ -113,7 +113,6 @@ CREATE TABLE `usuarios` (
   `surname` varchar(30) DEFAULT NULL,
   `email` varchar(30) DEFAULT NULL,
   `password` varchar(60) DEFAULT NULL,
-  `passwordConfirm` varchar(60) DEFAULT NULL,
   `legal_buy` tinyint(4) DEFAULT 1,
   `avatar` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
@@ -126,7 +125,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Marc','Marcos','Villanueva','marcvillanueva@gmail.com',NULL,NULL,1,''),(2,'Juanito','Juan','Larraz','juanlarraz@gmail.com',NULL,NULL,1,''),(3,'Nacho','Ignacio','Maldonado','ignaciomaldonado@gmail.com',NULL,NULL,1,''),(4,'Agus','Agustin','Trossero','agustintrossero@gmail.com',NULL,NULL,1,'');
+INSERT INTO `usuarios` VALUES (1,'Marc','Marcos','Villanueva','marcvillanueva@gmail.com',NULL,1,''),(2,'Juanito','Juan','Larraz','juanlarraz@gmail.com',NULL,1,''),(3,'Nacho','Ignacio','Maldonado','ignaciomaldonado@gmail.com',NULL,1,''),(4,'Agus','Agustin','Trossero','agustintrossero@gmail.com',NULL,1,'');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 

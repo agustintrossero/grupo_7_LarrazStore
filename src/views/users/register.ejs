@@ -92,6 +92,7 @@
                    </div>
                <% } %>
             </div>
+            <!--
             <div class="input-user">
                 <div><label for="passwordConfirm" class="user-text">Confirmar contraseña</label></div>
                 <div class="bar">
@@ -101,14 +102,15 @@
                     minlength="8" 
                     placeholder="********" 
                     name="passwordConfirm" 
-                    class="form-control <%= locals.errors && errors.passwordConfirm ? 'is-invalid' : null %>">
+                    class="form-control <%=// locals.errors && errors.passwordConfirm ? 'is-invalid' : null %>">
                 </div>
-                <% if (locals.errors && errors.passwordConfirm) { %>
+                <%// if (locals.errors && errors.passwordConfirm) { %>
                     <div class="text-danger">
-                       <%= errors.passwordConfirm.msg %> 
+                       <%=// errors.passwordConfirm.msg %> 
                    </div>
-               <% } %>
+               <%// } %>
             </div>
+            -->
             <div class="input-user">
                 <div>
                     <label for="avatar" id="avatar">Inserta una imagen</label>
