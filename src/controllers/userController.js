@@ -49,7 +49,7 @@ const controller = {
       
 
        if (registerUserDb) {
-        console.log("encontro errores con el email")
+        console.log("encontro errores en el email")
         return res.render("users/register", {
           errors: {
             email: {
