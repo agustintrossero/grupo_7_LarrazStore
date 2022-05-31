@@ -10,6 +10,7 @@ const User = require("../data/models");
 const { validationResult } = require("express-validator");
 const bcryptjs = require("bcryptjs");
 const db = require("../data/models");
+const { devNull } = require("os");
 
 const controller = {
   //Index de usuarios -- OK
@@ -128,37 +129,43 @@ const controller = {
   },
 
   editView: (req, res) => {
-    let user = users.find((el) => el.id == req.params.id);
-    res.render("users/edit", { user });
+    db.usuarios.findByPk(req.params.id)
+    .then(users => {
+      res.render("users/edit", {"user" : users});
+    })
+    
   },
   
   edit: (req, res) => {
-    for (let i = 0; i < users.length; i++) {
-      if (users[i].id == req.params.id) {
-        let userAvatar = users[i].avatar;
-        let { username, name, surname, email, password } = req.body;
-        let id = users[i].id;
-        users[i] = { id, username, name, surname, email, password };
-        if (req.file !== undefined) {
-          users[i].avatar = "images/avatars/" + req.file.filename;
-        } else {
-          users[i].avatar = userAvatar;
-        }
+    //falta agregar poder editar tambien la foto con el avatar = req.file.filename;
+    db.usuarios.update({
+      name: req.body.name,
+      surname: req.body.surname,
+      email: req.body.email,
+      password: req.body.password,
+      passwordConfirm: req.body.passwordConfirm,
+      legal_buy: parseInt(req.body.legal_buy),
+    }, {
+      where : {
+        id : req.params.id
       }
-    }
-    let editedUser = JSON.stringify(users);
-    fs.writeFileSync(userFilePath, editedUser);
-    res.render("users/index", { users });
+    })
+    res.redirect("/users");
   },
   deleteView: (req, res) => {
-    let user = users.find((el) => el.id == req.params.id);
-    res.render("users/delete", { user });
+    db.usuarios.findByPk(req.params.id)
+    .then(users => {
+      res.render("users/delete", { "user" : users })
+    })
   },
   delete: (req, res) => {
-    let deletedUser = users.filter((el) => el.id != req.params.id);
-    let newUsers = JSON.stringify(deletedUser);
-    fs.writeFileSync(userFilePath, newUsers);
-    res.render("users/index", { users: deletedUser });
+    db.usuarios.destroy({
+      where: {
+        id : req.params.id
+      }
+    })
+
+    res.redirect("/users");
   },
 
   //Perfil del usuario.
