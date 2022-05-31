@@ -1177,3 +1177,8 @@ text-align: center}
   }
 }
 
+/* estilos para el div de errores en la validacion front-end */
+
+div.errores{
+    color: red;
+}

@@ -4,6 +4,11 @@
 
 <main>
         <form action="/users/register" method="POST" class="user-form" enctype="multipart/form-data">
+            <div class="errores">
+                <ul>
+
+                </ul>
+            </div>
             <div class="user-container">
             <h2 class="user-title">Registra tu Cuenta</h2>
             <h6 class="user-subtitle">Ingresa tus datos para crear tu cuenta</h6>
@@ -150,6 +155,7 @@
     </main>
     <%- include ("../partials/footer2")%>
 
-    
+    <script src="/validaciones/js-front-register"></script>
+
 </body>
 </html>
