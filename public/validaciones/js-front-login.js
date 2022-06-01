@@ -22,24 +22,20 @@ window.addEventListener('load', (e) =>{
                 errorDivEmail.innerHTML = ''
             }
         } else {
-            errorDivEmail.innerHTML = '<p>Esto esta hecho para el orto</p>'   
+            errorDivEmail.innerHTML = '<p>Debes escribir un formato de email válido.</p>'
                 errorDivEmail.classList.add('text-danger')
         }
     })
 
     password.addEventListener('keyup', (e) =>{
         if (expresiones.password.test(password.value)) {
-            errorDivPassword.innerHTML = '<p>tuki</p>'
             if (errorDivPassword.classList.contains('text-danger')) {
                 errorDivPassword.classList.remove('text-danger')
-                errorDivPassword.classList.add('text-success')
+                errorDivPassword.innerHTML = ''
             }
         } else {
-            errorDivPassword.innerHTML = '<p>Esto esta hecho para el orto</p>'
-            if (errorDivPassword.classList.contains('text-success')) {
-                errorDivPassword.classList.remove('text-success')
+            errorDivPassword.innerHTML = '<p>La contraseña debe incluir letras mayúsculas, minúsculas, como mínimo un número y un cáracter especial.</p>'
                 errorDivPassword.classList.add('text-danger')
-            }
         }
     })
 
