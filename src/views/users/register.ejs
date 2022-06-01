@@ -10,7 +10,7 @@
     </div>
         <form action="/users/register" method="POST" class="user-form" enctype="multipart/form-data" id="register">
 
-           
+
             <div class="user-container">
             <h2 class="user-title">Registra tu Cuenta</h2>
             <h6 class="user-subtitle">Ingresa tus datos para crear tu cuenta</h6>
@@ -83,7 +83,9 @@
                     value="<%= locals.oldData ? oldData.email : null %>">
                 </div>
 
+
                 <div class="text-danger" id="front-register-email">
+
                 </div>
                 <% if (locals.errors && errors.email) { %>
                     <div class="text-danger">
@@ -102,7 +104,9 @@
                     name="password"
                     class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>">
                 </div>
+
                 <div class="text-danger" id="front-register-password">
+
                 </div>
                 <% if (locals.errors && errors.password) { %>
                     <div class="text-danger">

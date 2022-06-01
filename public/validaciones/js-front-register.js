@@ -1,3 +1,4 @@
+
 const expresiones = {
 	username: /^[a-zA-Z0-9\_\-]{2,16}$/, 
 	name: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, 
@@ -33,6 +34,7 @@ Window.AddeventListener('load', (e) => {
             username.innerHTML = ''
         }   
     })
+
 
     name.addEventListener('keyup', (e) => {
         if (!expresiones.name.test(name.value)) {
@@ -96,3 +98,4 @@ Window.AddeventListener('load', (e) => {
         }
     })
 })
+

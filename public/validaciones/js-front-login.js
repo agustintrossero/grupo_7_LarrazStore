@@ -3,7 +3,7 @@ const expresiones = {
 	usuario: /^[a-zA-Z0-9\_\-]{2,16}$/, 
 	nombre: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, 
     apellido: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, 
-	password: /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[.,:;-_!"§$%&/()=?`+@])[A-Za-z0-9]{8,16}$/, 
+	password: /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9]{8,16}$/, // tuvimos que sacar el tema de los caracteres especiales porque no habia caso de que nos lo tome.
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 }
 
