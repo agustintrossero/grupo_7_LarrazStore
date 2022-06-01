@@ -7,6 +7,9 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true,
         },
+        username: {
+            type: dataTypes.STRING(30)
+        },
         name: {
             type: dataTypes.STRING(30)
         },
@@ -19,9 +22,10 @@ module.exports = (sequelize, dataTypes) => {
         password: {
             type: dataTypes.STRING(30)
         },
-        passwordConfirm: {
+     /*   passwordConfirm: {
             type: dataTypes.STRING(30)
         },
+        */ 
         legal_buy: {
             type: dataTypes.INTEGER
         },

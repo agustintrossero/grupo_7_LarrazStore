@@ -1,3 +1,6 @@
+CREATE OR REPLACE DATABASE larraz_store_db;
+USE larraz_store_db;
+
 -- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
 -- Host: localhost    Database: larraz_store_db
@@ -105,11 +108,11 @@ DROP TABLE IF EXISTS `usuarios`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(30) DEFAULT NULL,
   `name` varchar(30) DEFAULT NULL,
   `surname` varchar(30) DEFAULT NULL,
   `email` varchar(30) DEFAULT NULL,
   `password` varchar(60) DEFAULT NULL,
-  `passwordConfirm` varchar(60) DEFAULT NULL,
   `legal_buy` tinyint(4) DEFAULT 1,
   `avatar` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
@@ -122,7 +125,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Marc','Villanueva','marcvillanueva@gmail.com',NULL,NULL,1,''),(2,'Juan','Larraz','juanlarraz@gmail.com',NULL,NULL,1,''),(3,'Ignacio','Maldonado','ignaciomaldonado@gmail.com',NULL,NULL,1,''),(4,'Agustin','Trossero','agustintrossero@gmail.com',NULL,NULL,1,'');
+INSERT INTO `usuarios` VALUES (1,'Marc','Marcos','Villanueva','marcvillanueva@gmail.com',NULL,1,''),(2,'Juanito','Juan','Larraz','juanlarraz@gmail.com',NULL,1,''),(3,'Nacho','Ignacio','Maldonado','ignaciomaldonado@gmail.com',NULL,1,''),(4,'Agus','Agustin','Trossero','agustintrossero@gmail.com',NULL,1,'');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 

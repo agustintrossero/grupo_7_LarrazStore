@@ -6,7 +6,7 @@ const path = require("path");
 //const users = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
 
 //Modulos requeridos para el proceso de register y de login.
-const User = require("../data/models");
+
 const { validationResult } = require("express-validator");
 const bcryptjs = require("bcryptjs");
 const db = require("../data/models");
@@ -50,7 +50,7 @@ const controller = {
       
 
        if (registerUserDb) {
-        console.log("encontro errores con el email")
+        console.log("encontro errores en el email")
         return res.render("users/register", {
           errors: {
             email: {
@@ -62,14 +62,17 @@ const controller = {
       } else {
         if(errorsForm.isEmpty()) {
           let encryptedPass = bcryptjs.hashSync(req.body.password, 10)
-          let confirmPass = bcryptjs.hashSync(req.body.confirmPassword, 10) //hay que borrar passwordconfirm de la base de datos
+     //     let confirmPass = bcryptjs.hashSync(req.body.confirmPassword, 10) //hay que borrar passwordconfirm de la base de datos
   
+        
+
           db.usuarios.create({
+            username: req.body.username,
             name: req.body.name,
             surname: req.body.surname,
             email: req.body.email,
             password: encryptedPass,
-            passwordConfirm: confirmPass,
+      //      passwordConfirm: confirmPass,
             legal_buy: parseInt(req.body.legal_buy),
             avatar: "/images/" + req.file.filename,
            })
@@ -89,7 +92,7 @@ const controller = {
     },
 
     login: function(req, res) {
-    res.render("users/login")
+      res.render("users/login");
     },
 
 
@@ -104,9 +107,8 @@ const controller = {
 
       if (isOkThePassword) {
         delete userToLogin.password;
-        delete userToLogin.passwordConfirm;
+  //      delete userToLogin.passwordConfirm;
         req.session.userLogged = userToLogin;
-
         return res.redirect("/users/profile");
       }
 
