@@ -1,12 +1,13 @@
 window.addEventListener("load", function () {
     let formulario = document.querySelector('form.user-form');
-    
+    let campoNombre = document.querySelector('');
+
     formulario.addEventListener('submit', function(e){
 
         let errores = [];
 
 
-        let campoNombre = document.querySelector('');
+        
 
         if (campoNombre.value == ""){
             errores.push("El campo de nombre tiene que estar completo");
