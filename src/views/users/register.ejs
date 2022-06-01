@@ -6,13 +6,11 @@
     <%- include ("../partials/header")%>
 
 <main>
-    <div class="errores">
-        <ul>
+    <div class="errores" id="submit-error-register">
+    </div>
+        <form action="/users/register" method="POST" class="user-form" enctype="multipart/form-data" id="register">
 
-        </ul>
-        <form action="/users/register" method="POST" class="user-form" enctype="multipart/form-data">
 
-            </div>
             <div class="user-container">
             <h2 class="user-title">Registra tu Cuenta</h2>
             <h6 class="user-subtitle">Ingresa tus datos para crear tu cuenta</h6>
@@ -26,6 +24,8 @@
                      name="username" 
                      class="form-control <%= locals.errors && errors.username ? 'is-invalid' : null %>"
                      value="<%= locals.oldData ? oldData.username : null %>">
+                </div>
+                <div class="text-danger" id="front-register-username">
                 </div>
                 <% if (locals.errors && errors.username) { %>
                      <div class="text-danger">
@@ -43,6 +43,8 @@
                     class="form-control <%= locals.errors && errors.name ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.name : null %>">
                 </div>
+                <div class="text-danger" id="front-register-name">
+                </div>
                 <% if (locals.errors && errors.name) { %>
                     <div class="text-danger">
                        <%= errors.name.msg %> 
@@ -58,6 +60,8 @@
                     name="surname" 
                     class="form-control <%= locals.errors && errors.surname ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.surname : null %>">
+                </div>
+                <div class="text-danger" id="front-register-surname">
                 </div>
                 <% if (locals.errors && errors.surname) { %>
                     <div class="text-danger">
@@ -78,7 +82,10 @@
                     class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.email : null %>">
                 </div>
-                <div class="text-danger" id="front-errors-email">
+
+
+                <div class="text-danger" id="front-register-email">
+
                 </div>
                 <% if (locals.errors && errors.email) { %>
                     <div class="text-danger">
@@ -97,7 +104,9 @@
                     name="password"
                     class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>">
                 </div>
-                <div class="text-success" id="front-errors-password">
+
+                <div class="text-danger" id="front-register-password">
+
                 </div>
                 <% if (locals.errors && errors.password) { %>
                     <div class="text-danger">
@@ -115,6 +124,8 @@
                     placeholder="********" 
                     name="passwordConfirm" 
                     class="form-control <%= locals.errors && errors.passwordConfirm ? 'is-invalid' : null %>">
+                </div>
+                <div class="text-danger" id="front-register-confirmPassword">
                 </div>
                 <% if (locals.errors && errors.passwordConfirm) { %>
                     <div class="text-danger">

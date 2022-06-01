@@ -1,3 +1,4 @@
+
 const expresiones = {
 	usuario: /^[a-zA-Z0-9\_\-]{2,16}$/, 
 	nombre: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, 
@@ -7,7 +8,6 @@ const expresiones = {
 }
 
 window.addEventListener('load', (e) =>{
-    console.log('cargo el script')
     let form = document.querySelector('form.user-form')
     let email = document.getElementById('email')
     let password = document.getElementById('password')

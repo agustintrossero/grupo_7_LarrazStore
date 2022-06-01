@@ -1,95 +1,101 @@
-window.addEventListener("load", function () {
-    let formulario = document.querySelector('form.user-form');
-    let campoUsername = document.getElementById('username');
-    let campoNombre = document.getElementById('name');
-    let campoApellido = document.getElementById('surname');
-
-    formulario.addEventListener('submit', function(e){
-
-        let errores = [];
-        
-
-        if (campoNombre.value == ""){
-            errores.push("El campo de nombre tiene que estar completo");
-        } else if (campoNombre.value.lenght < 2) {
-            errores.push("El campo de nombre debe tener al menos dos caracteres");
-        }
-
-        let campoApellido = document.querySelector('');
-
-        if (campoApellido.value == ""){
-            errores.push("El campo de apellido tiene que estar completo");
-        } else if (campoApellido.value.lenght < 2) {
-            errores.push("El campo de apellido debe tener al menos dos caracteres");
-        }
-
-        let campoUsername = document.querySelector('');
-
-        if (campoUsername.value == ""){
-            errores.push("El campo de usuario tiene que estar completo");
-        } else if (campoUsername.value.lenght < 2) {
-            errores.push("El campo de usuario debe tener al menos dos caracteres");
-        }
-
-        let campoEmail = document.querySelector('');
-
-        if (campoEmail.value == ""){
-            errores.push("El campo de email tiene que estar completo");
-        }
-
-        if (errores.length > 0) {
-            e.preventDefault()
-
-            let ulErrores = document.querySelector('div.errores ul')
-
-            for (let i = 0; i < errores.length; i++) {
-
-                ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
-                
-            }
-        }
-
-    })
-})
 
 const expresiones = {
-	usuario: /^[a-zA-Z0-9\_\-]{2,16}$/, 
-	nombre: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, 
-    apellido: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, 
-	password: /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9]{8,16}$/, // tuvimos que sacar el tema de los caracteres especiales porque no habia caso de que nos lo tome.
+	username: /^[a-zA-Z0-9\_\-]{2,16}$/, 
+	name: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, 
+    surname: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, 
+	password: /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[.,:;-_!"§$%&/()=?`+@])[A-Za-z0-9]{8,16}$/, 
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 }
 
-window.addEventListener('load', (e) =>{
-    console.log('cargo el script')
-    let form = document.querySelector('form.user-form')
+Window.AddeventListener('load', (e) => {
+    let form = document.getElementById('register')
+    let submitError = document.getElementById('submit-error-register')
+    let username = document.getElementById('username')
+    let name = document.getElementById('name')
+    let surname = document.getElementById('surname')
     let email = document.getElementById('email')
     let password = document.getElementById('password')
-    let errorDivEmail = document.getElementById('front-errors-email')
-    let errorDivPassword = document.getElementById('front-errors-password')
-    let errorDivSubmit = document.getElementById('front-errors-submit')
+    let confirmPassword= document.getElementById('passwordConfirm')
+    let errorDivUsername = document.getElementById('front-register-username')
+    let errorDivName = document.getElementById('front-register-name')
+    let errorDivSurname = document.getElementById('front-register-surname')
+    let errorDivEmail = document.getElementById('front-register-email')
+    let errorDivPassword = document.getElementById('front-register-password')
+    let errorDivConfirmPassword = document.getElementById('front-register-confirmPassword')
 
-    email.addEventListener('keyup', (e) =>{
-        if (expresiones.email.test(email.value)) {
-            if (errorDivEmail.classList.contains('text-danger')) {
+    username.addEventListener('keyup', (e) => {
+        if (!expresiones.username.test(username.value)) {
+            username.innerHTML = '<p> Debes escribir un usuario valido </p>'
+            errorDivUsername.classList.add('text-danger')
+        }   else {
+            if (errorDivUsername.classList.contains('text-danger')){
+                errorDivUsername.classList.remove('text-danger')
+            }
+            username.innerHTML = ''
+        }   
+    })
+
+
+    name.addEventListener('keyup', (e) => {
+        if (!expresiones.name.test(name.value)) {
+            name.innerHTML = '<p> Debes escribir un nombre valido </p>'
+            errorDivName.classList.add('text-danger')
+        }   else {
+            if (errorDivName.classList.contains('text-danger')){
+                errorDivName.classList.remove('text-danger')
+            }
+            name.innerHTML = ''
+        }   
+    })
+    surname.addEventListener('keyup', (e) => {
+        if (!expresiones.surname.test(surname.value)) {
+            surname.innerHTML = '<p> Debes escribir un apellido valido </p>'
+            errorDivSurname.classList.add('text-danger')
+        }   else {
+            if (errorDivSurname.classList.contains('text-danger')){
+                errorDivSurname.classList.remove('text-danger')
+            }
+            surname.innerHTML = ''
+        }   
+    })
+    email.addEventListener('keyup', (e) => {
+        if (!expresiones.email.test(email.value)) {
+            email.innerHTML = '<p> Debes escribir un email valido </p>'
+            errorDivEmail.classList.add('text-danger')
+        }   else {
+            if (errorDivEmail.classList.contains('text-danger')){
                 errorDivEmail.classList.remove('text-danger')
-                errorDivEmail.innerHTML = ''
             }
-        } else {
-            errorDivEmail.innerHTML = '<p>Debes escribir un formato de email válido.</p>'
-                errorDivEmail.classList.add('text-danger')
-        }
+            email.innerHTML = ''
+        }   
     })
-
-    password.addEventListener('keyup', (e) =>{
-        if (expresiones.password.test(password.value)) {
-            if (errorDivPassword.classList.contains('text-danger')) {
+    password.addEventListener('keyup', (e) => {
+        if (!expresiones.password.test(password.value)) {
+            password.innerHTML = '<p> Debes escribir una contraseña valida </p>'
+            errorDivPassword.classList.add('text-danger')
+        }   else {
+            if (errorDivPassword.classList.contains('text-danger')){
                 errorDivPassword.classList.remove('text-danger')
-                errorDivPassword.innerHTML = ''
             }
+            password.innerHTML = ''
+        }   
+    })
+    confirmPassword.addEventListener('keyup', (e) => {
+        if (password.value != confirmPassword.value) {
+            confirmPassword.innerHTML = '<p>Las contraseñas no coincidden </p>'
+            errorDivConfirmPassword.classList.add('text-danger')
         } else {
-            errorDivPassword.innerHTML = '<p>La contraseña debe incluir letras mayúsculas, minúsculas, como mínimo un número y un cáracter especial.</p>'
-                errorDivPassword.classList.add('text-danger')
+            if (errorDivConfirmPassword.classList.contains('text-danger')){
+                errorDivConfirmPassword.classList.remove('text-danger')
+            }
+            confirmPassword.innerHTML = ''
+        }   
+    })
+    form.addEventListener('submit', (e) => {
+        if(!expresiones.username.test(username.value) || !expresiones.name.test(username.value) || !expresiones.surname.test(surname.value) || !expresiones.email.test(email.value) || !expresiones.password.test(password.value) || !expresiones.passwordConfirm.test(passwordConfirm.value)) {
+            e.preventDefault() 
+            submitError.innerHTML = 'campos imcompletos o invalidos'
         }
     })
-});
+})
+
