@@ -1,13 +1,13 @@
+
 const expresiones = {
 	usuario: /^[a-zA-Z0-9\_\-]{2,16}$/, 
 	nombre: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, 
     apellido: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, 
-	password: /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9]{8,16}$/, 
+	password: /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[.,:;-_!"§$%&/()=?`+@])[A-Za-z0-9]{8,16}$/, 
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 }
 
 window.addEventListener('load', (e) =>{
-    console.log('cargo el script')
     let form = document.querySelector('form.user-form')
     let email = document.getElementById('email')
     let password = document.getElementById('password')
@@ -17,17 +17,13 @@ window.addEventListener('load', (e) =>{
 
     email.addEventListener('keyup', (e) =>{
         if (expresiones.email.test(email.value)) {
-            errorDivEmail.innerHTML = '<p>tuki</p>'
             if (errorDivEmail.classList.contains('text-danger')) {
                 errorDivEmail.classList.remove('text-danger')
-                errorDivEmail.classList.add('text-success')
+                errorDivEmail.innerHTML = ''
             }
         } else {
-            errorDivEmail.innerHTML = '<p>Esto esta hecho para el orto</p>'
-            if (errorDivEmail.classList.contains('text-success')) {
-                errorDivEmail.classList.remove('text-success')
+            errorDivEmail.innerHTML = '<p>Esto esta hecho para el orto</p>'   
                 errorDivEmail.classList.add('text-danger')
-            }
         }
     })
 
