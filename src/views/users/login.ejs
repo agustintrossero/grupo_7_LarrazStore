@@ -1,4 +1,7 @@
 <%- include ("../partials/head")%>
+<script src="/validaciones/js-front-login.js"></script>
+<title>Iniciar Sesión</title>
+</head>
 <body>
     <%- include ("../partials/header")%>
     <main>
@@ -15,6 +18,8 @@
                     name="email"
                     class="form-control">
                 </div>
+                <div class="text-danger" id="front-errors-email">
+                </div>
                 <% if (locals.errors && errors.email) { %>
                  <div class="text-danger">
                      <%= errors.email.msg %> 
@@ -26,12 +31,14 @@
                 <div>
                     <input 
                     class="bar-user" 
-                    type="text" 
+                    type="password" 
                     id="password" 
                     name="password" 
                     minlength="8" 
                     placeholder="********" 
                     require>
+                </div>
+                <div class="text-success" id="front-errors-password">
                 </div>
                 <% if (locals.errors && errors.password) { %>
                 <div class="text-danger">
@@ -40,6 +47,8 @@
                 <% } %>
             </div>
             <div><button type="submit" class="user-button">Ingresar</button></div>
+            <div class="text-danger" id="front-errors-submit">
+            </div>
             <div><h6 class="user-subtitle">Todavia no tenes cuenta?<a href="/users/register"><br>Crear cuenta</a></h6></div>
             </div>
         </form>
@@ -60,4 +69,5 @@
     </section>
     </main>
     <%- include ("../partials/footer2")%>
+  
 </body>
