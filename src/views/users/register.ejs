@@ -6,11 +6,12 @@
     <%- include ("../partials/header")%>
 
 <main>
-        <form action="/users/register" method="POST" class="user-form" enctype="multipart/form-data">
-            <div class="errores">
-                <ul>
+    <div class="errores">
+        <ul>
 
-                </ul>
+        </ul>
+        <form action="/users/register" method="POST" class="user-form" enctype="multipart/form-data">
+
             </div>
             <div class="user-container">
             <h2 class="user-title">Registra tu Cuenta</h2>
@@ -77,6 +78,8 @@
                     class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.email : null %>">
                 </div>
+                <div class="text-danger" id="front-errors-email">
+                </div>
                 <% if (locals.errors && errors.email) { %>
                     <div class="text-danger">
                        <%= errors.email.msg %> 
@@ -93,6 +96,8 @@
                     placeholder="********" 
                     name="password"
                     class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>">
+                </div>
+                <div class="text-success" id="front-errors-password">
                 </div>
                 <% if (locals.errors && errors.password) { %>
                     <div class="text-danger">
