@@ -74,7 +74,7 @@ const controller = {
             password: encryptedPass,
       //      passwordConfirm: confirmPass,
             legal_buy: parseInt(req.body.legal_buy),
-            avatar: "/images/" + req.file.filename,
+            avatar: req.file.filename,
            })
            console.log("se creo el usuario")
            return res.redirect('/');
