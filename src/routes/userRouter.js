@@ -20,6 +20,7 @@ var storage = multer.diskStorage({
         let fileName = file.fieldname + Date.now() + path.extname(file.originalname) 
        cb(null, fileName);
     }
+    
 })
 
 var uploadFile = multer({storage: storage})

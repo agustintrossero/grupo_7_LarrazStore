@@ -74,7 +74,7 @@ const controller = {
             password: encryptedPass,
       //      passwordConfirm: confirmPass,
             legal_buy: parseInt(req.body.legal_buy),
-            avatar: "/images/" + req.file.filename,
+            avatar: req.file.filename,
            })
            console.log("se creo el usuario")
            return res.redirect('/');
@@ -140,13 +140,25 @@ const controller = {
   
   edit: (req, res) => {
     //falta agregar poder editar tambien la foto con el avatar = req.file.filename;
+    let userAvatar
+    let reqFile = req.file
+    if (!reqFile){
+      db.usuarios.findByPk(req.params.id)
+      .then((usuario) => {
+        userAvatar = usuario.dataValues.avatar
+        console.log(userAvatar)
+      })
+    } else {
+      userAvatar = req.file.filename
+    }
+    
     db.usuarios.update({
+      username: req.body.username,
       name: req.body.name,
       surname: req.body.surname,
       email: req.body.email,
       password: req.body.password,
-      passwordConfirm: req.body.passwordConfirm,
-      legal_buy: parseInt(req.body.legal_buy),
+      avatar: userAvatar
     }, {
       where : {
         id : req.params.id
