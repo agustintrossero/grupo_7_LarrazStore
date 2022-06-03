@@ -17,7 +17,6 @@ const controller = {
   index: function (req, res) {
     db.usuarios.findAll()
       .then((users) => {
-      console.log(users)
       res.render("users/index", { users });
     });
   },
@@ -92,42 +91,49 @@ const controller = {
     },
 
     login: function(req, res) {
-      res.render("users/login");
+      db.usuarios.findAll()
+        .then(function(usuario){
+          return res.render("users/login", {usuario : usuario});
+        })
+      
     },
 
 
     loginProcess: (req,res) => {
-    let userToLogin = funcionalidadUser.findByField("email", req.body.email);
-
-    if (userToLogin) {
-      let isOkThePassword = bcryptjs.compareSync(
-        req.body.password,
-        userToLogin.password
-      );
-
-      if (isOkThePassword) {
-        delete userToLogin.password;
-  //      delete userToLogin.passwordConfirm;
-        req.session.userLogged = userToLogin;
-        return res.redirect("/users/profile");
+    let userToLogin
+    db.usuarios.findAll()
+    .then(usuario => {
+      userToLogin = usuario.find(user => user.email == req.body.email)
+      if (userToLogin) {
+        let isOkThePassword = bcryptjs.compareSync(
+          req.body.password,
+          userToLogin.password
+        );
+  
+        if (isOkThePassword) {
+          delete userToLogin.password;
+          req.session.userLogged = userToLogin;
+          return res.redirect("/users/profile");
+        }
+  
+        return res.render("users/login", {
+          errors: {
+            password: {
+              msg: "Las credenciales son inválidas",
+            },
+          },
+        });
       }
-
+  
       return res.render("users/login", {
         errors: {
-          password: {
-            msg: "Las credenciales son inválidas",
+          email: {
+            msg: "Este email no se encuentra registrado",
           },
         },
       });
-    }
+      })                            
 
-    return res.render("users/login", {
-      errors: {
-        email: {
-          msg: "Este email no se encuentra registrado",
-        },
-      },
-    });
   },
 
   editView: (req, res) => {
