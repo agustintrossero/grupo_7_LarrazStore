@@ -17,6 +17,7 @@
         <div class="header-login">
             <% if (locals.userLogged) { %>
                 <p>Hola <%= locals.userLogged.name %> <%= locals.userLogged.surname %>!</p> 
+                <a href="/users/logout"><button class="header-incon" type="submit" >Logout</button></a>
             <% } else {%>
                 <a href="/users/login"><i class="fas fa-user header-icon-login"></i></a>
             <% } %> 
