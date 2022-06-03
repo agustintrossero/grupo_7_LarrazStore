@@ -22,10 +22,6 @@ module.exports = (sequelize, dataTypes) => {
         password: {
             type: dataTypes.STRING(30)
         },
-     /*   passwordConfirm: {
-            type: dataTypes.STRING(30)
-        },
-        */ 
         legal_buy: {
             type: dataTypes.INTEGER
         },

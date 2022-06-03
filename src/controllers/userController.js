@@ -38,7 +38,7 @@ const controller = {
     }
     */
   //Proceso de validacion del register - Express Validator.
-  processRegister: function (req, res) { //Hay que agregar username y borrar confirmpassword de la base de datos
+  processRegister: function (req, res) {
     var errorsForm = validationResult(req);  
       var registerUserDb;
       console.log(errorsForm)
@@ -47,7 +47,6 @@ const controller = {
         registerUserDb = users.find(user => user.email == req.body.email)
       })
       
-
        if (registerUserDb) {
         console.log("encontro errores en el email")
         return res.render("users/register", {
@@ -58,20 +57,17 @@ const controller = {
           },
           oldData: req.body,
         }); 
+
       } else {
         if(errorsForm.isEmpty()) {
           let encryptedPass = bcryptjs.hashSync(req.body.password, 10)
-     //     let confirmPass = bcryptjs.hashSync(req.body.confirmPassword, 10) //hay que borrar passwordconfirm de la base de datos
   
-        
-
           db.usuarios.create({
             username: req.body.username,
             name: req.body.name,
             surname: req.body.surname,
             email: req.body.email,
             password: encryptedPass,
-      //      passwordConfirm: confirmPass,
             legal_buy: parseInt(req.body.legal_buy),
             avatar: req.file.filename,
            })
@@ -85,7 +81,6 @@ const controller = {
             errors: errorsForm.array(),
             oldData: req.body,
           });
-          
         }
       }      
     },
@@ -104,10 +99,12 @@ const controller = {
     db.usuarios.findAll()
     .then(usuario => {
       userToLogin = usuario.find(user => user.email == req.body.email)
+      console.log(userToLogin)
       if (userToLogin) {
         let isOkThePassword = bcryptjs.compareSync(
           req.body.password,
           userToLogin.password
+          
         );
   
         if (isOkThePassword) {
@@ -192,7 +189,9 @@ const controller = {
   profile: (req, res) => {
     return res.render("users/profile", {
       user: req.session.userLogged,
+      
     });
+    
   },
 
   //Logout
