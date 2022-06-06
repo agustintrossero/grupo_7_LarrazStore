@@ -28,8 +28,8 @@ var uploadFile = multer({storage: storage})
 //Validaciones para la carga de datos en nuestro formulario de registro.
 const validations = [
     body('username').notEmpty().withMessage('Debes elegir tu nombre de usuario'),
-    body('name').notEmpty().withMessage('Debes escribir tu nombre'),
-    body('surname').notEmpty().withMessage('Debes escribir tu apellido'),
+    body('name').notEmpty().isLength({min:2}).withMessage('Debes escribir tu nombre'),
+    body('surname').notEmpty().isLength({min:2}).withMessage('Debes escribir tu apellido'),
     body('email')
         .notEmpty().withMessage('Debes escribir tu correo electronico').bail()
         .isEmail().withMessage('Debes escribir un formato de correo electronico valido'),
