@@ -2,9 +2,6 @@ const res = require("express/lib/response");
 const fs = require("fs");
 const path = require("path");
 
-//const userFilePath = path.join(__dirname, "../data/users.JSON");
-//const users = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
-
 //Modulos requeridos para el proceso de register y de login.
 
 const { validationResult } = require("express-validator");
@@ -27,16 +24,6 @@ const controller = {
     });
   },
 
-  /*processRegister: (req, res) => {
-    const resultValidation = validationResult(req);
-
-    if (validationResult.errors.length > 0) {
-      return res.render("users/register", {
-        errors: validationResult.mapped(),
-        oldData: req.body,
-      });
-    }
-    */
   //Proceso de validacion del register - Express Validator.
   processRegister: function (req, res) {
     let errorsForm = validationResult(req);  
@@ -72,13 +59,20 @@ const controller = {
             avatar: req.file.filename,
            })
            console.log("se creo el usuario")
-           return res.redirect('/');
+           return res.redirect('/users/login');
+          }
+           if (!errorsForm.isEmpty()) {
+            return res.render("users/register", {
+              errors: errorsForm.mapped(),
+              oldData: req.body,
+            });
+          
            
         } else {
           req.file = ""
           console.log("encontro errores")
           return res.render("users/register", {
-            errors: errorsForm.array(),
+            errors: errorsForm.mapped(),
             oldData: req.body,
           });
           
