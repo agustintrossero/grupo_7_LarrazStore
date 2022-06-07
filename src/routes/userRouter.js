@@ -36,9 +36,6 @@ const validations = [
         .notEmpty().withMessage('Debes escribir tu correo electronico').bail()
         .isEmail().withMessage('Debes escribir un formato de correo electronico valido'),
     body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
-  //  body('passwordConfirm').notEmpty().withMessage('Tienes que confirmar tu contraseña'), //hay que crear la fuincionalidad para que se fije si las contrasenias son iguales
-
-    //Validacion "Custom" para la carga de imagenes en nuestro formulario de registro.
     body('avatar').custom((value, {req}) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.gif'];
