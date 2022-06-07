@@ -12,6 +12,11 @@
             <div class="input-user">
                 <label for="nombre" class="bar-user">Nombre del producto:</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Nombre del producto">
+                <% if (locals.errors && errors.nombre) { %>
+                 <div class="text-danger">
+                     <%= errors.nombre.msg  %> 
+                 </div>
+                <% } %>
             </div>
             <div class="input-user">
                 <label for="precio" class="bar-user">Precio del producto:</label>
@@ -20,6 +25,11 @@
             <div class="input-user">
                 <label for="description" class="bar-user">Descipción:</label>
                 <textarea name="description" id="description"></textarea>
+                <% if (locals.errors && errors.description) { %>
+                    <div class="text-danger">
+                        <%= errors.description.msg  %> 
+                    </div>
+                   <% } %>
             </div>
             <div>
                 <h4 class="user-title">Seleccione una categoria para su producto</h4>
