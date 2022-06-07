@@ -31,7 +31,6 @@ const validations = [
                 throw new Error('Las extensiones de archivos permitidas son ".jpg", ".png", ".gif"');
             }
         }
-
         return true;
     })
 

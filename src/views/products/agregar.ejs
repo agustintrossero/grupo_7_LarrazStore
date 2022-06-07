@@ -63,6 +63,11 @@
             <div class="add-img">
                 <label for="image" class="form-label"> Imagen de tu producto: </label>
                 <input type="file" name="image" id="image" class="img-button">
+                <% if (locals.errors && errors.image) { %>
+                    <div class="text-danger">
+                        <%= errors.image.msg  %> 
+                    </div>
+                   <% } %>
              </div>
             <div><button type="submit" class="user-button">Agregar producto</button></div>
             </div>

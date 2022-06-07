@@ -73,12 +73,19 @@ const controller = {
            })
            console.log("se creo el usuario")
            return res.redirect('/');
+          }
+           if (!errorsForm.isEmpty()) {
+            return res.render("users/register", {
+              errors: errorsForm.mapped(),
+              oldData: req.body,
+            });
+          
            
         } else {
           req.file = ""
           console.log("encontro errores")
           return res.render("users/register", {
-            errors: errorsForm.array(),
+            errors: errorsForm.mapped(),
             oldData: req.body,
           });
           
