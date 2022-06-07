@@ -11,6 +11,8 @@ const authMiddleware = require('../middlewares/authMiddleware');//Middleware par
 const { body } = require('express-validator')
 
 //Disco donde se va a almacenar nuestra informacion. 
+
+
 var storage = multer.diskStorage({
     destination:function(req,file,cb){
         let imgFolder = path.join(__dirname, '../../public/images/avatars')
@@ -20,7 +22,7 @@ var storage = multer.diskStorage({
         let fileName = file.fieldname + Date.now() + path.extname(file.originalname) 
        cb(null, fileName);
     }
-    
+
 })
 
 var uploadFile = multer({storage: storage})
