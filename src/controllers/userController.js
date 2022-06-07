@@ -39,7 +39,8 @@ const controller = {
     */
   //Proceso de validacion del register - Express Validator.
   processRegister: function (req, res) {
-    var errorsForm = validationResult(req);  
+    var errorsForm = validationResult(req); 
+    var avatar; 
       var registerUserDb;
       console.log(errorsForm)
       db.usuarios.findAll()
@@ -60,6 +61,7 @@ const controller = {
 
       } else {
         if(errorsForm.isEmpty()) {
+          
           let encryptedPass = bcrypt.hashSync(req.body.password, 10)
   
           db.usuarios.create({

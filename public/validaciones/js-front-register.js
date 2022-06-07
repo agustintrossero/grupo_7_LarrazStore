@@ -7,7 +7,7 @@ const expresiones = {
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 }
 
-Window.AddeventListener('load', (e) => {
+window.addEventListener('load', (e) => {
     let form = document.getElementById('register')
     let submitError = document.getElementById('submit-error-register')
     let username = document.getElementById('username')
@@ -24,6 +24,7 @@ Window.AddeventListener('load', (e) => {
     let errorDivConfirmPassword = document.getElementById('front-register-confirmPassword')
 
     username.addEventListener('keyup', (e) => {
+        console.log('asdhasdhiuashiu')
         if (!expresiones.username.test(username.value)) {
             username.innerHTML = '<p> Debes escribir un usuario valido </p>'
             errorDivUsername.classList.add('text-danger')
@@ -38,57 +39,58 @@ Window.AddeventListener('load', (e) => {
 
     name.addEventListener('keyup', (e) => {
         if (!expresiones.name.test(name.value)) {
-            name.innerHTML = '<p> Debes escribir un nombre valido </p>'
+            errorDivName.innerHTML = '<p> Debes escribir un nombre valido </p>'
             errorDivName.classList.add('text-danger')
         }   else {
             if (errorDivName.classList.contains('text-danger')){
                 errorDivName.classList.remove('text-danger')
             }
-            name.innerHTML = ''
+            errorDivName.innerHTML = ''
         }   
     })
     surname.addEventListener('keyup', (e) => {
         if (!expresiones.surname.test(surname.value)) {
-            surname.innerHTML = '<p> Debes escribir un apellido valido </p>'
+            errorDivSurname.innerHTML = '<p> Debes escribir un apellido valido </p>'
             errorDivSurname.classList.add('text-danger')
         }   else {
             if (errorDivSurname.classList.contains('text-danger')){
                 errorDivSurname.classList.remove('text-danger')
             }
-            surname.innerHTML = ''
+            errorDivSurname.innerHTML = ''
         }   
     })
     email.addEventListener('keyup', (e) => {
-        if (!expresiones.email.test(email.value)) {
-            email.innerHTML = '<p> Debes escribir un email valido </p>'
-            errorDivEmail.classList.add('text-danger')
-        }   else {
+        if (expresiones.email.test(email.value)) {
             if (errorDivEmail.classList.contains('text-danger')){
                 errorDivEmail.classList.remove('text-danger')
-            }
-            email.innerHTML = ''
+                errorDivEmail.innerHTML = ''
+            }      
+        }   else {
+            errorDivEmail.innerHTML = '<p> Debes escribir un email valido </p>'
+            errorDivEmail.classList.add('text-danger')
         }   
     })
     password.addEventListener('keyup', (e) => {
         if (!expresiones.password.test(password.value)) {
-            password.innerHTML = '<p> Debes escribir una contraseña valida </p>'
+            errorDivPassword.innerHTML = '<p> Debes escribir una contraseña valida </p>'
             errorDivPassword.classList.add('text-danger')
         }   else {
             if (errorDivPassword.classList.contains('text-danger')){
                 errorDivPassword.classList.remove('text-danger')
             }
-            password.innerHTML = ''
+            errorDivPassword.innerHTML = ''
         }   
     })
     confirmPassword.addEventListener('keyup', (e) => {
         if (password.value != confirmPassword.value) {
-            confirmPassword.innerHTML = '<p>Las contraseñas no coincidden </p>'
+            errorDivConfirmPassword.innerHTML = '<p>Las contraseñas no coincidden </p>'
             errorDivConfirmPassword.classList.add('text-danger')
         } else {
             if (errorDivConfirmPassword.classList.contains('text-danger')){
                 errorDivConfirmPassword.classList.remove('text-danger')
+                errorDivConfirmPassword.innerHTML = ''
             }
-            confirmPassword.innerHTML = ''
+            
         }   
     })
     form.addEventListener('submit', (e) => {
