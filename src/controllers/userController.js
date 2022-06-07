@@ -30,22 +30,22 @@ const controller = {
   /*processRegister: (req, res) => {
     const resultValidation = validationResult(req);
 
-    if (resultValidation.errors.length > 0) {
+    if (validationResult.errors.length > 0) {
       return res.render("users/register", {
-        errors: resultValidation.mapped(),
+        errors: validationResult.mapped(),
         oldData: req.body,
       });
     }
     */
   //Proceso de validacion del register - Express Validator.
   processRegister: function (req, res) {
-    var errorsForm = validationResult(req);  
-      var registerUserDb;
+    let errorsForm = validationResult(req);  
+      let registerUserDb;
       console.log(errorsForm)
       db.usuarios.findAll()
       .then(users => {
         registerUserDb = users.find(user => user.email == req.body.email)
-      })
+      
       
        if (registerUserDb) {
         console.log("encontro errores en el email")
@@ -81,8 +81,10 @@ const controller = {
             errors: errorsForm.array(),
             oldData: req.body,
           });
+          
         }
-      }      
+      }   
+    })   
     },
 
     login: function(req, res) {
