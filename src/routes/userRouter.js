@@ -11,6 +11,8 @@ const authMiddleware = require('../middlewares/authMiddleware');//Middleware par
 const { body } = require('express-validator')
 
 //Disco donde se va a almacenar nuestra informacion. 
+
+
 var storage = multer.diskStorage({
     destination:function(req,file,cb){
         let imgFolder = path.join(__dirname, '../../public/images/avatars')
@@ -20,7 +22,7 @@ var storage = multer.diskStorage({
         let fileName = file.fieldname + Date.now() + path.extname(file.originalname) 
        cb(null, fileName);
     }
-    
+
 })
 
 var uploadFile = multer({storage: storage})
@@ -28,15 +30,12 @@ var uploadFile = multer({storage: storage})
 //Validaciones para la carga de datos en nuestro formulario de registro.
 const validations = [
     body('username').notEmpty().withMessage('Debes elegir tu nombre de usuario'),
-    body('name').notEmpty().withMessage('Debes escribir tu nombre'),
-    body('surname').notEmpty().withMessage('Debes escribir tu apellido'),
+    body('name').notEmpty().isLength({min:2}).withMessage('Debes escribir tu nombre'),
+    body('surname').notEmpty().isLength({min:2}).withMessage('Debes escribir tu apellido'),
     body('email')
         .notEmpty().withMessage('Debes escribir tu correo electronico').bail()
         .isEmail().withMessage('Debes escribir un formato de correo electronico valido'),
     body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
-  //  body('passwordConfirm').notEmpty().withMessage('Tienes que confirmar tu contraseña'), //hay que crear la fuincionalidad para que se fije si las contrasenias son iguales
-
-    //Validacion "Custom" para la carga de imagenes en nuestro formulario de registro.
     body('avatar').custom((value, {req}) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.gif'];
