@@ -21,6 +21,21 @@ const productsController = {
     //Guardado del producto creado.
     guardado: function (req, res) { 
         let errorsForm = validationResult(req); 
+        let image;
+
+        if (!req.file) {
+            console.log('no cargo una mierda')
+            return res.render('products/agregar', {
+                errors: {
+                    image: {
+                        msg: "Carga una imagen nabo"
+                    }
+                }
+            })
+        }
+        
+       
+        
         
         db.productos.create({
 

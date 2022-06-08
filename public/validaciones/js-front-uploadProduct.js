@@ -100,7 +100,7 @@ window.addEventListener('load', (e) => {
             || !expresiones.name.test(productName.value) 
             || serviceType.value == 'service' 
             || productType.value == 'product' 
-            || (!productCheck.checked || !serviceCheck.checked)) {
+            || (!productCheck.checked && !serviceCheck.checked)) {
                 e.preventDefault()
                 submitError.innerHTML = 'campos imcompletos o invalidos'
             }
