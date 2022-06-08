@@ -1,4 +1,5 @@
 <%- include ("../partials/head")%>
+<script src="/validaciones/js-front-uploadProduct.js"></script>
 <title>Agregar producto</title>
 </head>
 <body>
@@ -6,12 +7,12 @@
 
     <main>
         
-        <form action="/products/agregar" method="POST" class="user-form admin-form" enctype="multipart/form-data">
+        <form action="/products/agregar" method="POST" class="user-form admin-form" enctype="multipart/form-data" id="form">
             <div class="user-container">
             <h2 class="user-title">Agregar producto</h2>
             <div class="input-user">
                 <label for="nombre" class="bar-user">Nombre del producto:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre del producto">
+                <input type="text" name="nombre" placeholder="Nombre del producto" id="input-name">
                 <% if (locals.errors && errors.nombre) { %>
                  <div class="text-danger">
                      <%= errors.nombre.msg  %> 
@@ -20,10 +21,10 @@
             </div>
             <div class="input-user">
                 <label for="precio" class="bar-user">Precio del producto:</label>
-                <input type="text" id="precio" name="precio" placeholder="Ej: 5678">
+                <input type="text" id="input-price" name="precio" placeholder="Ej: 5678">
             </div>
             <div class="input-user">
-                <label for="description" class="bar-user">Descipción:</label>
+                <label for="description" class="bar-user">Descripción:</label>
                 <textarea name="description" id="description"></textarea>
                 <% if (locals.errors && errors.description) { %>
                     <div class="text-danger">
@@ -37,7 +38,7 @@
                     <div><input type="radio" name="productCheck" id="product-check" value="1"></div>
                     <div class="user-legal"><label for="product-check">Productos</label></div>
                 </div>
-                <select class= "select-txt-bar" name="categoria" id="tipos-de-productos" >
+                <select class= "select-txt-bar-product" name="categoria" id="product-type" >
                     <option class= "select-txt" value="product" selected>Elija una opcion</option>
                     <option class= "select-txt" value="1">Componentes de PC</option>
                     <option class= "select-txt" value="2">Perifericos</option>
@@ -51,7 +52,7 @@
                     <div><input type="radio" name="productCheck" value="2" id="service-check"></div>
                     <div class="user-legal"><label for="service-check">Servicio Tecnico</label></div>
                 </div>
-                <select class= "select-txt-bar" name="Categoria" id="tipos-de-servicios">
+                <select class= "select-txt-bar-service" name="Categoria" id="service-type">
                     <option class= "select-txt" value="service" selected>Elija una opcion</option>
                     <option class= "select-txt" value="8">Notebooks</option>
                     <option class= "select-txt" value="9">Celulares</option>

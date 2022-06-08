@@ -1,4 +1,3 @@
-
 const expresiones = {
 	username: /^[a-zA-Z0-9\_\-]{2,16}$/, 
 	name: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, 
@@ -24,7 +23,6 @@ window.addEventListener('load', (e) => {
     let errorDivConfirmPassword = document.getElementById('front-register-confirmPassword')
 
     username.addEventListener('keyup', (e) => {
-        console.log('asdhasdhiuashiu')
         if (!expresiones.username.test(username.value)) {
             username.innerHTML = '<p> Debes escribir un usuario valido </p>'
             errorDivUsername.classList.add('text-danger')

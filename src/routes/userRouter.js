@@ -39,18 +39,17 @@ const validations = [
     body('avatar').custom((value, {req}) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.gif'];
-        if (!file) {
-            throw new Error('Tienes que subir una imagen');
-        } else {
+        if(file != undefined) {
             let fileExtension = path.extname(file.originalname)
             if (!acceptedExtensions.includes(fileExtension)) {
                 throw new Error('Las extensiones de archivos permitidas son ".jpg", ".png", ".gif"');
+            } else { 
+                req.file.fieldname = "DefaultAvatar"
+                req.file.filename = "DefaultAvatar.jpg"
             }
-        }
-
         return true;
+        }
     })
-
 ]
 
 //Index de usuarios

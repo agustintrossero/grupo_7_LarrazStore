@@ -1,4 +1,3 @@
-
 const expresiones = {
 	usuario: /^[a-zA-Z0-9\_\-]{2,16}$/, 
 	nombre: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, 

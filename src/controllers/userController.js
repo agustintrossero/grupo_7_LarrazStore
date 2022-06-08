@@ -26,9 +26,9 @@ const controller = {
 
   //Proceso de validacion del register - Express Validator.
   processRegister: function (req, res) {
-    var errorsForm = validationResult(req); 
-    var avatar; 
-      var registerUserDb;
+    let errorsForm = validationResult(req); 
+    let avatar; 
+      let registerUserDb;
       console.log(errorsForm)
       db.usuarios.findAll()
       .then(users => {
@@ -36,7 +36,6 @@ const controller = {
       
       
        if (registerUserDb) {
-        console.log("encontro errores en el email")
         return res.render("users/register", {
           errors: {
             email: {
@@ -49,6 +48,12 @@ const controller = {
       } else {
         if(errorsForm.isEmpty()) {
           
+          if(!req.file) {
+            avatar = "DefaultAvatar.jpg"
+          } else {
+            avatar = req.file.filename
+          }
+
           let encryptedPass = bcrypt.hashSync(req.body.password, 10)
   
           db.usuarios.create({
@@ -58,7 +63,7 @@ const controller = {
             email: req.body.email,
             password: encryptedPass,
             legal_buy: parseInt(req.body.legal_buy),
-            avatar: req.file.filename,
+            avatar: avatar,
            })
            console.log("se creo el usuario")
            return res.redirect('/users/login');
@@ -146,7 +151,6 @@ const controller = {
       db.usuarios.findByPk(req.params.id)
       .then((usuario) => {
         userAvatar = usuario.dataValues.avatar
-        console.log(userAvatar)
       })
     } else {
       userAvatar = req.file.filename
