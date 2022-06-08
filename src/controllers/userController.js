@@ -5,7 +5,7 @@ const path = require("path");
 //Modulos requeridos para el proceso de register y de login.
 
 const { validationResult } = require("express-validator");
-const bcryptjs = require("bcryptjs");
+const bcrypt = require("bcrypt");
 const db = require("../data/models");
 const { devNull } = require("os");
 
@@ -26,8 +26,9 @@ const controller = {
 
   //Proceso de validacion del register - Express Validator.
   processRegister: function (req, res) {
-    let errorsForm = validationResult(req);  
-      let registerUserDb;
+    var errorsForm = validationResult(req); 
+    var avatar; 
+      var registerUserDb;
       console.log(errorsForm)
       db.usuarios.findAll()
       .then(users => {
@@ -47,7 +48,8 @@ const controller = {
 
       } else {
         if(errorsForm.isEmpty()) {
-          let encryptedPass = bcryptjs.hashSync(req.body.password, 10)
+          
+          let encryptedPass = bcrypt.hashSync(req.body.password, 10)
   
           db.usuarios.create({
             username: req.body.username,
@@ -97,10 +99,9 @@ const controller = {
       userToLogin = usuario.find(user => user.email == req.body.email)
       console.log(userToLogin)
       if (userToLogin) {
-        let isOkThePassword = bcryptjs.compareSync(
+        let isOkThePassword = bcrypt.compareSync(
           req.body.password,
-          userToLogin.password
-          
+          userToLogin.password      
         );
   
         if (isOkThePassword) {
