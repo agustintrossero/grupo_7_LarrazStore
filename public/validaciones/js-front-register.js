@@ -92,9 +92,14 @@ window.addEventListener('load', (e) => {
         }   
     })
     form.addEventListener('submit', (e) => {
-        if(!expresiones.username.test(username.value) || !expresiones.name.test(username.value) || !expresiones.surname.test(surname.value) || !expresiones.email.test(email.value) || !expresiones.password.test(password.value) || !expresiones.passwordConfirm.test(passwordConfirm.value)) {
-            e.preventDefault() 
-            submitError.innerHTML = 'campos imcompletos o invalidos'
+        if(!expresiones.username.test(username.value) 
+            || !expresiones.name.test(username.value) 
+            || !expresiones.surname.test(surname.value) 
+            || !expresiones.email.test(email.value) 
+            || !expresiones.password.test(password.value) 
+            || !expresiones.passwordConfirm.test(passwordConfirm.value)) {
+                e.preventDefault() 
+                submitError.innerHTML = 'campos imcompletos o invalidos'
         }
     })
 })

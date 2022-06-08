@@ -39,9 +39,10 @@ window.addEventListener('load', (e) =>{
     })
 
     form.addEventListener('submit', (e) =>{
-        if (!expresiones.email.test(email.value) || !expresiones.password.test(password.value)) {
-            e.preventDefault()
-            errorDivSubmit.innerHTML = 'Hay campos incorrectos'
+        if (!expresiones.email.test(email.value) 
+            || !expresiones.password.test(password.value)) {
+                e.preventDefault()
+                errorDivSubmit.innerHTML = 'Hay campos incorrectos'
         }     
     })
 })
