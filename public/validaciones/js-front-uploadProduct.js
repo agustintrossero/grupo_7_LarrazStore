@@ -98,12 +98,11 @@ window.addEventListener('load', (e) => {
         if (!expresiones.price.test(productPrice.value) 
             || productDescription.value == ''
             || !expresiones.name.test(productName.value) 
-            || serviceType.value == 'service' 
-            || productType.value == 'product' 
-            || (!productCheck.checked || !serviceCheck.checked)) {
+            //|| (serviceType.value == 'service' || productType.value == 'product') 
+            //|| (!productCheck.checked || !serviceCheck.checked)
+            ){
                 e.preventDefault()
                 submitError.innerHTML = 'campos imcompletos o invalidos'
-            }
+            } 
     })
-
 })

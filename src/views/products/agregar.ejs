@@ -19,10 +19,12 @@
                  </div>
                 <% } %>
             </div>
+            <div class="text-danger" id="error-productName"></div>
             <div class="input-user">
                 <label for="precio" class="bar-user">Precio del producto:</label>
                 <input type="text" id="input-price" name="precio" placeholder="Ej: 5678">
             </div>
+            <div class="text-danger" id='error-productPrice'></div>
             <div class="input-user">
                 <label for="description" class="bar-user">Descripción:</label>
                 <textarea name="description" id="description"></textarea>
@@ -32,6 +34,7 @@
                     </div>
                    <% } %>
             </div>
+            <div class="text-danger" id='error-productDescription'></div>
             <div>
                 <h4 class="user-title">Seleccione una categoria para su producto</h4>
                 <div class="user-checkbox">
