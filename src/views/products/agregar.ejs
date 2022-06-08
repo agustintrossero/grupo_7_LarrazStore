@@ -1,4 +1,5 @@
 <%- include ("../partials/head")%>
+<script src="/validaciones/js-front-uploadProduct.js"></script>
 <title>Agregar producto</title>
 </head>
 <body>
@@ -6,20 +7,30 @@
 
     <main>
         
-        <form action="/products/agregar" method="POST" class="user-form admin-form" enctype="multipart/form-data">
+        <form action="/products/agregar" method="POST" class="user-form admin-form" enctype="multipart/form-data" id="form">
             <div class="user-container">
             <h2 class="user-title">Agregar producto</h2>
             <div class="input-user">
                 <label for="nombre" class="bar-user">Nombre del producto:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre del producto">
+                <input type="text" name="nombre" placeholder="Nombre del producto" id="input-name">
+                <% if (locals.errors && errors.nombre) { %>
+                 <div class="text-danger">
+                     <%= errors.nombre.msg  %> 
+                 </div>
+                <% } %>
             </div>
             <div class="input-user">
                 <label for="precio" class="bar-user">Precio del producto:</label>
-                <input type="text" id="precio" name="precio" placeholder="Ej: 5678">
+                <input type="text" id="input-price" name="precio" placeholder="Ej: 5678">
             </div>
             <div class="input-user">
-                <label for="description" class="bar-user">Descipción:</label>
+                <label for="description" class="bar-user">Descripción:</label>
                 <textarea name="description" id="description"></textarea>
+                <% if (locals.errors && errors.description) { %>
+                    <div class="text-danger">
+                        <%= errors.description.msg  %> 
+                    </div>
+                   <% } %>
             </div>
             <div>
                 <h4 class="user-title">Seleccione una categoria para su producto</h4>
@@ -27,7 +38,7 @@
                     <div><input type="radio" name="productCheck" id="product-check" value="1"></div>
                     <div class="user-legal"><label for="product-check">Productos</label></div>
                 </div>
-                <select class= "select-txt-bar" name="categoria" id="tipos-de-productos" >
+                <select class= "select-txt-bar-product" name="categoria" id="product-type" >
                     <option class= "select-txt" value="product" selected>Elija una opcion</option>
                     <option class= "select-txt" value="1">Componentes de PC</option>
                     <option class= "select-txt" value="2">Perifericos</option>
@@ -41,7 +52,7 @@
                     <div><input type="radio" name="productCheck" value="2" id="service-check"></div>
                     <div class="user-legal"><label for="service-check">Servicio Tecnico</label></div>
                 </div>
-                <select class= "select-txt-bar" name="Categoria" id="tipos-de-servicios">
+                <select class= "select-txt-bar-service" name="Categoria" id="service-type">
                     <option class= "select-txt" value="service" selected>Elija una opcion</option>
                     <option class= "select-txt" value="8">Notebooks</option>
                     <option class= "select-txt" value="9">Celulares</option>
@@ -53,53 +64,19 @@
             <div class="add-img">
                 <label for="image" class="form-label"> Imagen de tu producto: </label>
                 <input type="file" name="image" id="image" class="img-button">
+                <% if (locals.errors && errors.image) { %>
+                    <div class="text-danger">
+                        <%= errors.image.msg  %> 
+                    </div>
+                   <% } %>
              </div>
             <div><button type="submit" class="user-button">Agregar producto</button></div>
             </div>
         </form>
-    <!--
-    <form action="/products/store" method="POST" enctype="multipart/form-data">
-        <div class="row product-detail">
-            <div class="col-12 col-md-6">
-                <label for="name" class="form-label">Nombre del producto:</label>
-                <input type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok" class="form-input">
-            </div>
-            <div class="col-12 col-md-6">
-                <label for="price" class="form-label">Precio del producto:</label>
-                <input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input">
-            </div>
-            <div class="col-12 col-md-6">
-                <label for="discount" class="form-label">Descuento:</label>
-                <input type="text" id="discount" name="discount" placeholder="Ej: 15" class="form-input">
-            </div>
-            <div class="col-12 col-md-6">
-                <label for="category" class="form-label">Categoría:</label>
-                <select name="category" id="category" class="form-input">
-                    <option value="">Elegí</option>
-                    <option value="in-sale">En oferta</option>
-                    <option value="visited">Últimos agregados</option>
-                </select>
-            </div>
-            <div class="col-12">
-                <label for="description" class="form-label">Descipción:</label>
-                <textarea name="description" id="description" class="form-input"></textarea>
-            </div>
-            <div class="col-12">
-                <label for="image" class="form-label"> Imagen de tu producto: </label>
-                <input type="file" name="image" id="image" >
-            </div>
-            <div class="col-12">
-                <button type="submit" class="buy-now-button">Guardar producto</button>
-            </div>
-        </div>
-    </form>
-    -->
     </main>
 
     <footer>
         <%- include ("../partials/footer")%>
     </footer>
-
-
 </body>
 </html>

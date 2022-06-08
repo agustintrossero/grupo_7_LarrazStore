@@ -774,14 +774,24 @@ text-align: center}
     color:black;
 }
 
-.select-txt-bar {
-    height: 30px;
+.select-txt-bar-product,
+.select-txt-bar-service {
+    display:none;
+    height: 0px;
     margin: 4px 0;
     border: 1px solid #dbdcdd;
     border-radius: 4px;
+    opacity: 0;
     font-size: 13px;
     padding: 5px;
     color: black;
+}
+
+.select-txt-bar-product.active,
+.select-txt-bar-service.active {
+    display:block;
+    opacity: 1;
+    height: 30px;
 }
 
 .img-button {
