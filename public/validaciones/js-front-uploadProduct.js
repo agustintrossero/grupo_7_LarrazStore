@@ -13,6 +13,7 @@ window.addEventListener('load', (e) => {
     let serviceCheck = document.getElementById('service-check')
     let productType = document.getElementById('product-type')
     let serviceType = document.getElementById('service-type')
+    let image = document.getElementById('image')
 
     let errorDivProductName = document.getElementById('error-productName')
     let errorDivProductPrice = document.getElementById('error-productPrice')
@@ -94,6 +95,9 @@ window.addEventListener('load', (e) => {
             errorDivProductDescription.innerHTML = ''
         }   
         
+        image.addEventListener('click', (e) => {
+            console.log(image.value)
+        })
 
         if (!expresiones.price.test(productPrice.value) 
             || productDescription.value == ''
@@ -102,6 +106,7 @@ window.addEventListener('load', (e) => {
             //|| (!productCheck.checked || !serviceCheck.checked)
             ){
                 e.preventDefault()
+                console.log(image.value)
                 submitError.innerHTML = 'campos imcompletos o invalidos'
             } 
     })
