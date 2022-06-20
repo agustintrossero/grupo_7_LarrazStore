@@ -36,20 +36,7 @@ const validations = [
         .notEmpty().withMessage('Debes escribir tu correo electronico').bail()
         .isEmail().withMessage('Debes escribir un formato de correo electronico valido'),
     body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
-    body('avatar').custom((value, {req}) => {
-        let file = req.file;
-        let acceptedExtensions = ['.jpg', '.png', '.gif'];
-        if(file != undefined) {
-            let fileExtension = path.extname(file.originalname)
-            if (!acceptedExtensions.includes(fileExtension)) {
-                throw new Error('Las extensiones de archivos permitidas son ".jpg", ".png", ".gif"');
-            } else { 
-                req.file.fieldname = "DefaultAvatar"
-                req.file.filename = "DefaultAvatar.jpg"
-            }
-        return true;
-        }
-    })
+
 ]
 
 //Index de usuarios

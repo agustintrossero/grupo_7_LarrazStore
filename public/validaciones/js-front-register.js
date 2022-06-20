@@ -2,7 +2,7 @@ const expresiones = {
 	username: /^[a-zA-Z0-9\_\-]{2,16}$/, 
 	name: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, 
     surname: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, 
-	password: /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[.,:;-_!"§$%&/()=?`+@])[A-Za-z0-9]{8,16}$/, 
+	password: /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9]{8,16}$/, 
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 }
 
@@ -93,11 +93,10 @@ window.addEventListener('load', (e) => {
     })
     form.addEventListener('submit', (e) => {
         if(!expresiones.username.test(username.value) 
-            || !expresiones.name.test(username.value) 
+            || !expresiones.name.test(name.value) 
             || !expresiones.surname.test(surname.value) 
             || !expresiones.email.test(email.value) 
-            || !expresiones.password.test(password.value) 
-            || !expresiones.passwordConfirm.test(passwordConfirm.value)) {
+            || !expresiones.password.test(password.value)) {
                 e.preventDefault() 
                 submitError.innerHTML = 'campos imcompletos o invalidos'
         }

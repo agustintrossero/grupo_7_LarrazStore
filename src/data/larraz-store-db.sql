@@ -115,6 +115,7 @@ CREATE TABLE `usuarios` (
   `password` varchar(60) DEFAULT NULL,
   `legal_buy` tinyint(4) DEFAULT 1,
   `avatar` varchar(255) NOT NULL,
+  `isAdmin` tinyint(4) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -125,7 +126,10 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Marc','Marcos','Villanueva','marcvillanueva@gmail.com','$2a$10$alOid0cWLkLvjLy5.D4M1eBAIy7.kjFrpEpSma2JK54R9AbNk6wS.',0,'avatar1654280033185.jpg'),(2,'Juan','Juan','Larraz','juanlarraz@gmail.com','$2a$10$dqYpYnNFkTszyq9kgtHcNejToJ6uP2ucdOskYfw3ukA3H9LI1fhja',0,'avatar1654280226716.png'),(3,'Nacho','Ignacio','Maldonado','ignaciomaldonado@gmail.com','$2a$10$wy5grYzMPKIQ4Hil0zwVSOVjNoSFiwTPJ5EaLCoABhMAD/mp2SgxW',0,'avatar1654280342675.png'),(4,'Agus','Agustin','Trossero','agustintrossero@gmail.com','$2a$10$ET5Dc6i80bVO5pKIly9fC.tKMXux2dbWix.bfLcxdK9vAnIfNlsHm',0,'avatar1654279743787.jpg');
+INSERT INTO `usuarios` VALUES ('Nacho','Ignacio','Maldonado','ignaciomaldonado@gmail.com','$2b$10$xEnjdADlVIdfRitG.0oIVe13ezGb55BcJ4ztDvLfHK9UdNEniq0CG',0,'DefaultAvatar.jpg',1),
+	 ('Agus','Agustin ','Trossero','agustintrossero@gmail.com','$2b$10$oh9Lb1obhClIY/acR1DymuEsMKDzAzmfuDGOsfrXTiW5Hdqi853S6',0,'DefaultAvatar.jpg',1),
+	 ('Juan','Juan','Larraz','juanlarraz@gmail.com','$2b$10$WZRiu8ji/xKjGZA.LOjOjOLP3GEiACuQaOhE50Wq1ZJfOZGnbJQIC',0,'DefaultAvatar.jpg',1),
+	 ('Marc','Marcos','Villanueva','marcvillanueva@gmail.com','$2b$10$11bO8LfQgIDChWvqyODWf.YdCa6RHx.Es5m8mOsDLi5vawB0HtMEG',0,'DefaultAvatar.jpg',1);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 

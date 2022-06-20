@@ -33,7 +33,7 @@ window.addEventListener('load', (e) =>{
                 errorDivPassword.innerHTML = ''
             }
         } else {
-            errorDivPassword.innerHTML = '<p>La contraseña debe incluir letras mayúsculas, minúsculas, como mínimo un número y un cáracter especial.</p>'
+            errorDivPassword.innerHTML = '<p>La contraseña debe incluir letras mayúsculas, minúsculas como mínimo un número</p>'
                 errorDivPassword.classList.add('text-danger')
         }
     })

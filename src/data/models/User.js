@@ -28,7 +28,11 @@ module.exports = (sequelize, dataTypes) => {
         avatar: {
             type: dataTypes.STRING(255),
             allowNull: false,
-            }
+            },
+        isAdmin: {
+            type: dataTypes.INTEGER,
+            allowNull: false
+        }
     }
     let config = {
         tableName: 'usuarios',
