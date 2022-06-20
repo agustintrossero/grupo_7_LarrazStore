@@ -64,7 +64,7 @@ const controller = {
             password: encryptedPass,
             legal_buy: parseInt(req.body.legal_buy),
             avatar: avatar,
-            isAdmin: 1
+            isAdmin: 0
            })
            console.log("se creo el usuario")
            return res.redirect('/users/login');
