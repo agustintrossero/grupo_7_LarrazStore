@@ -126,10 +126,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES ('Nacho','Ignacio','Maldonado','ignaciomaldonado@gmail.com','$2b$10$xEnjdADlVIdfRitG.0oIVe13ezGb55BcJ4ztDvLfHK9UdNEniq0CG',0,'DefaultAvatar.jpg',1),
-	 ('Agus','Agustin ','Trossero','agustintrossero@gmail.com','$2b$10$oh9Lb1obhClIY/acR1DymuEsMKDzAzmfuDGOsfrXTiW5Hdqi853S6',0,'DefaultAvatar.jpg',1),
-	 ('Juan','Juan','Larraz','juanlarraz@gmail.com','$2b$10$WZRiu8ji/xKjGZA.LOjOjOLP3GEiACuQaOhE50Wq1ZJfOZGnbJQIC',0,'DefaultAvatar.jpg',1),
-	 ('Marc','Marcos','Villanueva','marcvillanueva@gmail.com','$2b$10$11bO8LfQgIDChWvqyODWf.YdCa6RHx.Es5m8mOsDLi5vawB0HtMEG',0,'DefaultAvatar.jpg',1);
+INSERT INTO `usuarios` VALUES ('Nacho','Ignacio','Maldonado','ignaciomaldonado@gmail.com','$2b$10$xEnjdADlVIdfRitG.0oIVe13ezGb55BcJ4ztDvLfHK9UdNEniq0CG',0,'DefaultAvatar.jpg',1),('Agus','Agustin ','Trossero','agustintrossero@gmail.com','$2b$10$oh9Lb1obhClIY/acR1DymuEsMKDzAzmfuDGOsfrXTiW5Hdqi853S6',0,'DefaultAvatar.jpg',1),('Juan','Juan','Larraz','juanlarraz@gmail.com','$2b$10$WZRiu8ji/xKjGZA.LOjOjOLP3GEiACuQaOhE50Wq1ZJfOZGnbJQIC',0,'DefaultAvatar.jpg',1),('Marc','Marcos','Villanueva','marcvillanueva@gmail.com','$2b$10$11bO8LfQgIDChWvqyODWf.YdCa6RHx.Es5m8mOsDLi5vawB0HtMEG',0,'DefaultAvatar.jpg',1);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
