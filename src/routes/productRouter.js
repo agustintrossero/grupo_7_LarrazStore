@@ -36,6 +36,9 @@ const validations = [
 
 ]
 
+
+//cart
+router.get ('/cart', productsController.cart);
 //Agregar producto
 router.get('/agregar', productsController.agregar);
 

@@ -8,8 +8,12 @@ const { validationResult } = require("express-validator");
 
 //Sequelize
 let db = require('../data/models');
+const res = require("express/lib/response");
 
 const productsController = {
+    cart : (req,res)=>{
+        res.render('products/product-cart')
+    },
     //Agregar producto.
     agregar: function (req, res) {
         db.productos.findAll()
