@@ -33,7 +33,7 @@ window.addEventListener('load', (e) => {
             username.innerHTML = ''
         }   
     })
-
+    
 
     name.addEventListener('keyup', (e) => {
         if (!expresiones.name.test(name.value)) {
