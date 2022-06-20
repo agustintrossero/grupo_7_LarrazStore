@@ -30,11 +30,13 @@
                 <label for="image" class="form-label"> Nueva imagen de perfil </label>
                 <input type="file" name="avatar" id="image" class="img-button" value="<%=user.avatar%>">
             </div>
-            <p>imagen actual de avatar</p>
-            <img src="/images/avatars/<%=user.avatar%>" alt="<%=user.name%>">
+            <div class="avatar-edit-text"><p class="edit-avatar">imagen actual de avatar</p></div>
+            <div class="avatar-edit">
+                <img src="/images/avatars/<%=user.avatar%>" class="img-edit" alt="<%=user.name%>">
+            </div>
             <button type="submit" class="user-button">Guardar perfil</button>
             
         </form>
     </main>
-    <% include ("../partials/footer")%>
+    <% include ("../partials/footer2")%>
 </body>

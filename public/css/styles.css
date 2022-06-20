@@ -970,8 +970,25 @@ text-align: center}
     margin: 20px 0
 }
 
+.avatar-edit {
+    height:100px;
+    width:100px;
+    margin:0 auto
+}
 
+.img-edit {
+    height:100%;
+    width:100%;
+}
 
+.avatar-edit-text {
+    justify-content: center;
+}
+
+.edit-avatar {
+    justify-content: center;
+    text-align: center;
+}
 
 
 

@@ -32,8 +32,10 @@
           <a href="/products/"><li>Productos</li></a>
           <a href="/armarPC/"><li>Arma tu PC</li></a>
           <a href="/service/"><li>Servicio Tecnico</li></a>
-          <a href="/users"><li>Usuarios</li></a>
-          <li>Contacto</li>
+          <% if (locals.userLogged && locals.userLogged.isAdmin == 1) { %>
+            <a href="http://localhost:3001/"><li>Dashboard</li></a>
+            <a href="/users"><li>Usuarios</li></a>
+          <% } %>
       </ul>
   </nav>
 </header>
