@@ -18,6 +18,14 @@ const mainController = {
         return res.render("admin")
     },
 
+    service:(req,res) => {
+        return res.render("service")
+    },
+
+    armarPC:(req,res) => {
+        return res.render("armarPC")
+    }
+
 }
 
 module.exports = mainController;
