@@ -5,26 +5,46 @@
   <%- include ("../partials/header")%>
   <main>
     <h1 class="cursiva">Productos Seleccionados</h1>
+    <!--
     <article>
         <section class = "contenedor">
             <div class = "contenedor-imagen">
-              <% for (let i = 0 ; i < productos.length ; i++ ){%>
-                <a href="/products/detail/<%=productos[i].id%>">
-                <img  class = "product-imagen" src= <%= productos[i].image %> alt= <%= productos[i].nombre %>/>
+              <% //for (let i = 0 ; i < productos.length ; i++ ){%>
+                <a href="/products/detail/<%=//productos[i].id%>">
+                <img  class = "product-imagen" src= <%= //productos[i].image %> alt= <%= //productos[i].nombre %>/>
               </a>
             </div>
           
             <div class = "contenedor-detalle">
               <div class = "contenedor-detalle">
-                <h2 class="cursiva"><%= productos[i].nombre %></h2>
-                <h3><%= productos[i].precio %></h3>
-                <p> <%= productos[i].description %></p>
+                <h2 class="cursiva"><%=// productos[i].nombre %></h2>
+                <h3><%= //productos[i].precio %></h3>
+                <p> <%=// productos[i].description %></p>
                 <button>Buy Now</button>
                 <button>Add to Cart</button>
               </div>
             </section>
-          <%}%>
+          <%//}%>
         </article>
+        -->
+
+        <div id="todos-productos">
+          <% for (let i = 0 ; i < productos.length ; i++ ){%>
+          <section class="producto">
+              <div class="foto-producto">
+                
+                  <a href="/products/detail/<%=productos[i].id%>">
+                    <img  class = "product_img" src= <%= productos[i].image %> alt= <%= productos[i].nombre %>/>
+                  </div>
+              </a>
+              <div class="texto-producto">
+                <h2 class="cursiva"><%= productos[i].nombre %></h2>
+                  <button>Buy Now</button>
+                  <button>Add to Cart</button>
+              </div>
+          </section>
+          <%}%>
+        </div>
         </main>
             
 
