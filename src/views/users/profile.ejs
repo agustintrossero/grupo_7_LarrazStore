@@ -6,8 +6,10 @@
     <main>
         <H1 class="edit-hl"><%=user.name%> <%=user.surname%>, bienvenido a nuestro e-commerce!</H1>
         <div>
-            <p>El mail con el que te encuentras registrado es <%= user.email %></p>
-            <img src="/images/avatars/<%= user.avatar %>">
+            <div class="avatar-edit-text"><p class="edit-avatar">El mail con el que te encuentras registrado es <%= user.email %></p></div>
+            <div class="avatar-edit">
+                <img src="/images/avatars/<%=user.avatar%>" class="img-edit" alt="<%=user.name%>">
+            </div>
         </div>
     </main>
     <%- include ("../partials/footer2")%>

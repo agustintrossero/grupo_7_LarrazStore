@@ -990,6 +990,12 @@ text-align: center}
     text-align: center;
 }
 
+.button-header {
+    width: 70px;
+    height: 40px;
+    font-size: 12px;
+    padding:5px
+}
 
 
 

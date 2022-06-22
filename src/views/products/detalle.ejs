@@ -1,5 +1,6 @@
 <%- include ("../partials/head")%>
 <title>Detalle del producto</title>
+<script src="/js/products/productToCart.js"></script>
 </head>
 
 <body>
@@ -18,15 +19,14 @@
                 <h2 class="cursiva"><%= productDetail.nombre %></h2>
                 <h3><%= productDetail.precio %></h3>
                 <p> <%= productDetail.description %></p>
-                <button>Buy Now</button>
-                <button>Add to Cart</button>
+                <button href="/products/cart" class = "button-compra" id="buttonCart">Agregar a carrito</button>
               </div>
             </section>
             <hr>
             <div class = 'contenedor-edit-delete'>
 						<a href="/products/modificar/<%=productDetail.id%>" class="action-button-edit">EDITAR</a>
             <form action="/products/detail/<%= productDetail.id %>/?_method=DELETE" method="POST">
-							<button type="submit" class="action-button-delete">ELIMINAR</button>
+							<button type="submit" class="action-button-delete"><a href='/products/product-cart'>ELIMINAR</a></button>
 						</form>
           </div>
 

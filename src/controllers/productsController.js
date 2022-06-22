@@ -72,6 +72,7 @@ const productsController = {
 
     //Listado de productos.
     listado: function (req, res) {
+    let arr = []
         db.productos.findAll()
             .then((productos) => {
                 res.render("products/products", {productos});

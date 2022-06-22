@@ -1,5 +1,6 @@
 <%- include ("../partials/head")%>
 <title>Productos</title>
+
 </head>
 <body>
   <%- include ("../partials/header")%>
@@ -38,8 +39,13 @@
                   </div>
               </a>
               <div class="texto-producto">
-                <h2 class="cursiva"><%= productos[i].nombre %></h2>
-                <a href="/products/cart" class = "button-compra">Agregar a carrito</a>
+                <h2 class="cursiva" id="cartNombre"><%= productos[i].nombre %></h2>
+
+                <p><%= productos[i].precio %></p>
+
+                
+
+
               </div>
           </section>
           <%}%>
